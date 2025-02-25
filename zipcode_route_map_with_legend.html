@@ -1,0 +1,4873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8848f9628f6d870bd53293993d10a1fc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 240px;
+    padding: 10px;
+    background-color: white;
+    border:2px solid grey;
+    z-index:9999;
+    font-size:14px;
+">
+    <b>Route Legend (by Route Number)</b><br>
+    
+        <i style="background: maroon;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>751<br>
+    
+        <i style="background: navy;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>752<br>
+    
+        <i style="background: blue;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>753<br>
+    
+        <i style="background: red;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>755<br>
+    
+        <i style="background: green;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>756<br>
+    
+        <i style="background: orange;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>757<br>
+    
+        <i style="background: purple;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>758<br>
+    
+        <i style="background: pink;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>759<br>
+    
+        <i style="background: darkred;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>760<br>
+    
+        <i style="background: cadetblue;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>761<br>
+    
+        <i style="background: lightblue;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>763<br>
+    
+        <i style="background: lightgreen;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>764<br>
+    
+        <i style="background: olive;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>766<br>
+    
+        <i style="background: black;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>767<br>
+    
+</div>
+    
+            <div class="folium-map" id="map_8848f9628f6d870bd53293993d10a1fc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_8848f9628f6d870bd53293993d10a1fc = L.map(
+                "map_8848f9628f6d870bd53293993d10a1fc",
+                {
+                    center: [39.5501, -105.7821],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_060388341830f731c12304aaf1cac830 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_060388341830f731c12304aaf1cac830.addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var marker_5ce21d580c3aee239cb363708b8b3edd = L.marker(
+                [39.7903083, -105.08238122079182],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_658fbc57285d86e60123f0c9bb14b3fa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5ce21d580c3aee239cb363708b8b3edd.setIcon(icon_658fbc57285d86e60123f0c9bb14b3fa);
+        
+    
+        var popup_488b53d6156616c430075a45bf74dc89 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da285c22713fdb3d74f5ee3fd523722c = $(`<div id="html_da285c22713fdb3d74f5ee3fd523722c" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80002.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $126756.25</div>`)[0];
+                popup_488b53d6156616c430075a45bf74dc89.setContent(html_da285c22713fdb3d74f5ee3fd523722c);
+            
+        
+
+        marker_5ce21d580c3aee239cb363708b8b3edd.bindPopup(popup_488b53d6156616c430075a45bf74dc89)
+        ;
+
+        
+    
+    
+            var marker_fac4a8fc131c911b93280d3ac14e1be2 = L.marker(
+                [39.839137504371735, -105.08312638233797],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_def0235cb901c183ba72dc8f9cecf6b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fac4a8fc131c911b93280d3ac14e1be2.setIcon(icon_def0235cb901c183ba72dc8f9cecf6b4);
+        
+    
+        var popup_e755f347680b4e2915ef6a4bccee7d17 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea3a6337b25b7b3b38adaf3988be5857 = $(`<div id="html_ea3a6337b25b7b3b38adaf3988be5857" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80003.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $91643.56</div>`)[0];
+                popup_e755f347680b4e2915ef6a4bccee7d17.setContent(html_ea3a6337b25b7b3b38adaf3988be5857);
+            
+        
+
+        marker_fac4a8fc131c911b93280d3ac14e1be2.bindPopup(popup_e755f347680b4e2915ef6a4bccee7d17)
+        ;
+
+        
+    
+    
+            var marker_09947c329d2102afc44ba0456d04bb10 = L.marker(
+                [39.81125504999999, -105.13647618077404],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_c1cf9e850a7f72ced878e6115d1097db = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_09947c329d2102afc44ba0456d04bb10.setIcon(icon_c1cf9e850a7f72ced878e6115d1097db);
+        
+    
+        var popup_124663f12a9819513be83911c158b7c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57d69ee157fdf90273b254ad25e11d2b = $(`<div id="html_57d69ee157fdf90273b254ad25e11d2b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80004.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $23637.96</div>`)[0];
+                popup_124663f12a9819513be83911c158b7c0.setContent(html_57d69ee157fdf90273b254ad25e11d2b);
+            
+        
+
+        marker_09947c329d2102afc44ba0456d04bb10.bindPopup(popup_124663f12a9819513be83911c158b7c0)
+        ;
+
+        
+    
+    
+            var marker_7609e93afbea28291d473f89a52b2437 = L.marker(
+                [39.82779274768857, -105.1705587944268],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_12ac6b0086e7ac3aff2a441e76e2dc97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7609e93afbea28291d473f89a52b2437.setIcon(icon_12ac6b0086e7ac3aff2a441e76e2dc97);
+        
+    
+        var popup_1bc88536988206cc5eef984d38754663 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5440191ccd42fe09bee068981024c7ab = $(`<div id="html_5440191ccd42fe09bee068981024c7ab" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80007.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $84468.32</div>`)[0];
+                popup_1bc88536988206cc5eef984d38754663.setContent(html_5440191ccd42fe09bee068981024c7ab);
+            
+        
+
+        marker_7609e93afbea28291d473f89a52b2437.bindPopup(popup_1bc88536988206cc5eef984d38754663)
+        ;
+
+        
+    
+    
+            var marker_c420ccb5334767b1ccd18be42c06b2fb = L.marker(
+                [39.69248938220928, -104.85699126876902],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0bfffe1db948a3125ad8b66fb905c86f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c420ccb5334767b1ccd18be42c06b2fb.setIcon(icon_0bfffe1db948a3125ad8b66fb905c86f);
+        
+    
+        var popup_8831c45c8c0e49703a6396e3a5c41d28 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a53b4efd4938c41a7942750b4884d10 = $(`<div id="html_1a53b4efd4938c41a7942750b4884d10" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80012.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $133209.22</div>`)[0];
+                popup_8831c45c8c0e49703a6396e3a5c41d28.setContent(html_1a53b4efd4938c41a7942750b4884d10);
+            
+        
+
+        marker_c420ccb5334767b1ccd18be42c06b2fb.bindPopup(popup_8831c45c8c0e49703a6396e3a5c41d28)
+        ;
+
+        
+    
+    
+            var marker_621371dd46d7426304ed4ff4ac267665 = L.marker(
+                [39.65457321119527, -104.78104276848723],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_b481a8abd197df05813169ed3ee3efcb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_621371dd46d7426304ed4ff4ac267665.setIcon(icon_b481a8abd197df05813169ed3ee3efcb);
+        
+    
+        var popup_5687a9ebd8225afaf8b753bf48978221 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89961b017c07cba1b4cdf734286deaf8 = $(`<div id="html_89961b017c07cba1b4cdf734286deaf8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80013.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $41148.70</div>`)[0];
+                popup_5687a9ebd8225afaf8b753bf48978221.setContent(html_89961b017c07cba1b4cdf734286deaf8);
+            
+        
+
+        marker_621371dd46d7426304ed4ff4ac267665.bindPopup(popup_5687a9ebd8225afaf8b753bf48978221)
+        ;
+
+        
+    
+    
+            var marker_76d4dd1b6865b7b97151773e4281b7f1 = L.marker(
+                [39.65848226025091, -104.82258531208691],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_1d9a718571b64eec4baf762a4f249e19 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_76d4dd1b6865b7b97151773e4281b7f1.setIcon(icon_1d9a718571b64eec4baf762a4f249e19);
+        
+    
+        var popup_28dd600dd9c5cd88ae7ddd4f1272d63d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e855a7540b8b52a90a7129025136b66 = $(`<div id="html_3e855a7540b8b52a90a7129025136b66" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80014.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $31119.34</div>`)[0];
+                popup_28dd600dd9c5cd88ae7ddd4f1272d63d.setContent(html_3e855a7540b8b52a90a7129025136b66);
+            
+        
+
+        marker_76d4dd1b6865b7b97151773e4281b7f1.bindPopup(popup_28dd600dd9c5cd88ae7ddd4f1272d63d)
+        ;
+
+        
+    
+    
+            var marker_370bc334d133b2cdedb2902ea36eceaf = L.marker(
+                [39.614125, -104.8120941],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_dc97caf10831d0042d5a79af2b39ef1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_370bc334d133b2cdedb2902ea36eceaf.setIcon(icon_dc97caf10831d0042d5a79af2b39ef1f);
+        
+    
+        var popup_2c2911238370533465d78d3f7af1841d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02a23fc30f46a27f42e74adf4c50691a = $(`<div id="html_02a23fc30f46a27f42e74adf4c50691a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80015.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $13487.32</div>`)[0];
+                popup_2c2911238370533465d78d3f7af1841d.setContent(html_02a23fc30f46a27f42e74adf4c50691a);
+            
+        
+
+        marker_370bc334d133b2cdedb2902ea36eceaf.bindPopup(popup_2c2911238370533465d78d3f7af1841d)
+        ;
+
+        
+    
+    
+            var marker_8fa9bcbb04b5af8d36dd971a37812f4e = L.marker(
+                [39.59461793596763, -104.72744803947519],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_fe57c705a686130ee72847d8db1a68d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8fa9bcbb04b5af8d36dd971a37812f4e.setIcon(icon_fe57c705a686130ee72847d8db1a68d3);
+        
+    
+        var popup_54263d062c60d451da7d04df6cbe5f7a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb1367c95e79c1a0ab0e0412175173cc = $(`<div id="html_bb1367c95e79c1a0ab0e0412175173cc" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80016.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $86106.30</div>`)[0];
+                popup_54263d062c60d451da7d04df6cbe5f7a.setContent(html_bb1367c95e79c1a0ab0e0412175173cc);
+            
+        
+
+        marker_8fa9bcbb04b5af8d36dd971a37812f4e.bindPopup(popup_54263d062c60d451da7d04df6cbe5f7a)
+        ;
+
+        
+    
+    
+            var marker_4304c7bd6fb60198cfc7a6828442d4fc = L.marker(
+                [39.69482235, -104.78884012247904],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_a2d8b7e0f926e6b02932a03fcc91ae2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4304c7bd6fb60198cfc7a6828442d4fc.setIcon(icon_a2d8b7e0f926e6b02932a03fcc91ae2c);
+        
+    
+        var popup_ff86c30c681db6efda92fb481be76027 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4148e8d47079123bc6b6900fa3cc7ade = $(`<div id="html_4148e8d47079123bc6b6900fa3cc7ade" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80017.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $12102.72</div>`)[0];
+                popup_ff86c30c681db6efda92fb481be76027.setContent(html_4148e8d47079123bc6b6900fa3cc7ade);
+            
+        
+
+        marker_4304c7bd6fb60198cfc7a6828442d4fc.bindPopup(popup_ff86c30c681db6efda92fb481be76027)
+        ;
+
+        
+    
+    
+            var marker_eefefd361405e8dae9aa4024c662144a = L.marker(
+                [39.93445059379937, -105.05482333247363],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_3a7922bf22c0f727a4b87c81c55c9c13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_eefefd361405e8dae9aa4024c662144a.setIcon(icon_3a7922bf22c0f727a4b87c81c55c9c13);
+        
+    
+        var popup_336f801d7148976f305e4ab879a9e5c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_900f0182c640b55f3722c7ddcaeeda63 = $(`<div id="html_900f0182c640b55f3722c7ddcaeeda63" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80020.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $50967.85</div>`)[0];
+                popup_336f801d7148976f305e4ab879a9e5c1.setContent(html_900f0182c640b55f3722c7ddcaeeda63);
+            
+        
+
+        marker_eefefd361405e8dae9aa4024c662144a.bindPopup(popup_336f801d7148976f305e4ab879a9e5c1)
+        ;
+
+        
+    
+    
+            var marker_92deff458c0f1e1cf45dd65b31b711fc = L.marker(
+                [39.90099717208775, -105.10500662299546],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_7bf15b80b269ce48949eb222049624ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_92deff458c0f1e1cf45dd65b31b711fc.setIcon(icon_7bf15b80b269ce48949eb222049624ce);
+        
+    
+        var popup_e9487a3a825c1dbbd80c812718ec36ef = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b89094e2ad51b6e97348d4db65881033 = $(`<div id="html_b89094e2ad51b6e97348d4db65881033" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80021.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $40198.85</div>`)[0];
+                popup_e9487a3a825c1dbbd80c812718ec36ef.setContent(html_b89094e2ad51b6e97348d4db65881033);
+            
+        
+
+        marker_92deff458c0f1e1cf45dd65b31b711fc.bindPopup(popup_e9487a3a825c1dbbd80c812718ec36ef)
+        ;
+
+        
+    
+    
+            var marker_15586d3b9e343bfe1e984fe24614aa16 = L.marker(
+                [39.86523674359268, -104.84275501690949],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_4df283f3e29f0e9fdf9fcfd8081523d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_15586d3b9e343bfe1e984fe24614aa16.setIcon(icon_4df283f3e29f0e9fdf9fcfd8081523d5);
+        
+    
+        var popup_0cdcaf181103d01a989fc53945d87f7a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cd2094f0416d9b13ae65879ce2d39eb = $(`<div id="html_1cd2094f0416d9b13ae65879ce2d39eb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80022.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $20403.94</div>`)[0];
+                popup_0cdcaf181103d01a989fc53945d87f7a.setContent(html_1cd2094f0416d9b13ae65879ce2d39eb);
+            
+        
+
+        marker_15586d3b9e343bfe1e984fe24614aa16.bindPopup(popup_0cdcaf181103d01a989fc53945d87f7a)
+        ;
+
+        
+    
+    
+            var marker_477d42bdba1939f660e8873400213603 = L.marker(
+                [39.95392189265281, -105.01497762885268],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_4f71893653bb563a22c9b65722d600c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_477d42bdba1939f660e8873400213603.setIcon(icon_4f71893653bb563a22c9b65722d600c3);
+        
+    
+        var popup_1250ad0a19bd48f8f8203e828cb2b9e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61bb3c0cce671a074cbeb45e4ed4d50a = $(`<div id="html_61bb3c0cce671a074cbeb45e4ed4d50a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80023.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $163623.99</div>`)[0];
+                popup_1250ad0a19bd48f8f8203e828cb2b9e5.setContent(html_61bb3c0cce671a074cbeb45e4ed4d50a);
+            
+        
+
+        marker_477d42bdba1939f660e8873400213603.bindPopup(popup_1250ad0a19bd48f8f8203e828cb2b9e5)
+        ;
+
+        
+    
+    
+            var marker_1bb786ea3d640552aa2d84d0e1aab3a5 = L.marker(
+                [39.98918851314561, -105.09412875883793],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_a1b3b6e6511799063813bb49326676a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1bb786ea3d640552aa2d84d0e1aab3a5.setIcon(icon_a1b3b6e6511799063813bb49326676a6);
+        
+    
+        var popup_25e868db32e133a396f9d4b254b27388 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_169f8441d44a18a3b8fc235286bfbb5f = $(`<div id="html_169f8441d44a18a3b8fc235286bfbb5f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80026.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $70183.90</div>`)[0];
+                popup_25e868db32e133a396f9d4b254b27388.setContent(html_169f8441d44a18a3b8fc235286bfbb5f);
+            
+        
+
+        marker_1bb786ea3d640552aa2d84d0e1aab3a5.bindPopup(popup_25e868db32e133a396f9d4b254b27388)
+        ;
+
+        
+    
+    
+            var marker_d8fab3b9c9283d9fa2dc8efeab3174d3 = L.marker(
+                [39.973492740181186, -105.14472810926293],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_ad90f636c12cafa5756f6f15d188e4a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d8fab3b9c9283d9fa2dc8efeab3174d3.setIcon(icon_ad90f636c12cafa5756f6f15d188e4a0);
+        
+    
+        var popup_9334622f98bfe4c47cc462ba15ffad2d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee566199cc8c15b4f7e4b00ccdf67fa8 = $(`<div id="html_ee566199cc8c15b4f7e4b00ccdf67fa8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80027.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $303436.10</div>`)[0];
+                popup_9334622f98bfe4c47cc462ba15ffad2d.setContent(html_ee566199cc8c15b4f7e4b00ccdf67fa8);
+            
+        
+
+        marker_d8fab3b9c9283d9fa2dc8efeab3174d3.bindPopup(popup_9334622f98bfe4c47cc462ba15ffad2d)
+        ;
+
+        
+    
+    
+            var marker_39470b753e4acc3bdecd05bdaeb24b36 = L.marker(
+                [39.9124305, -105.0507693],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_a5d0fa58d7773d45f978b797d300c4a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_39470b753e4acc3bdecd05bdaeb24b36.setIcon(icon_a5d0fa58d7773d45f978b797d300c4a0);
+        
+    
+        var popup_39f0fc64092c833ab40c62bb4a701c79 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e6ecea50aa29bcc2506738d3a1733a9 = $(`<div id="html_0e6ecea50aa29bcc2506738d3a1733a9" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80030.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $22329.96</div>`)[0];
+                popup_39f0fc64092c833ab40c62bb4a701c79.setContent(html_0e6ecea50aa29bcc2506738d3a1733a9);
+            
+        
+
+        marker_39470b753e4acc3bdecd05bdaeb24b36.bindPopup(popup_39f0fc64092c833ab40c62bb4a701c79)
+        ;
+
+        
+    
+    
+            var marker_77343ef4f4ad1fec233e32b9ed21e821 = L.marker(
+                [39.90133082672902, -105.0484109903264],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_70ba680ee38bf2b685b302441140c17f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_77343ef4f4ad1fec233e32b9ed21e821.setIcon(icon_70ba680ee38bf2b685b302441140c17f);
+        
+    
+        var popup_2b394c99afaffa8bc99c2ec23aed0555 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ebc2ccbc9d23b427eb075f2de6dc160 = $(`<div id="html_1ebc2ccbc9d23b427eb075f2de6dc160" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80031.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $93557.50</div>`)[0];
+                popup_2b394c99afaffa8bc99c2ec23aed0555.setContent(html_1ebc2ccbc9d23b427eb075f2de6dc160);
+            
+        
+
+        marker_77343ef4f4ad1fec233e32b9ed21e821.bindPopup(popup_2b394c99afaffa8bc99c2ec23aed0555)
+        ;
+
+        
+    
+    
+            var marker_4aa4b5f963cc8872a7a1c19df36bcb51 = L.marker(
+                [39.776227897753856, -105.1039397395695],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0b71ad4e0cb2afd6de299527b2295974 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4aa4b5f963cc8872a7a1c19df36bcb51.setIcon(icon_0b71ad4e0cb2afd6de299527b2295974);
+        
+    
+        var popup_a8287cd7ec3031e1b6304ac8e15441f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6cdd52185b05d6f9cd14cae413be6ae = $(`<div id="html_d6cdd52185b05d6f9cd14cae413be6ae" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80033.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $81754.34</div>`)[0];
+                popup_a8287cd7ec3031e1b6304ac8e15441f2.setContent(html_d6cdd52185b05d6f9cd14cae413be6ae);
+            
+        
+
+        marker_4aa4b5f963cc8872a7a1c19df36bcb51.bindPopup(popup_a8287cd7ec3031e1b6304ac8e15441f2)
+        ;
+
+        
+    
+    
+            var marker_0d5e30d3d18e863968419750e3a2e071 = L.marker(
+                [39.39727636216216, -104.85995826003585],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_e0f2d6e620b04e7b22cb9975a2252917 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0d5e30d3d18e863968419750e3a2e071.setIcon(icon_e0f2d6e620b04e7b22cb9975a2252917);
+        
+    
+        var popup_43539ed84b0050801b248e6695eb94e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7bebbbb250b592af96ad286ceb65b12f = $(`<div id="html_7bebbbb250b592af96ad286ceb65b12f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80104.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $60794.50</div>`)[0];
+                popup_43539ed84b0050801b248e6695eb94e3.setContent(html_7bebbbb250b592af96ad286ceb65b12f);
+            
+        
+
+        marker_0d5e30d3d18e863968419750e3a2e071.bindPopup(popup_43539ed84b0050801b248e6695eb94e3)
+        ;
+
+        
+    
+    
+            var marker_62ac8e0d5acbeacfa02748bee19280f2 = L.marker(
+                [39.43572912323233, -104.87908289771181],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_4109e1d7ec386847995522593ec64bcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_62ac8e0d5acbeacfa02748bee19280f2.setIcon(icon_4109e1d7ec386847995522593ec64bcd);
+        
+    
+        var popup_91e1355dac5cf519064b31395c48e13e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83a1f75ae7ada9b26f6e98e0ad10f228 = $(`<div id="html_83a1f75ae7ada9b26f6e98e0ad10f228" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80108.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $109903.37</div>`)[0];
+                popup_91e1355dac5cf519064b31395c48e13e.setContent(html_83a1f75ae7ada9b26f6e98e0ad10f228);
+            
+        
+
+        marker_62ac8e0d5acbeacfa02748bee19280f2.bindPopup(popup_91e1355dac5cf519064b31395c48e13e)
+        ;
+
+        
+    
+    
+            var marker_aab98db21e1372016c30bb1b53208579 = L.marker(
+                [39.4130056, -104.86496679999999],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_a1437ba2ee9779aa7a3d0c055125ede9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_aab98db21e1372016c30bb1b53208579.setIcon(icon_a1437ba2ee9779aa7a3d0c055125ede9);
+        
+    
+        var popup_dfc739d7c9864f8b90f637755abaae80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f0b3dd91e255e486f918bd4a36f557b = $(`<div id="html_4f0b3dd91e255e486f918bd4a36f557b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80109.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $19477.32</div>`)[0];
+                popup_dfc739d7c9864f8b90f637755abaae80.setContent(html_4f0b3dd91e255e486f918bd4a36f557b);
+            
+        
+
+        marker_aab98db21e1372016c30bb1b53208579.bindPopup(popup_dfc739d7c9864f8b90f637755abaae80)
+        ;
+
+        
+    
+    
+            var marker_3aaa1a75515de40be0dc5efba34182bb = L.marker(
+                [39.63077217093568, -104.99527511963248],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_06102290fd397a7146cb9c7c75cc8234 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3aaa1a75515de40be0dc5efba34182bb.setIcon(icon_06102290fd397a7146cb9c7c75cc8234);
+        
+    
+        var popup_e9cb3b932ba5607e239e7e74fad4acdf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8bd90db8b772a5751ba4054b799c7e8b = $(`<div id="html_8bd90db8b772a5751ba4054b799c7e8b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80110.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $142369.78</div>`)[0];
+                popup_e9cb3b932ba5607e239e7e74fad4acdf.setContent(html_8bd90db8b772a5751ba4054b799c7e8b);
+            
+        
+
+        marker_3aaa1a75515de40be0dc5efba34182bb.bindPopup(popup_e9cb3b932ba5607e239e7e74fad4acdf)
+        ;
+
+        
+    
+    
+            var marker_a85a9d18dcc9d97305d0f9fb2678f89d = L.marker(
+                [39.6173419893617, -104.90201619470064],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_8b4614520446ce00f24ca0358cd7be3f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a85a9d18dcc9d97305d0f9fb2678f89d.setIcon(icon_8b4614520446ce00f24ca0358cd7be3f);
+        
+    
+        var popup_c0d95ca3ac06f524cb31c42150866972 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb0630aea7f24368f41fca3ae6e2c40b = $(`<div id="html_fb0630aea7f24368f41fca3ae6e2c40b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80111.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $61938.86</div>`)[0];
+                popup_c0d95ca3ac06f524cb31c42150866972.setContent(html_fb0630aea7f24368f41fca3ae6e2c40b);
+            
+        
+
+        marker_a85a9d18dcc9d97305d0f9fb2678f89d.bindPopup(popup_c0d95ca3ac06f524cb31c42150866972)
+        ;
+
+        
+    
+    
+            var marker_e9e362ebf52fc8f962d6945b48619f50 = L.marker(
+                [39.59518326307111, -104.88514759292339],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_c8a4dd7cfd6d3d581c0de546dfd254c3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e9e362ebf52fc8f962d6945b48619f50.setIcon(icon_c8a4dd7cfd6d3d581c0de546dfd254c3);
+        
+    
+        var popup_6f8ee085837814d446d95844896018b0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c8dc33f48852fe600299455c1763862 = $(`<div id="html_7c8dc33f48852fe600299455c1763862" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80112.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $28774.77</div>`)[0];
+                popup_6f8ee085837814d446d95844896018b0.setContent(html_7c8dc33f48852fe600299455c1763862);
+            
+        
+
+        marker_e9e362ebf52fc8f962d6945b48619f50.bindPopup(popup_6f8ee085837814d446d95844896018b0)
+        ;
+
+        
+    
+    
+            var marker_ceba60c412dd62a6147bbd9c7b035dda = L.marker(
+                [39.640775647487885, -104.98078023284273],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_87d8e92f3c181ddc128153b03ce881a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ceba60c412dd62a6147bbd9c7b035dda.setIcon(icon_87d8e92f3c181ddc128153b03ce881a1);
+        
+    
+        var popup_901c61f643e84a4f274365efce79a3b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51e3ef47652d5e8da8c3044c8baeb1f0 = $(`<div id="html_51e3ef47652d5e8da8c3044c8baeb1f0" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80113.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $68537.88</div>`)[0];
+                popup_901c61f643e84a4f274365efce79a3b9.setContent(html_51e3ef47652d5e8da8c3044c8baeb1f0);
+            
+        
+
+        marker_ceba60c412dd62a6147bbd9c7b035dda.bindPopup(popup_901c61f643e84a4f274365efce79a3b9)
+        ;
+
+        
+    
+    
+            var marker_a0709885dc7a4393fc4367cae7e453f5 = L.marker(
+                [39.5647545, -104.8730821],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_2cef4690f3e78f797940c821ef67d28b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a0709885dc7a4393fc4367cae7e453f5.setIcon(icon_2cef4690f3e78f797940c821ef67d28b);
+        
+    
+        var popup_2adb6fc5c2eb8ca0af21178c8145632c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_638df319ac9dde0358f6696f0041c082 = $(`<div id="html_638df319ac9dde0358f6696f0041c082" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80114.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $114843.75</div>`)[0];
+                popup_2adb6fc5c2eb8ca0af21178c8145632c.setContent(html_638df319ac9dde0358f6696f0041c082);
+            
+        
+
+        marker_a0709885dc7a4393fc4367cae7e453f5.bindPopup(popup_2adb6fc5c2eb8ca0af21178c8145632c)
+        ;
+
+        
+    
+    
+            var marker_94e6872a8c5ba26e6e7232fe47faf2b7 = L.marker(
+                [39.5748722, -104.9918813],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_dfad5c9ad9d104fac434cf4c90f169e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_94e6872a8c5ba26e6e7232fe47faf2b7.setIcon(icon_dfad5c9ad9d104fac434cf4c90f169e1);
+        
+    
+        var popup_4d3dffabb60f82b54c27aeabe72fa7e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82d55b45ed1627ae080c24965f39e367 = $(`<div id="html_82d55b45ed1627ae080c24965f39e367" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80120.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $19468.77</div>`)[0];
+                popup_4d3dffabb60f82b54c27aeabe72fa7e9.setContent(html_82d55b45ed1627ae080c24965f39e367);
+            
+        
+
+        marker_94e6872a8c5ba26e6e7232fe47faf2b7.bindPopup(popup_4d3dffabb60f82b54c27aeabe72fa7e9)
+        ;
+
+        
+    
+    
+            var marker_52e127509ba094e62b4c6b92519eacd3 = L.marker(
+                [39.5943915, -104.928758],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_3977af2cc7fef10a99ccd642fc204f2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_52e127509ba094e62b4c6b92519eacd3.setIcon(icon_3977af2cc7fef10a99ccd642fc204f2c);
+        
+    
+        var popup_69b33aa855e6cfd87a39e88b21b1e4ab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d05dfe8bd1857a3f342da4f6a47ef5c9 = $(`<div id="html_d05dfe8bd1857a3f342da4f6a47ef5c9" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80121.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $7574.74</div>`)[0];
+                popup_69b33aa855e6cfd87a39e88b21b1e4ab.setContent(html_d05dfe8bd1857a3f342da4f6a47ef5c9);
+            
+        
+
+        marker_52e127509ba094e62b4c6b92519eacd3.bindPopup(popup_69b33aa855e6cfd87a39e88b21b1e4ab)
+        ;
+
+        
+    
+    
+            var marker_3313e17e890bdb7e5eaadbd66d1f02bf = L.marker(
+                [39.579039902628836, -104.94760886438556],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0c6631e609aa370b1336eeeaf0c948af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3313e17e890bdb7e5eaadbd66d1f02bf.setIcon(icon_0c6631e609aa370b1336eeeaf0c948af);
+        
+    
+        var popup_643dec6dcccb07a6a6f788dad65e9f0d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a135bd90fdc5babd5d1aa582d18d46e = $(`<div id="html_4a135bd90fdc5babd5d1aa582d18d46e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80122.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $91723.14</div>`)[0];
+                popup_643dec6dcccb07a6a6f788dad65e9f0d.setContent(html_4a135bd90fdc5babd5d1aa582d18d46e);
+            
+        
+
+        marker_3313e17e890bdb7e5eaadbd66d1f02bf.bindPopup(popup_643dec6dcccb07a6a6f788dad65e9f0d)
+        ;
+
+        
+    
+    
+            var marker_f73e2ebe7f9ae1a0dad1b8b82ca464de = L.marker(
+                [39.61653896971237, -105.0938036582699],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_5b6721635ef60439c2f051aab814302d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f73e2ebe7f9ae1a0dad1b8b82ca464de.setIcon(icon_5b6721635ef60439c2f051aab814302d);
+        
+    
+        var popup_e06fe133723f32058e1a259089de52c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bdada0fa16e083d94a7f504b0442e66e = $(`<div id="html_bdada0fa16e083d94a7f504b0442e66e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80123.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $72373.54</div>`)[0];
+                popup_e06fe133723f32058e1a259089de52c0.setContent(html_bdada0fa16e083d94a7f504b0442e66e);
+            
+        
+
+        marker_f73e2ebe7f9ae1a0dad1b8b82ca464de.bindPopup(popup_e06fe133723f32058e1a259089de52c0)
+        ;
+
+        
+    
+    
+            var marker_dd82bea42603c33da24cf15bc8789f2a = L.marker(
+                [39.535383078746825, -104.8814237585503],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_bb26379d074a705db3d357a10b168390 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dd82bea42603c33da24cf15bc8789f2a.setIcon(icon_bb26379d074a705db3d357a10b168390);
+        
+    
+        var popup_7b7742545e0a50d1374569a32e0cbbc6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3b66d0d162fb89d5159f5928078b2499 = $(`<div id="html_3b66d0d162fb89d5159f5928078b2499" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80124.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $60788.70</div>`)[0];
+                popup_7b7742545e0a50d1374569a32e0cbbc6.setContent(html_3b66d0d162fb89d5159f5928078b2499);
+            
+        
+
+        marker_dd82bea42603c33da24cf15bc8789f2a.bindPopup(popup_7b7742545e0a50d1374569a32e0cbbc6)
+        ;
+
+        
+    
+    
+            var marker_54e9ad37d0bf3425f3e8a7ce34117364 = L.marker(
+                [39.5038546, -105.0733028],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_eec24d20e4d095da3d2853b0594582de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_54e9ad37d0bf3425f3e8a7ce34117364.setIcon(icon_eec24d20e4d095da3d2853b0594582de);
+        
+    
+        var popup_1e603e92ca6756441fe637fa454fcd6b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84da4c084bff3d53a53282dc62b8f893 = $(`<div id="html_84da4c084bff3d53a53282dc62b8f893" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80125.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $3386.52</div>`)[0];
+                popup_1e603e92ca6756441fe637fa454fcd6b.setContent(html_84da4c084bff3d53a53282dc62b8f893);
+            
+        
+
+        marker_54e9ad37d0bf3425f3e8a7ce34117364.bindPopup(popup_1e603e92ca6756441fe637fa454fcd6b)
+        ;
+
+        
+    
+    
+            var marker_84215826a85d0b08b072a6f3fdaea55c = L.marker(
+                [39.556323316109456, -104.94236967100349],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_73fb0f3fb47f02a55c466c8d01915960 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_84215826a85d0b08b072a6f3fdaea55c.setIcon(icon_73fb0f3fb47f02a55c466c8d01915960);
+        
+    
+        var popup_28b25022a2018bc4121322e3c765f48c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe2c4ce7cf445b7eaeee3f494622cf89 = $(`<div id="html_fe2c4ce7cf445b7eaeee3f494622cf89" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80126.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $139553.52</div>`)[0];
+                popup_28b25022a2018bc4121322e3c765f48c.setContent(html_fe2c4ce7cf445b7eaeee3f494622cf89);
+            
+        
+
+        marker_84215826a85d0b08b072a6f3fdaea55c.bindPopup(popup_28b25022a2018bc4121322e3c765f48c)
+        ;
+
+        
+    
+    
+            var marker_4d2116bc754670815a7008571163e0e6 = L.marker(
+                [39.59121448549091, -105.12038594740606],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0aab6e3792095cf8660d72b7032a2d4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4d2116bc754670815a7008571163e0e6.setIcon(icon_0aab6e3792095cf8660d72b7032a2d4a);
+        
+    
+        var popup_2cf3ffc1969625580facf3cee76cb339 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2b8bfd9b3090be195377899fa5e1ca8 = $(`<div id="html_b2b8bfd9b3090be195377899fa5e1ca8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80127.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $87949.36</div>`)[0];
+                popup_2cf3ffc1969625580facf3cee76cb339.setContent(html_b2b8bfd9b3090be195377899fa5e1ca8);
+            
+        
+
+        marker_4d2116bc754670815a7008571163e0e6.bindPopup(popup_2cf3ffc1969625580facf3cee76cb339)
+        ;
+
+        
+    
+    
+            var marker_25588ca2c39399ddac9949f99664755b = L.marker(
+                [39.58783455257732, -105.06555117216496],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_e08220d0b0f0ccfb9085ad7953a6592d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_25588ca2c39399ddac9949f99664755b.setIcon(icon_e08220d0b0f0ccfb9085ad7953a6592d);
+        
+    
+        var popup_7a26a58e67ba17e4ddb9d2ecf96d1a5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c49954e03094e4673b4b46bf18577caf = $(`<div id="html_c49954e03094e4673b4b46bf18577caf" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80128.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $36091.30</div>`)[0];
+                popup_7a26a58e67ba17e4ddb9d2ecf96d1a5a.setContent(html_c49954e03094e4673b4b46bf18577caf);
+            
+        
+
+        marker_25588ca2c39399ddac9949f99664755b.bindPopup(popup_7a26a58e67ba17e4ddb9d2ecf96d1a5a)
+        ;
+
+        
+    
+    
+            var marker_d87a53244b15c50a7b13c8c40bba4e5b = L.marker(
+                [39.54031586350262, -104.99540767226216],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_639ab53f572126db5e884fbe08fe0231 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d87a53244b15c50a7b13c8c40bba4e5b.setIcon(icon_639ab53f572126db5e884fbe08fe0231);
+        
+    
+        var popup_8fc29410e16b3b0b541befaed8cf7b0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11069b40d6e27ad1bc2fad57c7c60a0e = $(`<div id="html_11069b40d6e27ad1bc2fad57c7c60a0e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80129.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $103174.73</div>`)[0];
+                popup_8fc29410e16b3b0b541befaed8cf7b0e.setContent(html_11069b40d6e27ad1bc2fad57c7c60a0e);
+            
+        
+
+        marker_d87a53244b15c50a7b13c8c40bba4e5b.bindPopup(popup_8fc29410e16b3b0b541befaed8cf7b0e)
+        ;
+
+        
+    
+    
+            var marker_a7aa18f42cc08feff8ee2faf7a40cb44 = L.marker(
+                [39.54998325983206, -104.91208520794765],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_976062078e70d53210b6607eaff832d3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a7aa18f42cc08feff8ee2faf7a40cb44.setIcon(icon_976062078e70d53210b6607eaff832d3);
+        
+    
+        var popup_693a572bc570808364f2b33ff50b3a7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_63f180d6652c43d4142eef4862fe8eac = $(`<div id="html_63f180d6652c43d4142eef4862fe8eac" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80130.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $51767.15</div>`)[0];
+                popup_693a572bc570808364f2b33ff50b3a7e.setContent(html_63f180d6652c43d4142eef4862fe8eac);
+            
+        
+
+        marker_a7aa18f42cc08feff8ee2faf7a40cb44.bindPopup(popup_693a572bc570808364f2b33ff50b3a7e)
+        ;
+
+        
+    
+    
+            var marker_add775a7155f821df85b4185c22e7bf5 = L.marker(
+                [39.08389284068586, -104.84804289668713],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0fd526257cdeffe8e2479fc1a547456e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_add775a7155f821df85b4185c22e7bf5.setIcon(icon_0fd526257cdeffe8e2479fc1a547456e);
+        
+    
+        var popup_ff37a0669a73e0ca042d97a331b562b2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1019de27ccc18cb00636eb7481794ddb = $(`<div id="html_1019de27ccc18cb00636eb7481794ddb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80132.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $116858.43</div>`)[0];
+                popup_ff37a0669a73e0ca042d97a331b562b2.setContent(html_1019de27ccc18cb00636eb7481794ddb);
+            
+        
+
+        marker_add775a7155f821df85b4185c22e7bf5.bindPopup(popup_ff37a0669a73e0ca042d97a331b562b2)
+        ;
+
+        
+    
+    
+            var marker_9ccb1a81a7897f5027476906cf514ef2 = L.marker(
+                [39.52274324461344, -104.77114638672687],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0350779c698887a8481e243866dda601 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9ccb1a81a7897f5027476906cf514ef2.setIcon(icon_0350779c698887a8481e243866dda601);
+        
+    
+        var popup_c1cbbb9f05194b019140a375538d1ae5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_624e74ce8c175679ca63d5548333b541 = $(`<div id="html_624e74ce8c175679ca63d5548333b541" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80134.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $194825.97</div>`)[0];
+                popup_c1cbbb9f05194b019140a375538d1ae5.setContent(html_624e74ce8c175679ca63d5548333b541);
+            
+        
+
+        marker_9ccb1a81a7897f5027476906cf514ef2.bindPopup(popup_c1cbbb9f05194b019140a375538d1ae5)
+        ;
+
+        
+    
+    
+            var marker_27a8995028874a23e52046a427620d44 = L.marker(
+                [39.75567585563565, -105.00062522663826],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_afcaf13c3ac7bd0c7e1937a89a95d634 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_27a8995028874a23e52046a427620d44.setIcon(icon_afcaf13c3ac7bd0c7e1937a89a95d634);
+        
+    
+        var popup_778edf043e0377167927658580c7a10e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78e689fb549955ab8b276f241806fb44 = $(`<div id="html_78e689fb549955ab8b276f241806fb44" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80202.0<br><strong>Route Description:</strong> 759 DOWNTOWN DENVER<br><strong>Profit:</strong> $66711.49</div>`)[0];
+                popup_778edf043e0377167927658580c7a10e.setContent(html_78e689fb549955ab8b276f241806fb44);
+            
+        
+
+        marker_27a8995028874a23e52046a427620d44.bindPopup(popup_778edf043e0377167927658580c7a10e)
+        ;
+
+        
+    
+    
+            var marker_5b5c55162a4622ec4e594e4eeac365ef = L.marker(
+                [39.73930785, -104.97908618827748],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_f829d075cc1e04327c25ae7c3d2779a8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5b5c55162a4622ec4e594e4eeac365ef.setIcon(icon_f829d075cc1e04327c25ae7c3d2779a8);
+        
+    
+        var popup_a5449fe2200cdce4616feab3d59efdc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_322838a2dc23a2b4d95e56bdf184e8d8 = $(`<div id="html_322838a2dc23a2b4d95e56bdf184e8d8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80203.0<br><strong>Route Description:</strong> 759 DOWNTOWN DENVER<br><strong>Profit:</strong> $18659.13</div>`)[0];
+                popup_a5449fe2200cdce4616feab3d59efdc9.setContent(html_322838a2dc23a2b4d95e56bdf184e8d8);
+            
+        
+
+        marker_5b5c55162a4622ec4e594e4eeac365ef.bindPopup(popup_a5449fe2200cdce4616feab3d59efdc9)
+        ;
+
+        
+    
+    
+            var marker_0f38e974918ae987ec0ef59dfd5325a6 = L.marker(
+                [39.7476384, -104.9772189],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_f95f39fa986581497bbe81deab354508 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0f38e974918ae987ec0ef59dfd5325a6.setIcon(icon_f95f39fa986581497bbe81deab354508);
+        
+    
+        var popup_435476eb9ee679075eeb2f130e47a2fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0bc3db3cce8d02e9e3de035eca8c0c8 = $(`<div id="html_f0bc3db3cce8d02e9e3de035eca8c0c8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80205.0<br><strong>Route Description:</strong> 759 DOWNTOWN DENVER<br><strong>Profit:</strong> $17294.28</div>`)[0];
+                popup_435476eb9ee679075eeb2f130e47a2fd.setContent(html_f0bc3db3cce8d02e9e3de035eca8c0c8);
+            
+        
+
+        marker_0f38e974918ae987ec0ef59dfd5325a6.bindPopup(popup_435476eb9ee679075eeb2f130e47a2fd)
+        ;
+
+        
+    
+    
+            var marker_92664bc07dba15d21aedfe7e8b1d6d8a = L.marker(
+                [39.72647397437966, -104.95300090453023],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_112142424ca892f8c5effff8c508adfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_92664bc07dba15d21aedfe7e8b1d6d8a.setIcon(icon_112142424ca892f8c5effff8c508adfe);
+        
+    
+        var popup_4d019d363fa3ee4219f35fe59256c4d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0550651c1a398b2488c0fe305283026b = $(`<div id="html_0550651c1a398b2488c0fe305283026b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80206.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $174172.09</div>`)[0];
+                popup_4d019d363fa3ee4219f35fe59256c4d6.setContent(html_0550651c1a398b2488c0fe305283026b);
+            
+        
+
+        marker_92664bc07dba15d21aedfe7e8b1d6d8a.bindPopup(popup_4d019d363fa3ee4219f35fe59256c4d6)
+        ;
+
+        
+    
+    
+            var marker_482585ec6b32744d5ddaef3c9f2a493f = L.marker(
+                [39.703875102112676, -104.98678924028837],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_73d104148f7ff643b1dfb33545268e0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_482585ec6b32744d5ddaef3c9f2a493f.setIcon(icon_73d104148f7ff643b1dfb33545268e0b);
+        
+    
+        var popup_63084998253e9b0ffbf7c8e5fd00e1d6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d7d935f30f7af94317b6870b9a7b878 = $(`<div id="html_1d7d935f30f7af94317b6870b9a7b878" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80209.0<br><strong>Route Description:</strong> 759 DOWNTOWN DENVER<br><strong>Profit:</strong> $71242.60</div>`)[0];
+                popup_63084998253e9b0ffbf7c8e5fd00e1d6.setContent(html_1d7d935f30f7af94317b6870b9a7b878);
+            
+        
+
+        marker_482585ec6b32744d5ddaef3c9f2a493f.bindPopup(popup_63084998253e9b0ffbf7c8e5fd00e1d6)
+        ;
+
+        
+    
+    
+            var marker_bc91c1595f03eea1df1670acef5b4136 = L.marker(
+                [39.68816110136321, -104.97656682626896],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_18150284e29d8608e8ee069b23525fc5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bc91c1595f03eea1df1670acef5b4136.setIcon(icon_18150284e29d8608e8ee069b23525fc5);
+        
+    
+        var popup_22e6ca105d52e2a0839656da1f41e997 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e9114e222cebf6d52fecf93c02f5cef = $(`<div id="html_9e9114e222cebf6d52fecf93c02f5cef" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80210.0<br><strong>Route Description:</strong> 759 DOWNTOWN DENVER<br><strong>Profit:</strong> $81146.87</div>`)[0];
+                popup_22e6ca105d52e2a0839656da1f41e997.setContent(html_9e9114e222cebf6d52fecf93c02f5cef);
+            
+        
+
+        marker_bc91c1595f03eea1df1670acef5b4136.bindPopup(popup_22e6ca105d52e2a0839656da1f41e997)
+        ;
+
+        
+    
+    
+            var marker_a04f266c4255f761d249b9bc6266c920 = L.marker(
+                [39.7760152, -105.0366718],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_764928edd336ca2f0d72b1aa91de7608 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a04f266c4255f761d249b9bc6266c920.setIcon(icon_764928edd336ca2f0d72b1aa91de7608);
+        
+    
+        var popup_543f8095a85e1ebd04f35948e963d8ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f455976f5e2140cfceca1fcc456c2d76 = $(`<div id="html_f455976f5e2140cfceca1fcc456c2d76" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80211.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $20406.90</div>`)[0];
+                popup_543f8095a85e1ebd04f35948e963d8ad.setContent(html_f455976f5e2140cfceca1fcc456c2d76);
+            
+        
+
+        marker_a04f266c4255f761d249b9bc6266c920.bindPopup(popup_543f8095a85e1ebd04f35948e963d8ad)
+        ;
+
+        
+    
+    
+            var marker_9fc65db5fe595235c17b4448a5499ef5 = L.marker(
+                [39.77056324130482, -105.0457879865994],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_4aa70bfd4e8202d6036e91ca8f5a6cbb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9fc65db5fe595235c17b4448a5499ef5.setIcon(icon_4aa70bfd4e8202d6036e91ca8f5a6cbb);
+        
+    
+        var popup_02587d48a7291cb8c879e0a164a5988a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d85b24cb1f4a5abe2dce4a9553d48651 = $(`<div id="html_d85b24cb1f4a5abe2dce4a9553d48651" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80212.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $32616.18</div>`)[0];
+                popup_02587d48a7291cb8c879e0a164a5988a.setContent(html_d85b24cb1f4a5abe2dce4a9553d48651);
+            
+        
+
+        marker_9fc65db5fe595235c17b4448a5499ef5.bindPopup(popup_02587d48a7291cb8c879e0a164a5988a)
+        ;
+
+        
+    
+    
+            var marker_3c47771eb08b6dc53f04f2c06d95abee = L.marker(
+                [39.74946412581105, -105.07530184058903],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_2acaa38eb96b869e0b392c4b16c0dd93 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3c47771eb08b6dc53f04f2c06d95abee.setIcon(icon_2acaa38eb96b869e0b392c4b16c0dd93);
+        
+    
+        var popup_86b0e64117ab000d7609c0e5b58d5f52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76b1b8debc05d803a33a53008822d344 = $(`<div id="html_76b1b8debc05d803a33a53008822d344" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80214.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $59598.96</div>`)[0];
+                popup_86b0e64117ab000d7609c0e5b58d5f52.setContent(html_76b1b8debc05d803a33a53008822d344);
+            
+        
+
+        marker_3c47771eb08b6dc53f04f2c06d95abee.bindPopup(popup_86b0e64117ab000d7609c0e5b58d5f52)
+        ;
+
+        
+    
+    
+            var marker_6f35ca2af149bec566c9230bd7b97fc6 = L.marker(
+                [39.7497494593206, -105.12157415813164],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_e216600d538a768c503db649e4880f2d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6f35ca2af149bec566c9230bd7b97fc6.setIcon(icon_e216600d538a768c503db649e4880f2d);
+        
+    
+        var popup_66b461ed8196ad917a502bd51f6302c0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab4cebd4e326111a73f31dc1c6cef385 = $(`<div id="html_ab4cebd4e326111a73f31dc1c6cef385" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80215.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $42205.76</div>`)[0];
+                popup_66b461ed8196ad917a502bd51f6302c0.setContent(html_ab4cebd4e326111a73f31dc1c6cef385);
+            
+        
+
+        marker_6f35ca2af149bec566c9230bd7b97fc6.bindPopup(popup_66b461ed8196ad917a502bd51f6302c0)
+        ;
+
+        
+    
+    
+            var marker_29a8b9350fadabf1f662972119d910c9 = L.marker(
+                [39.7835086, -104.9787999],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_7a26c9da2208a1f63ad284da20579435 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_29a8b9350fadabf1f662972119d910c9.setIcon(icon_7a26c9da2208a1f63ad284da20579435);
+        
+    
+        var popup_745300c4d55140c0cd853463a940cdff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b43e1a6bdcacf35e6a2da96a479da24f = $(`<div id="html_b43e1a6bdcacf35e6a2da96a479da24f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80216.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $10738.18</div>`)[0];
+                popup_745300c4d55140c0cd853463a940cdff.setContent(html_b43e1a6bdcacf35e6a2da96a479da24f);
+            
+        
+
+        marker_29a8b9350fadabf1f662972119d910c9.bindPopup(popup_745300c4d55140c0cd853463a940cdff)
+        ;
+
+        
+    
+    
+            var marker_b844e33c7ee09cd9fdf780c5734ae288 = L.marker(
+                [39.729349978948505, -104.97354490008519],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_be83d3281ec157e9506c0adbd1fbe48e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "pink",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b844e33c7ee09cd9fdf780c5734ae288.setIcon(icon_be83d3281ec157e9506c0adbd1fbe48e);
+        
+    
+        var popup_38e128657494b75fd87d866b81ee0a45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b230edbe4c61cfb17c6e3a13e186b4a = $(`<div id="html_8b230edbe4c61cfb17c6e3a13e186b4a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80218.0<br><strong>Route Description:</strong> 759 DOWNTOWN DENVER<br><strong>Profit:</strong> $67710.81</div>`)[0];
+                popup_38e128657494b75fd87d866b81ee0a45.setContent(html_8b230edbe4c61cfb17c6e3a13e186b4a);
+            
+        
+
+        marker_b844e33c7ee09cd9fdf780c5734ae288.bindPopup(popup_38e128657494b75fd87d866b81ee0a45)
+        ;
+
+        
+    
+    
+            var marker_cb5fe070d3e2d9ff4a4faa2d39464219 = L.marker(
+                [39.6822197, -105.03919930000002],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_fb4e0d195762b5e6399a72b71eaa328d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cb5fe070d3e2d9ff4a4faa2d39464219.setIcon(icon_fb4e0d195762b5e6399a72b71eaa328d);
+        
+    
+        var popup_0af3043a776e3519bb1f397a8797eed8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40dfdf82982fdaa2e46066f150f67a74 = $(`<div id="html_40dfdf82982fdaa2e46066f150f67a74" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80219.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $11081.39</div>`)[0];
+                popup_0af3043a776e3519bb1f397a8797eed8.setContent(html_40dfdf82982fdaa2e46066f150f67a74);
+            
+        
+
+        marker_cb5fe070d3e2d9ff4a4faa2d39464219.bindPopup(popup_0af3043a776e3519bb1f397a8797eed8)
+        ;
+
+        
+    
+    
+            var marker_7c7150ea007a401d17cf60a790c7c807 = L.marker(
+                [39.73740426216287, -104.9165764587512],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_33012ae2d4154ad714eacda57056f424 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7c7150ea007a401d17cf60a790c7c807.setIcon(icon_33012ae2d4154ad714eacda57056f424);
+        
+    
+        var popup_cf99904fb953349bd3a88e6d192a5849 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4825af42557bca4585d0f3894435277f = $(`<div id="html_4825af42557bca4585d0f3894435277f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80220.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $39183.06</div>`)[0];
+                popup_cf99904fb953349bd3a88e6d192a5849.setContent(html_4825af42557bca4585d0f3894435277f);
+            
+        
+
+        marker_7c7150ea007a401d17cf60a790c7c807.bindPopup(popup_cf99904fb953349bd3a88e6d192a5849)
+        ;
+
+        
+    
+    
+            var marker_4737f636e73eb5cf3194b17514633057 = L.marker(
+                [39.663595427943726, -104.92892923831353],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_6a837554d94fc35f95bb0310479c01df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4737f636e73eb5cf3194b17514633057.setIcon(icon_6a837554d94fc35f95bb0310479c01df);
+        
+    
+        var popup_40a107e115720eacb08ff1227f2fec73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6a6108e5762defed3dbed9f686f9e16 = $(`<div id="html_d6a6108e5762defed3dbed9f686f9e16" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80222.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $74313.54</div>`)[0];
+                popup_40a107e115720eacb08ff1227f2fec73.setContent(html_d6a6108e5762defed3dbed9f686f9e16);
+            
+        
+
+        marker_4737f636e73eb5cf3194b17514633057.bindPopup(popup_40a107e115720eacb08ff1227f2fec73)
+        ;
+
+        
+    
+    
+            var marker_6316eb692a7162a80bb319d8aa2f783f = L.marker(
+                [39.7112606, -104.9998165],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_54254d9f8b658d4e6ae03b1c920b30a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6316eb692a7162a80bb319d8aa2f783f.setIcon(icon_54254d9f8b658d4e6ae03b1c920b30a0);
+        
+    
+        var popup_48d3eb17598c9bae6a0e4764fe794d72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b85cf69f28d3381507313c1bad69c0d1 = $(`<div id="html_b85cf69f28d3381507313c1bad69c0d1" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80223.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $2182.08</div>`)[0];
+                popup_48d3eb17598c9bae6a0e4764fe794d72.setContent(html_b85cf69f28d3381507313c1bad69c0d1);
+            
+        
+
+        marker_6316eb692a7162a80bb319d8aa2f783f.bindPopup(popup_48d3eb17598c9bae6a0e4764fe794d72)
+        ;
+
+        
+    
+    
+            var marker_1c00ed485719557f87cec3bdc9ae45a0 = L.marker(
+                [39.7010741, -104.911365],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0ed67eca09c0e35e7a6f9d97de770c8c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1c00ed485719557f87cec3bdc9ae45a0.setIcon(icon_0ed67eca09c0e35e7a6f9d97de770c8c);
+        
+    
+        var popup_533e65333aa18d958eecf6e200813eba = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2a2f39c33e156c5d2cbb7657e0680aba = $(`<div id="html_2a2f39c33e156c5d2cbb7657e0680aba" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80224.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $13711.95</div>`)[0];
+                popup_533e65333aa18d958eecf6e200813eba.setContent(html_2a2f39c33e156c5d2cbb7657e0680aba);
+            
+        
+
+        marker_1c00ed485719557f87cec3bdc9ae45a0.bindPopup(popup_533e65333aa18d958eecf6e200813eba)
+        ;
+
+        
+    
+    
+            var marker_dd0a92deb8410f71a2d6b43dfa00b1f2 = L.marker(
+                [39.713835521914696, -105.08086480675077],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0ee075eebe2bb89d82d239c4bc8380e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_dd0a92deb8410f71a2d6b43dfa00b1f2.setIcon(icon_0ee075eebe2bb89d82d239c4bc8380e8);
+        
+    
+        var popup_a5d5d520626687e39e6ae558db46df45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7cd1b4995fa9cc6154908fe54d072746 = $(`<div id="html_7cd1b4995fa9cc6154908fe54d072746" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80226.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $98088.18</div>`)[0];
+                popup_a5d5d520626687e39e6ae558db46df45.setContent(html_7cd1b4995fa9cc6154908fe54d072746);
+            
+        
+
+        marker_dd0a92deb8410f71a2d6b43dfa00b1f2.bindPopup(popup_a5d5d520626687e39e6ae558db46df45)
+        ;
+
+        
+    
+    
+            var marker_5b9fc4d3c83513ea644c7edf6636e878 = L.marker(
+                [39.6546824, -105.0512763],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d995810e9102696f2cd900b9493053d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5b9fc4d3c83513ea644c7edf6636e878.setIcon(icon_d995810e9102696f2cd900b9493053d6);
+        
+    
+        var popup_7d6237ae1c0a0efc3a26455d3fae91fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_858fe004838c54ab7add5ae56fb51662 = $(`<div id="html_858fe004838c54ab7add5ae56fb51662" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80227.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $23674.54</div>`)[0];
+                popup_7d6237ae1c0a0efc3a26455d3fae91fd.setContent(html_858fe004838c54ab7add5ae56fb51662);
+            
+        
+
+        marker_5b9fc4d3c83513ea644c7edf6636e878.bindPopup(popup_7d6237ae1c0a0efc3a26455d3fae91fd)
+        ;
+
+        
+    
+    
+            var marker_015d2da6fd0d0fa074dcaa811347ef35 = L.marker(
+                [39.70303453958438, -105.1397648815096],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_b7c639d39f857a3e7afd2f2d49d26115 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_015d2da6fd0d0fa074dcaa811347ef35.setIcon(icon_b7c639d39f857a3e7afd2f2d49d26115);
+        
+    
+        var popup_d2ed65be604f29ce54b7e41e9e26dbc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4df5afbc3a5c2e82e89589ee1cdd0328 = $(`<div id="html_4df5afbc3a5c2e82e89589ee1cdd0328" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80228.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $67764.07</div>`)[0];
+                popup_d2ed65be604f29ce54b7e41e9e26dbc2.setContent(html_4df5afbc3a5c2e82e89589ee1cdd0328);
+            
+        
+
+        marker_015d2da6fd0d0fa074dcaa811347ef35.bindPopup(popup_d2ed65be604f29ce54b7e41e9e26dbc2)
+        ;
+
+        
+    
+    
+            var marker_5938df8052c8e31f9af8fbee3779a519 = L.marker(
+                [39.86355119818182, -104.97983610363636],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_93a1741e2956bbe07e03285bf5ff55bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5938df8052c8e31f9af8fbee3779a519.setIcon(icon_93a1741e2956bbe07e03285bf5ff55bf);
+        
+    
+        var popup_fb37d36e8442237aac39181b226fb731 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5eb5af8392423d100c9c42ca299e49b4 = $(`<div id="html_5eb5af8392423d100c9c42ca299e49b4" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80229.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $4387.40</div>`)[0];
+                popup_fb37d36e8442237aac39181b226fb731.setContent(html_5eb5af8392423d100c9c42ca299e49b4);
+            
+        
+
+        marker_5938df8052c8e31f9af8fbee3779a519.bindPopup(popup_fb37d36e8442237aac39181b226fb731)
+        ;
+
+        
+    
+    
+            var marker_9d51cc5b7b97bd78c270cd59eaeb26db = L.marker(
+                [39.7169518, -104.9063788],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_abd9451efe7745c39b2aceb9d755e018 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9d51cc5b7b97bd78c270cd59eaeb26db.setIcon(icon_abd9451efe7745c39b2aceb9d755e018);
+        
+    
+        var popup_429526f4d0095491be55aa806c0d902c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e960d7707ec39f52819bffd633ea2c3 = $(`<div id="html_4e960d7707ec39f52819bffd633ea2c3" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80230.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $33144.63</div>`)[0];
+                popup_429526f4d0095491be55aa806c0d902c.setContent(html_4e960d7707ec39f52819bffd633ea2c3);
+            
+        
+
+        marker_9d51cc5b7b97bd78c270cd59eaeb26db.bindPopup(popup_429526f4d0095491be55aa806c0d902c)
+        ;
+
+        
+    
+    
+            var marker_c2fdc6aeeb44e172ff4a7bd7728d6baf = L.marker(
+                [39.691349048844145, -105.10280756308725],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_165420c28becfb5e6d9530c5251206af = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c2fdc6aeeb44e172ff4a7bd7728d6baf.setIcon(icon_165420c28becfb5e6d9530c5251206af);
+        
+    
+        var popup_37a42de174e621a560432ec84d9e1c91 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5a99179baceb2f52e4cec5b2838a82d = $(`<div id="html_b5a99179baceb2f52e4cec5b2838a82d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80232.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $28202.31</div>`)[0];
+                popup_37a42de174e621a560432ec84d9e1c91.setContent(html_b5a99179baceb2f52e4cec5b2838a82d);
+            
+        
+
+        marker_c2fdc6aeeb44e172ff4a7bd7728d6baf.bindPopup(popup_37a42de174e621a560432ec84d9e1c91)
+        ;
+
+        
+    
+    
+            var marker_f41c36e6e050b5bdb8d4e50e24b800f6 = L.marker(
+                [39.90146936289778, -104.9683228387698],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_c0154777d5ae1145bde716149848d6dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f41c36e6e050b5bdb8d4e50e24b800f6.setIcon(icon_c0154777d5ae1145bde716149848d6dd);
+        
+    
+        var popup_73389f166a1fb8c5e732fff1435d779d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97f51c4d6b31393e4275dcebc698569f = $(`<div id="html_97f51c4d6b31393e4275dcebc698569f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80233.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $49210.64</div>`)[0];
+                popup_73389f166a1fb8c5e732fff1435d779d.setContent(html_97f51c4d6b31393e4275dcebc698569f);
+            
+        
+
+        marker_f41c36e6e050b5bdb8d4e50e24b800f6.bindPopup(popup_73389f166a1fb8c5e732fff1435d779d)
+        ;
+
+        
+    
+    
+            var marker_18157fa5a021996834b6552f890d0c34 = L.marker(
+                [39.9404108, -104.99061487008828],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_633e75a43f6bc51613d0815b52e4b864 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_18157fa5a021996834b6552f890d0c34.setIcon(icon_633e75a43f6bc51613d0815b52e4b864);
+        
+    
+        var popup_f54b13405ed5f36636515236ee6ad158 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92e35f81fed7056c734b223a817a2f7b = $(`<div id="html_92e35f81fed7056c734b223a817a2f7b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80234.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $10477.20</div>`)[0];
+                popup_f54b13405ed5f36636515236ee6ad158.setContent(html_92e35f81fed7056c734b223a817a2f7b);
+            
+        
+
+        marker_18157fa5a021996834b6552f890d0c34.bindPopup(popup_f54b13405ed5f36636515236ee6ad158)
+        ;
+
+        
+    
+    
+            var marker_1d06815c29475136a822b17ff0b48ed8 = L.marker(
+                [39.6366908, -105.08654292580904],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_975420e4a67e8ed8da3f12368d8b045a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "maroon",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1d06815c29475136a822b17ff0b48ed8.setIcon(icon_975420e4a67e8ed8da3f12368d8b045a);
+        
+    
+        var popup_455b098a6b37d8577e0bc26a5a266e6f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83e1a48cc19f2ba5461c8f87bccfad84 = $(`<div id="html_83e1a48cc19f2ba5461c8f87bccfad84" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80235.0<br><strong>Route Description:</strong> 751 SOUTHWEST DENVER<br><strong>Profit:</strong> $105062.50</div>`)[0];
+                popup_455b098a6b37d8577e0bc26a5a266e6f.setContent(html_83e1a48cc19f2ba5461c8f87bccfad84);
+            
+        
+
+        marker_1d06815c29475136a822b17ff0b48ed8.bindPopup(popup_455b098a6b37d8577e0bc26a5a266e6f)
+        ;
+
+        
+    
+    
+            var marker_0f30356a3f1e7bf6b3088a2187b09409 = L.marker(
+                [39.6522552, -104.9017769],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_84ae0e943cd0ee146ed20794ff006dee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0f30356a3f1e7bf6b3088a2187b09409.setIcon(icon_84ae0e943cd0ee146ed20794ff006dee);
+        
+    
+        var popup_3cee4b197a1dd9dc3920e7ae0b9c44fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d2e2b582d06a618cd802cae9ba3e9c7 = $(`<div id="html_8d2e2b582d06a618cd802cae9ba3e9c7" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80237.0<br><strong>Route Description:</strong> 760 AURORA<br><strong>Profit:</strong> $79231.25</div>`)[0];
+                popup_3cee4b197a1dd9dc3920e7ae0b9c44fa.setContent(html_8d2e2b582d06a618cd802cae9ba3e9c7);
+            
+        
+
+        marker_0f30356a3f1e7bf6b3088a2187b09409.bindPopup(popup_3cee4b197a1dd9dc3920e7ae0b9c44fa)
+        ;
+
+        
+    
+    
+            var marker_096987401391a62526b77cf03ff796f9 = L.marker(
+                [39.76778107125912, -104.88966919487761],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_4fcb17c812c38f7733856ca13c4bf7ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_096987401391a62526b77cf03ff796f9.setIcon(icon_4fcb17c812c38f7733856ca13c4bf7ea);
+        
+    
+        var popup_d7b54642176b6f63905d62b66251c487 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ddb64848ff7f012286658a60bd5c5b8 = $(`<div id="html_7ddb64848ff7f012286658a60bd5c5b8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80238.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $66014.97</div>`)[0];
+                popup_d7b54642176b6f63905d62b66251c487.setContent(html_7ddb64848ff7f012286658a60bd5c5b8);
+            
+        
+
+        marker_096987401391a62526b77cf03ff796f9.bindPopup(popup_d7b54642176b6f63905d62b66251c487)
+        ;
+
+        
+    
+    
+            var marker_9e00d8a126fba85030588dd8d0547e4f = L.marker(
+                [39.7853307, -104.7944861],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d0e89d7bd617f1f25908537b0b02b08c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9e00d8a126fba85030588dd8d0547e4f.setIcon(icon_d0e89d7bd617f1f25908537b0b02b08c);
+        
+    
+        var popup_cc4c6b1cb676789ae7601e5780a57671 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b44c480f4e9da64d44b6ea245dcac90b = $(`<div id="html_b44c480f4e9da64d44b6ea245dcac90b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80239.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $54056.25</div>`)[0];
+                popup_cc4c6b1cb676789ae7601e5780a57671.setContent(html_b44c480f4e9da64d44b6ea245dcac90b);
+            
+        
+
+        marker_9e00d8a126fba85030588dd8d0547e4f.bindPopup(popup_cc4c6b1cb676789ae7601e5780a57671)
+        ;
+
+        
+    
+    
+            var marker_69678a595814f00e0b869efe7311bf37 = L.marker(
+                [39.94548116345961, -104.96725578951694],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_aa15065c2379cc0eb0c195f9e9841442 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_69678a595814f00e0b869efe7311bf37.setIcon(icon_aa15065c2379cc0eb0c195f9e9841442);
+        
+    
+        var popup_f51c75b2587c40677d32eecfdea1c0db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d9095ca4cbac7ebbae708a1be63d322 = $(`<div id="html_2d9095ca4cbac7ebbae708a1be63d322" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80241.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $31147.66</div>`)[0];
+                popup_f51c75b2587c40677d32eecfdea1c0db.setContent(html_2d9095ca4cbac7ebbae708a1be63d322);
+            
+        
+
+        marker_69678a595814f00e0b869efe7311bf37.bindPopup(popup_f51c75b2587c40677d32eecfdea1c0db)
+        ;
+
+        
+    
+    
+            var marker_64c93599fd160abc3ccd24e7bec17987 = L.marker(
+                [39.70469265387565, -104.93730014731986],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d7f1eb52787e5e6781418d48603cf424 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_64c93599fd160abc3ccd24e7bec17987.setIcon(icon_d7f1eb52787e5e6781418d48603cf424);
+        
+    
+        var popup_f3560d8a4030e25ae63597b45af1f0c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3cd0750eada4df9eaa892a9ded7b8cfb = $(`<div id="html_3cd0750eada4df9eaa892a9ded7b8cfb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80246.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $125850.11</div>`)[0];
+                popup_f3560d8a4030e25ae63597b45af1f0c1.setContent(html_3cd0750eada4df9eaa892a9ded7b8cfb);
+            
+        
+
+        marker_64c93599fd160abc3ccd24e7bec17987.bindPopup(popup_f3560d8a4030e25ae63597b45af1f0c1)
+        ;
+
+        
+    
+    
+            var marker_a8170bef2a849b46e5d94e1666b48ec5 = L.marker(
+                [39.794590389869995, -104.77141399256784],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_3aa93ebe023741a0ce11080f58f41545 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a8170bef2a849b46e5d94e1666b48ec5.setIcon(icon_3aa93ebe023741a0ce11080f58f41545);
+        
+    
+        var popup_9f61db2950dea84d5ca1e4a4f5864fb3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_11134cc3f84d5cd11f10ad44e7bb905f = $(`<div id="html_11134cc3f84d5cd11f10ad44e7bb905f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80249.0<br><strong>Route Description:</strong> 753 EAST DENVER<br><strong>Profit:</strong> $29875.57</div>`)[0];
+                popup_9f61db2950dea84d5ca1e4a4f5864fb3.setContent(html_11134cc3f84d5cd11f10ad44e7bb905f);
+            
+        
+
+        marker_a8170bef2a849b46e5d94e1666b48ec5.bindPopup(popup_9f61db2950dea84d5ca1e4a4f5864fb3)
+        ;
+
+        
+    
+    
+            var marker_0cf81806f836d1e1c011ad5f54b4110b = L.marker(
+                [39.8835021366465, -105.02497867476231],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d22648f059963d8f7663503b1a12355c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0cf81806f836d1e1c011ad5f54b4110b.setIcon(icon_d22648f059963d8f7663503b1a12355c);
+        
+    
+        var popup_d6b90e5d433e659dfe8cb9a52f185731 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01a4c14f238d92483779b2120348e805 = $(`<div id="html_01a4c14f238d92483779b2120348e805" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80260.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $21501.12</div>`)[0];
+                popup_d6b90e5d433e659dfe8cb9a52f185731.setContent(html_01a4c14f238d92483779b2120348e805);
+            
+        
+
+        marker_0cf81806f836d1e1c011ad5f54b4110b.bindPopup(popup_d6b90e5d433e659dfe8cb9a52f185731)
+        ;
+
+        
+    
+    
+            var marker_469ec4a1a2300702c072e7c6ec6fbe2d = L.marker(
+                [39.7400043, -104.993093],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_4bd8e99ed971e5dba37f9d8a3b1cb241 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_469ec4a1a2300702c072e7c6ec6fbe2d.setIcon(icon_4bd8e99ed971e5dba37f9d8a3b1cb241);
+        
+    
+        var popup_02028498b22853839fbae38f19b66c60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_844079b0b07979b0562773f7400334b5 = $(`<div id="html_844079b0b07979b0562773f7400334b5" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80293.0<br><strong>Route Description:</strong> 757 LAKEWOOD<br><strong>Profit:</strong> $13211.10</div>`)[0];
+                popup_02028498b22853839fbae38f19b66c60.setContent(html_844079b0b07979b0562773f7400334b5);
+            
+        
+
+        marker_469ec4a1a2300702c072e7c6ec6fbe2d.bindPopup(popup_02028498b22853839fbae38f19b66c60)
+        ;
+
+        
+    
+    
+            var marker_95dbfa676a6d25654a19dc9e88d3441c = L.marker(
+                [40.03295373103642, -105.24113468189373],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_5012b09a9a66c3730f138216ab7d4e23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_95dbfa676a6d25654a19dc9e88d3441c.setIcon(icon_5012b09a9a66c3730f138216ab7d4e23);
+        
+    
+        var popup_603427739c6ff69f9bdfddc122a8dfdc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8b561e8fa4e7aa1e840f61286c7ec8ec = $(`<div id="html_8b561e8fa4e7aa1e840f61286c7ec8ec" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80301.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $230699.01</div>`)[0];
+                popup_603427739c6ff69f9bdfddc122a8dfdc.setContent(html_8b561e8fa4e7aa1e840f61286c7ec8ec);
+            
+        
+
+        marker_95dbfa676a6d25654a19dc9e88d3441c.bindPopup(popup_603427739c6ff69f9bdfddc122a8dfdc)
+        ;
+
+        
+    
+    
+            var marker_db9e7fdc4759f0a1e393a4930eef1f64 = L.marker(
+                [39.99981038688309, -105.2452433220798],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_a992bf1648ce4c21f3aefaa79b923021 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_db9e7fdc4759f0a1e393a4930eef1f64.setIcon(icon_a992bf1648ce4c21f3aefaa79b923021);
+        
+    
+        var popup_d63b7b649c3fa230410cf254278376f5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f347fe19293ca040a1044a787f6df61e = $(`<div id="html_f347fe19293ca040a1044a787f6df61e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80303.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $37521.22</div>`)[0];
+                popup_d63b7b649c3fa230410cf254278376f5.setContent(html_f347fe19293ca040a1044a787f6df61e);
+            
+        
+
+        marker_db9e7fdc4759f0a1e393a4930eef1f64.bindPopup(popup_d63b7b649c3fa230410cf254278376f5)
+        ;
+
+        
+    
+    
+            var marker_2df664551b1a408e43a3fe98a210742b = L.marker(
+                [40.03257161667288, -105.26623294614551],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_f0eb99000c483ec1eb08e13980b94a73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2df664551b1a408e43a3fe98a210742b.setIcon(icon_f0eb99000c483ec1eb08e13980b94a73);
+        
+    
+        var popup_356cf7ff5e09d2b0965fd8a2c83be538 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7f3e88ef91a5d623ae115839ce55c27a = $(`<div id="html_7f3e88ef91a5d623ae115839ce55c27a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80304.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $111450.72</div>`)[0];
+                popup_356cf7ff5e09d2b0965fd8a2c83be538.setContent(html_7f3e88ef91a5d623ae115839ce55c27a);
+            
+        
+
+        marker_2df664551b1a408e43a3fe98a210742b.bindPopup(popup_356cf7ff5e09d2b0965fd8a2c83be538)
+        ;
+
+        
+    
+    
+            var marker_01ed50937ec50bad894254850e07f73d = L.marker(
+                [39.98329036409736, -105.25052277925101],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_89f7817d24e05df31af3f727fb843a1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_01ed50937ec50bad894254850e07f73d.setIcon(icon_89f7817d24e05df31af3f727fb843a1b);
+        
+    
+        var popup_99a66bf146aa86668e6280630d897769 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a64417f8bff080b7d0e8d46d0f5a5fa = $(`<div id="html_8a64417f8bff080b7d0e8d46d0f5a5fa" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80305.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $95106.33</div>`)[0];
+                popup_99a66bf146aa86668e6280630d897769.setContent(html_8a64417f8bff080b7d0e8d46d0f5a5fa);
+            
+        
+
+        marker_01ed50937ec50bad894254850e07f73d.bindPopup(popup_99a66bf146aa86668e6280630d897769)
+        ;
+
+        
+    
+    
+            var marker_e0821e634c822108e12e3893db23069b = L.marker(
+                [40.02401695142575, -105.25455638087743],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_e4d4fbb98e1c04ecd280a6c16190ec41 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e0821e634c822108e12e3893db23069b.setIcon(icon_e4d4fbb98e1c04ecd280a6c16190ec41);
+        
+    
+        var popup_ecd66fdf9555bcfced95fef8cf892f57 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4758f5b7f3a6e47ac9566e872520e7fa = $(`<div id="html_4758f5b7f3a6e47ac9566e872520e7fa" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80309.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $88311.90</div>`)[0];
+                popup_ecd66fdf9555bcfced95fef8cf892f57.setContent(html_4758f5b7f3a6e47ac9566e872520e7fa);
+            
+        
+
+        marker_e0821e634c822108e12e3893db23069b.bindPopup(popup_ecd66fdf9555bcfced95fef8cf892f57)
+        ;
+
+        
+    
+    
+            var marker_cb9b98996c938c1822b1f25a9e32acec = L.marker(
+                [40.0136119, -105.25246430000001],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_776dd7cebeee8567469365593e032c81 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cb9b98996c938c1822b1f25a9e32acec.setIcon(icon_776dd7cebeee8567469365593e032c81);
+        
+    
+        var popup_f330586934cfabdbaf98435009b389db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6c0d2367b4d2c8ed286348afa43b84a8 = $(`<div id="html_6c0d2367b4d2c8ed286348afa43b84a8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80310.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $75838.84</div>`)[0];
+                popup_f330586934cfabdbaf98435009b389db.setContent(html_6c0d2367b4d2c8ed286348afa43b84a8);
+            
+        
+
+        marker_cb9b98996c938c1822b1f25a9e32acec.bindPopup(popup_f330586934cfabdbaf98435009b389db)
+        ;
+
+        
+    
+    
+            var marker_a5b43a1b5235ddd1de75adee77f55cb0 = L.marker(
+                [39.744341580298226, -105.19809976831236],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0485eabbec68f36745958f2be69287e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a5b43a1b5235ddd1de75adee77f55cb0.setIcon(icon_0485eabbec68f36745958f2be69287e8);
+        
+    
+        var popup_1eb6a6370ecaa355e059991c48ae8b92 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ab0c01eec9d4702ad5a38ea60c34a81 = $(`<div id="html_1ab0c01eec9d4702ad5a38ea60c34a81" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80401.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $119272.13</div>`)[0];
+                popup_1eb6a6370ecaa355e059991c48ae8b92.setContent(html_1ab0c01eec9d4702ad5a38ea60c34a81);
+            
+        
+
+        marker_a5b43a1b5235ddd1de75adee77f55cb0.bindPopup(popup_1eb6a6370ecaa355e059991c48ae8b92)
+        ;
+
+        
+    
+    
+            var marker_cf799bbf46b402df1f70d0a53eb7b9ae = L.marker(
+                [39.5273031, -105.30338904552113],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_05dc2f4daac3a52c5619b434bf3c1793 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cf799bbf46b402df1f70d0a53eb7b9ae.setIcon(icon_05dc2f4daac3a52c5619b434bf3c1793);
+        
+    
+        var popup_5b47ea920e1a9a68cb64abb2e81825c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_58f17c0891efe50a6e70b988dc4b8541 = $(`<div id="html_58f17c0891efe50a6e70b988dc4b8541" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80433.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $22619.22</div>`)[0];
+                popup_5b47ea920e1a9a68cb64abb2e81825c3.setContent(html_58f17c0891efe50a6e70b988dc4b8541);
+            
+        
+
+        marker_cf799bbf46b402df1f70d0a53eb7b9ae.bindPopup(popup_5b47ea920e1a9a68cb64abb2e81825c3)
+        ;
+
+        
+    
+    
+            var marker_def5d732a8f387247309da443439128b = L.marker(
+                [39.694093, -105.3567479],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_670f61f3cae0193755877e5a406d88df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_def5d732a8f387247309da443439128b.setIcon(icon_670f61f3cae0193755877e5a406d88df);
+        
+    
+        var popup_48b8d54f337b189fbb93c969451ee902 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_17b2cd21e4fdf96f4c8e984a4f6f2936 = $(`<div id="html_17b2cd21e4fdf96f4c8e984a4f6f2936" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80437.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $35539.80</div>`)[0];
+                popup_48b8d54f337b189fbb93c969451ee902.setContent(html_17b2cd21e4fdf96f4c8e984a4f6f2936);
+            
+        
+
+        marker_def5d732a8f387247309da443439128b.bindPopup(popup_48b8d54f337b189fbb93c969451ee902)
+        ;
+
+        
+    
+    
+            var marker_47872118ee7d645dc52d52c7c0f3cdeb = L.marker(
+                [39.69602674271507, -105.34755492655394],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_51be257aa83c3d5318755555b4db6ea8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_47872118ee7d645dc52d52c7c0f3cdeb.setIcon(icon_51be257aa83c3d5318755555b4db6ea8);
+        
+    
+        var popup_d93397e0d5016e5595f6741efc82d56d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5510e4305b6b8f426285c25acf410a1d = $(`<div id="html_5510e4305b6b8f426285c25acf410a1d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80439.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $43146.27</div>`)[0];
+                popup_d93397e0d5016e5595f6741efc82d56d.setContent(html_5510e4305b6b8f426285c25acf410a1d);
+            
+        
+
+        marker_47872118ee7d645dc52d52c7c0f3cdeb.bindPopup(popup_d93397e0d5016e5595f6741efc82d56d)
+        ;
+
+        
+    
+    
+            var marker_95ecc4fb5612fde9766c463529ba6a12 = L.marker(
+                [39.5915421, -105.22189519999999],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_6f8f76f001739a54bd9064497918882b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_95ecc4fb5612fde9766c463529ba6a12.setIcon(icon_6f8f76f001739a54bd9064497918882b);
+        
+    
+        var popup_94b974d6c1f16fb9901b79b1de688bf0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a4e48e20ab67975a336cfe00c8713cf = $(`<div id="html_9a4e48e20ab67975a336cfe00c8713cf" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80454.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $20373.53</div>`)[0];
+                popup_94b974d6c1f16fb9901b79b1de688bf0.setContent(html_9a4e48e20ab67975a336cfe00c8713cf);
+            
+        
+
+        marker_95ecc4fb5612fde9766c463529ba6a12.bindPopup(popup_94b974d6c1f16fb9901b79b1de688bf0)
+        ;
+
+        
+    
+    
+            var marker_bc19d59acee02a29c6751d523a09e3ff = L.marker(
+                [40.1747985962922, -105.08654787106421],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_bcbd7fb28e8f7c66b7d8edbc0ca2e145 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bc19d59acee02a29c6751d523a09e3ff.setIcon(icon_bcbd7fb28e8f7c66b7d8edbc0ca2e145);
+        
+    
+        var popup_7a337bb0a2953becdc9b2f7734e9cd9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_588c99eb6c29c62257cc8df6bcc421aa = $(`<div id="html_588c99eb6c29c62257cc8df6bcc421aa" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80501.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $158402.95</div>`)[0];
+                popup_7a337bb0a2953becdc9b2f7734e9cd9e.setContent(html_588c99eb6c29c62257cc8df6bcc421aa);
+            
+        
+
+        marker_bc19d59acee02a29c6751d523a09e3ff.bindPopup(popup_7a337bb0a2953becdc9b2f7734e9cd9e)
+        ;
+
+        
+    
+    
+            var marker_f08f898e4381d4911357f746bc2135b6 = L.marker(
+                [40.14042397142004, -105.13862270282004],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_45a9daff8da39ebeebb8de1bd717a088 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f08f898e4381d4911357f746bc2135b6.setIcon(icon_45a9daff8da39ebeebb8de1bd717a088);
+        
+    
+        var popup_f3ad70f912d43db8032ee523f21c6247 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fed87e05a23b547b97445ae06ed58a2 = $(`<div id="html_9fed87e05a23b547b97445ae06ed58a2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80503.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $143726.46</div>`)[0];
+                popup_f3ad70f912d43db8032ee523f21c6247.setContent(html_9fed87e05a23b547b97445ae06ed58a2);
+            
+        
+
+        marker_f08f898e4381d4911357f746bc2135b6.bindPopup(popup_f3ad70f912d43db8032ee523f21c6247)
+        ;
+
+        
+    
+    
+            var marker_511c074e2414df19cb9f43fc671b672f = L.marker(
+                [40.16800648695295, -105.0044013034696],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_aa26039e37313f1eb61132f8d79f33ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_511c074e2414df19cb9f43fc671b672f.setIcon(icon_aa26039e37313f1eb61132f8d79f33ca);
+        
+    
+        var popup_9c0e6c0f39d9c6ef21072d8ebad15f70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ee693b4fad6cabf3dfccbfc08c89ae7 = $(`<div id="html_5ee693b4fad6cabf3dfccbfc08c89ae7" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80504.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $62174.69</div>`)[0];
+                popup_9c0e6c0f39d9c6ef21072d8ebad15f70.setContent(html_5ee693b4fad6cabf3dfccbfc08c89ae7);
+            
+        
+
+        marker_511c074e2414df19cb9f43fc671b672f.bindPopup(popup_9c0e6c0f39d9c6ef21072d8ebad15f70)
+        ;
+
+        
+    
+    
+            var marker_11f4e24e247016ef47d0cb6b173edf73 = L.marker(
+                [40.01693, -105.1012204],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_7c39fd8498f79e84c981e4b13f6b1f00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_11f4e24e247016ef47d0cb6b173edf73.setIcon(icon_7c39fd8498f79e84c981e4b13f6b1f00);
+        
+    
+        var popup_7a5289ea73f4d5c5fb7737d4389d3675 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc36f4c56be03db5c1c2bad9898930ed = $(`<div id="html_fc36f4c56be03db5c1c2bad9898930ed" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80516.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $17968.48</div>`)[0];
+                popup_7a5289ea73f4d5c5fb7737d4389d3675.setContent(html_fc36f4c56be03db5c1c2bad9898930ed);
+            
+        
+
+        marker_11f4e24e247016ef47d0cb6b173edf73.bindPopup(popup_7a5289ea73f4d5c5fb7737d4389d3675)
+        ;
+
+        
+    
+    
+            var marker_7d7b1e4d22354b4b52d074c3d7ed7c6a = L.marker(
+                [40.5729907, -105.1156931],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_134a0a6f99f99c5d46ebef234f1be3f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7d7b1e4d22354b4b52d074c3d7ed7c6a.setIcon(icon_134a0a6f99f99c5d46ebef234f1be3f2);
+        
+    
+        var popup_7031cbf6e92150bf67de979baa85d46c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bc4cebce57345975846f0b3b1bea71ab = $(`<div id="html_bc4cebce57345975846f0b3b1bea71ab" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80521.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $25645.13</div>`)[0];
+                popup_7031cbf6e92150bf67de979baa85d46c.setContent(html_bc4cebce57345975846f0b3b1bea71ab);
+            
+        
+
+        marker_7d7b1e4d22354b4b52d074c3d7ed7c6a.bindPopup(popup_7031cbf6e92150bf67de979baa85d46c)
+        ;
+
+        
+    
+    
+            var marker_bb19e8fe8743f4815d4937a57c9f1e42 = L.marker(
+                [40.527672858702736, -105.07135786511826],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_aa4761ba60982d17bc9c2b96dfb5992c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bb19e8fe8743f4815d4937a57c9f1e42.setIcon(icon_aa4761ba60982d17bc9c2b96dfb5992c);
+        
+    
+        var popup_98a934d80b6d9bb0d3a7b4b3c20c4904 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5de86a90e6395e4ad1416e7c30bd388e = $(`<div id="html_5de86a90e6395e4ad1416e7c30bd388e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80522.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $70754.04</div>`)[0];
+                popup_98a934d80b6d9bb0d3a7b4b3c20c4904.setContent(html_5de86a90e6395e4ad1416e7c30bd388e);
+            
+        
+
+        marker_bb19e8fe8743f4815d4937a57c9f1e42.bindPopup(popup_98a934d80b6d9bb0d3a7b4b3c20c4904)
+        ;
+
+        
+    
+    
+            var marker_663a27b0b7d6511d4f471782e90ce783 = L.marker(
+                [40.588953596922124, -105.07481706311918],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0acda8072be01977367440437ee02c14 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_663a27b0b7d6511d4f471782e90ce783.setIcon(icon_0acda8072be01977367440437ee02c14);
+        
+    
+        var popup_b9ff2219bab3919187d4a33b6eb18eb8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eacc4d3a240faa1e2dafc2f3cf016970 = $(`<div id="html_eacc4d3a240faa1e2dafc2f3cf016970" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80523.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $130488.65</div>`)[0];
+                popup_b9ff2219bab3919187d4a33b6eb18eb8.setContent(html_eacc4d3a240faa1e2dafc2f3cf016970);
+            
+        
+
+        marker_663a27b0b7d6511d4f471782e90ce783.bindPopup(popup_b9ff2219bab3919187d4a33b6eb18eb8)
+        ;
+
+        
+    
+    
+            var marker_bfc1ddc4435e7a2b00d8cb2b053497f1 = L.marker(
+                [40.581308770445695, -105.06984296289797],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_9d418538454047ff6f14b6be7ca34d10 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bfc1ddc4435e7a2b00d8cb2b053497f1.setIcon(icon_9d418538454047ff6f14b6be7ca34d10);
+        
+    
+        var popup_2140edf0bbb1762753099ccc06ee0454 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e6491e1f87635ef90156cf3ef7cfbe9 = $(`<div id="html_3e6491e1f87635ef90156cf3ef7cfbe9" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80524.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $66321.88</div>`)[0];
+                popup_2140edf0bbb1762753099ccc06ee0454.setContent(html_3e6491e1f87635ef90156cf3ef7cfbe9);
+            
+        
+
+        marker_bfc1ddc4435e7a2b00d8cb2b053497f1.bindPopup(popup_2140edf0bbb1762753099ccc06ee0454)
+        ;
+
+        
+    
+    
+            var marker_c3140c0eb482fc4a5430002cb578bcaf = L.marker(
+                [40.54620689371345, -105.05058404151072],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_81e5cb148ca571bf1722f2ceae60a615 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c3140c0eb482fc4a5430002cb578bcaf.setIcon(icon_81e5cb148ca571bf1722f2ceae60a615);
+        
+    
+        var popup_611c88ed9345c52f832c1cde99a60658 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9dd8464031684aed131affd600abf486 = $(`<div id="html_9dd8464031684aed131affd600abf486" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80525.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $160335.21</div>`)[0];
+                popup_611c88ed9345c52f832c1cde99a60658.setContent(html_9dd8464031684aed131affd600abf486);
+            
+        
+
+        marker_c3140c0eb482fc4a5430002cb578bcaf.bindPopup(popup_611c88ed9345c52f832c1cde99a60658)
+        ;
+
+        
+    
+    
+            var marker_f53d73a953b61f67c40535d021584bfc = L.marker(
+                [40.5545144, -105.116478],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_083c26a8037c0bcc7ff2917905502b38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f53d73a953b61f67c40535d021584bfc.setIcon(icon_083c26a8037c0bcc7ff2917905502b38);
+        
+    
+        var popup_e561952ccbb7d465485d9f4478a3fb5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f2bcf7f4b74edd0c89c71a08dead795 = $(`<div id="html_1f2bcf7f4b74edd0c89c71a08dead795" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80526.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $27630.06</div>`)[0];
+                popup_e561952ccbb7d465485d9f4478a3fb5f.setContent(html_1f2bcf7f4b74edd0c89c71a08dead795);
+            
+        
+
+        marker_f53d73a953b61f67c40535d021584bfc.bindPopup(popup_e561952ccbb7d465485d9f4478a3fb5f)
+        ;
+
+        
+    
+    
+            var marker_336fb2db09cdf3379618986a5a6c5217 = L.marker(
+                [40.5274324, -105.0216526],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_7d3c67d75fc815d58b61fbc3236fc948 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_336fb2db09cdf3379618986a5a6c5217.setIcon(icon_7d3c67d75fc815d58b61fbc3236fc948);
+        
+    
+        var popup_bd514f920d0328d333239ff548a327b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fc5348f7f722b539e6d04116277e1ca = $(`<div id="html_1fc5348f7f722b539e6d04116277e1ca" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80528.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $24063.04</div>`)[0];
+                popup_bd514f920d0328d333239ff548a327b3.setContent(html_1fc5348f7f722b539e6d04116277e1ca);
+            
+        
+
+        marker_336fb2db09cdf3379618986a5a6c5217.bindPopup(popup_bd514f920d0328d333239ff548a327b3)
+        ;
+
+        
+    
+    
+            var marker_7f8bd543a0689f3e14d21b1330da38b5 = L.marker(
+                [40.076604, -104.9423248],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_557775cf02a2d0ec5cf9c7ca934973d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7f8bd543a0689f3e14d21b1330da38b5.setIcon(icon_557775cf02a2d0ec5cf9c7ca934973d4);
+        
+    
+        var popup_77dc227e6828ca97636dfd3eae6112d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66426677fa10ec3d863e8d31477cb3c1 = $(`<div id="html_66426677fa10ec3d863e8d31477cb3c1" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80530.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $11340.00</div>`)[0];
+                popup_77dc227e6828ca97636dfd3eae6112d2.setContent(html_66426677fa10ec3d863e8d31477cb3c1);
+            
+        
+
+        marker_7f8bd543a0689f3e14d21b1330da38b5.bindPopup(popup_77dc227e6828ca97636dfd3eae6112d2)
+        ;
+
+        
+    
+    
+            var marker_bf602398c58a24fb0c61c42945863a2e = L.marker(
+                [40.334377, -104.908904],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_700526049968057ea08c4f4e4fbda2e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bf602398c58a24fb0c61c42945863a2e.setIcon(icon_700526049968057ea08c4f4e4fbda2e3);
+        
+    
+        var popup_41cb586264918f3535c0857a1cc432e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_218949bfcbd2b489878ab163f2963939 = $(`<div id="html_218949bfcbd2b489878ab163f2963939" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80534.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $0.00</div>`)[0];
+                popup_41cb586264918f3535c0857a1cc432e2.setContent(html_218949bfcbd2b489878ab163f2963939);
+            
+        
+
+        marker_bf602398c58a24fb0c61c42945863a2e.bindPopup(popup_41cb586264918f3535c0857a1cc432e2)
+        ;
+
+        
+    
+    
+            var marker_4c385017b7544f0119f46a1eb29103ca = L.marker(
+                [40.40263333127759, -105.08873613441695],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d2652299378565aec9bd74ddac0d5c1f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4c385017b7544f0119f46a1eb29103ca.setIcon(icon_d2652299378565aec9bd74ddac0d5c1f);
+        
+    
+        var popup_788eb07433e133ddbcc671c407ab3349 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_70e6895e24427db32172336961f80d7e = $(`<div id="html_70e6895e24427db32172336961f80d7e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80537.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $100795.16</div>`)[0];
+                popup_788eb07433e133ddbcc671c407ab3349.setContent(html_70e6895e24427db32172336961f80d7e);
+            
+        
+
+        marker_4c385017b7544f0119f46a1eb29103ca.bindPopup(popup_788eb07433e133ddbcc671c407ab3349)
+        ;
+
+        
+    
+    
+            var marker_91cfa73abe9a19647028d01f8846a201 = L.marker(
+                [40.5212478, -104.9883549],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_cc80cc0b2610e2103e8377400664dcd1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_91cfa73abe9a19647028d01f8846a201.setIcon(icon_cc80cc0b2610e2103e8377400664dcd1);
+        
+    
+        var popup_d35f026ab38ece2a0b563561670b3b25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_663221c0563562fc76b0f50ecbdbec18 = $(`<div id="html_663221c0563562fc76b0f50ecbdbec18" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80547.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $179537.50</div>`)[0];
+                popup_d35f026ab38ece2a0b563561670b3b25.setContent(html_663221c0563562fc76b0f50ecbdbec18);
+            
+        
+
+        marker_91cfa73abe9a19647028d01f8846a201.bindPopup(popup_d35f026ab38ece2a0b563561670b3b25)
+        ;
+
+        
+    
+    
+            var marker_f9a69c44d163059b72022ba8c40b177a = L.marker(
+                [40.4779686, -104.9280571],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_1ae2718bdf99b1543e6c1db5c1b4f67c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f9a69c44d163059b72022ba8c40b177a.setIcon(icon_1ae2718bdf99b1543e6c1db5c1b4f67c);
+        
+    
+        var popup_d95c5d5189a8dad52844a17f3ad9530b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_30c3277d51b081461a6d0e177ea30f5c = $(`<div id="html_30c3277d51b081461a6d0e177ea30f5c" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80550.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $19646.80</div>`)[0];
+                popup_d95c5d5189a8dad52844a17f3ad9530b.setContent(html_30c3277d51b081461a6d0e177ea30f5c);
+            
+        
+
+        marker_f9a69c44d163059b72022ba8c40b177a.bindPopup(popup_d95c5d5189a8dad52844a17f3ad9530b)
+        ;
+
+        
+    
+    
+            var marker_0cf301c4097308768dd8888775916193 = L.marker(
+                [39.978640764911994, -104.78869839886198],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_1a2c3088ace5c5f4d51581166a7a8748 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0cf301c4097308768dd8888775916193.setIcon(icon_1a2c3088ace5c5f4d51581166a7a8748);
+        
+    
+        var popup_d0ac3e1f777610dafe7319c1fd2cae23 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68650807e2d51231053d1bb3fda5b1cd = $(`<div id="html_68650807e2d51231053d1bb3fda5b1cd" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80601.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $28602.51</div>`)[0];
+                popup_d0ac3e1f777610dafe7319c1fd2cae23.setContent(html_68650807e2d51231053d1bb3fda5b1cd);
+            
+        
+
+        marker_0cf301c4097308768dd8888775916193.bindPopup(popup_d0ac3e1f777610dafe7319c1fd2cae23)
+        ;
+
+        
+    
+    
+            var marker_035047f03f78934cae9c5cc02d5bbd32 = L.marker(
+                [39.96961171853432, -104.90264071326095],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_2e3d015fdd036fc878dfd9a799060bf4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_035047f03f78934cae9c5cc02d5bbd32.setIcon(icon_2e3d015fdd036fc878dfd9a799060bf4);
+        
+    
+        var popup_83773e7e80074d18e7ba13213ff3b8f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7ea5a6f259fc99c651192ddd915566f4 = $(`<div id="html_7ea5a6f259fc99c651192ddd915566f4" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80602.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $56752.62</div>`)[0];
+                popup_83773e7e80074d18e7ba13213ff3b8f4.setContent(html_7ea5a6f259fc99c651192ddd915566f4);
+            
+        
+
+        marker_035047f03f78934cae9c5cc02d5bbd32.bindPopup(popup_83773e7e80074d18e7ba13213ff3b8f4)
+        ;
+
+        
+    
+    
+            var marker_961b255a4f2148c9089321b47127297b = L.marker(
+                [40.41917677874713, -104.68993654063627],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_6f6087bf4678fc8a1c7b1e9aa62e7716 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_961b255a4f2148c9089321b47127297b.setIcon(icon_6f6087bf4678fc8a1c7b1e9aa62e7716);
+        
+    
+        var popup_23e329ba2dfcb1f0d299896242bcdca7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_34d3e1a07c162c68fe78a3d2011ebbb3 = $(`<div id="html_34d3e1a07c162c68fe78a3d2011ebbb3" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80631.0<br><strong>Route Description:</strong> 763 BROOMFIELD<br><strong>Profit:</strong> $31824.83</div>`)[0];
+                popup_23e329ba2dfcb1f0d299896242bcdca7.setContent(html_34d3e1a07c162c68fe78a3d2011ebbb3);
+            
+        
+
+        marker_961b255a4f2148c9089321b47127297b.bindPopup(popup_23e329ba2dfcb1f0d299896242bcdca7)
+        ;
+
+        
+    
+    
+            var marker_658686d16be1428e07a11aecdbc82170 = L.marker(
+                [40.40648848867873, -104.7397407434918],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_5fadeb8cf1125a734550cb02ba40d50b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_658686d16be1428e07a11aecdbc82170.setIcon(icon_5fadeb8cf1125a734550cb02ba40d50b);
+        
+    
+        var popup_1aa57aee00111b3d4ac70d001b726008 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_512b69c1af696b68b3d577db3037215b = $(`<div id="html_512b69c1af696b68b3d577db3037215b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80634.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $30402.08</div>`)[0];
+                popup_1aa57aee00111b3d4ac70d001b726008.setContent(html_512b69c1af696b68b3d577db3037215b);
+            
+        
+
+        marker_658686d16be1428e07a11aecdbc82170.bindPopup(popup_1aa57aee00111b3d4ac70d001b726008)
+        ;
+
+        
+    
+    
+            var marker_6ff244af0b391e704357feb76e22bd9f = L.marker(
+                [40.2512536, -103.80150989999999],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_1be4f90a8fe9ce386604642fdd97ebfd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6ff244af0b391e704357feb76e22bd9f.setIcon(icon_1be4f90a8fe9ce386604642fdd97ebfd);
+        
+    
+        var popup_8a1c8cb42c172edb26dc2eb21039c08a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2929d224438922ee75072c79168ce34a = $(`<div id="html_2929d224438922ee75072c79168ce34a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80701.0<br><strong>Route Description:</strong> 758 MOUNTAIN<br><strong>Profit:</strong> $26755.38</div>`)[0];
+                popup_8a1c8cb42c172edb26dc2eb21039c08a.setContent(html_2929d224438922ee75072c79168ce34a);
+            
+        
+
+        marker_6ff244af0b391e704357feb76e22bd9f.bindPopup(popup_8a1c8cb42c172edb26dc2eb21039c08a)
+        ;
+
+        
+    
+    
+            var marker_e7987c5f22f0f2fe134fb09a693a5003 = L.marker(
+                [40.0823823, -102.2221114],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_f809be13be951314675ac6c70aef09ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e7987c5f22f0f2fe134fb09a693a5003.setIcon(icon_f809be13be951314675ac6c70aef09ff);
+        
+    
+        var popup_b21a3a1f481438f9c3c231eb60c2f014 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f85f654d3e4535ad595fb110e7e9affd = $(`<div id="html_f85f654d3e4535ad595fb110e7e9affd" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80758.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $82896.69</div>`)[0];
+                popup_b21a3a1f481438f9c3c231eb60c2f014.setContent(html_f85f654d3e4535ad595fb110e7e9affd);
+            
+        
+
+        marker_e7987c5f22f0f2fe134fb09a693a5003.bindPopup(popup_b21a3a1f481438f9c3c231eb60c2f014)
+        ;
+
+        
+    
+    
+            var marker_1ef81e5e4a21489c06fe7b98aac9cd2b = L.marker(
+                [38.71619895, -104.69897838821905],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_6572c6d1231a09f622d2e77fd0e992b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1ef81e5e4a21489c06fe7b98aac9cd2b.setIcon(icon_6572c6d1231a09f622d2e77fd0e992b1);
+        
+    
+        var popup_fc5d110472bf24760c5cf34aa5702e81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02535a1d7a67a863f97da5f1b8224f29 = $(`<div id="html_02535a1d7a67a863f97da5f1b8224f29" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80817.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $17395.24</div>`)[0];
+                popup_fc5d110472bf24760c5cf34aa5702e81.setContent(html_02535a1d7a67a863f97da5f1b8224f29);
+            
+        
+
+        marker_1ef81e5e4a21489c06fe7b98aac9cd2b.bindPopup(popup_fc5d110472bf24760c5cf34aa5702e81)
+        ;
+
+        
+    
+    
+            var marker_4af3d8284012806d0a29bfe1cc0ba467 = L.marker(
+                [38.7640171, -102.7861882],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_abed56dfd3a0da3f53bc4a3601ddd5b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4af3d8284012806d0a29bfe1cc0ba467.setIcon(icon_abed56dfd3a0da3f53bc4a3601ddd5b2);
+        
+    
+        var popup_1d7cd7667d7691980bc66dba44799d26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16214dd440e0a0afe4566b0d0648409b = $(`<div id="html_16214dd440e0a0afe4566b0d0648409b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80825.0<br><strong>Route Description:</strong> 756 ARVADA<br><strong>Profit:</strong> $22831.46</div>`)[0];
+                popup_1d7cd7667d7691980bc66dba44799d26.setContent(html_16214dd440e0a0afe4566b0d0648409b);
+            
+        
+
+        marker_4af3d8284012806d0a29bfe1cc0ba467.bindPopup(popup_1d7cd7667d7691980bc66dba44799d26)
+        ;
+
+        
+    
+    
+            var marker_7dd333077c60d7ea959c080e903bc305 = L.marker(
+                [38.94172285291174, -104.60576944577984],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d9e51b51e3589e1897a842ddc14b5cba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7dd333077c60d7ea959c080e903bc305.setIcon(icon_d9e51b51e3589e1897a842ddc14b5cba);
+        
+    
+        var popup_6dd87e7e5d19ba655ec3caff28131343 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_93e714aecbe74e819ef1c6566ae37637 = $(`<div id="html_93e714aecbe74e819ef1c6566ae37637" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80831.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $20349.72</div>`)[0];
+                popup_6dd87e7e5d19ba655ec3caff28131343.setContent(html_93e714aecbe74e819ef1c6566ae37637);
+            
+        
+
+        marker_7dd333077c60d7ea959c080e903bc305.bindPopup(popup_6dd87e7e5d19ba655ec3caff28131343)
+        ;
+
+        
+    
+    
+            var marker_772b007a40b7896bed810123d777f3e8 = L.marker(
+                [38.850940860585304, -104.8604934339975],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_c4b1f052c00ec38a031de1097f72a604 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_772b007a40b7896bed810123d777f3e8.setIcon(icon_c4b1f052c00ec38a031de1097f72a604);
+        
+    
+        var popup_6532865d72e0f8c0eff21ed3ca126b52 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f888268945a98a3662eeb7e29f18fcff = $(`<div id="html_f888268945a98a3662eeb7e29f18fcff" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80904.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $42959.34</div>`)[0];
+                popup_6532865d72e0f8c0eff21ed3ca126b52.setContent(html_f888268945a98a3662eeb7e29f18fcff);
+            
+        
+
+        marker_772b007a40b7896bed810123d777f3e8.bindPopup(popup_6532865d72e0f8c0eff21ed3ca126b52)
+        ;
+
+        
+    
+    
+            var marker_a4b31348d062a7efc6b33129ca7b30cf = L.marker(
+                [38.81386020967742, -104.8276802749008],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_3730f04707484e77e7682f9ff5581aac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a4b31348d062a7efc6b33129ca7b30cf.setIcon(icon_3730f04707484e77e7682f9ff5581aac);
+        
+    
+        var popup_d0b1eb1a61d7792e9dceeef42cd15235 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb9fc5654b47af68a45c14d9fa653a4f = $(`<div id="html_cb9fc5654b47af68a45c14d9fa653a4f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80905.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $34480.14</div>`)[0];
+                popup_d0b1eb1a61d7792e9dceeef42cd15235.setContent(html_cb9fc5654b47af68a45c14d9fa653a4f);
+            
+        
+
+        marker_a4b31348d062a7efc6b33129ca7b30cf.bindPopup(popup_d0b1eb1a61d7792e9dceeef42cd15235)
+        ;
+
+        
+    
+    
+            var marker_c166ee9d8158d35730c8cc148df01c14 = L.marker(
+                [38.79856074891962, -104.818100365714],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_3e2338385d4829746c11fc8305267809 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c166ee9d8158d35730c8cc148df01c14.setIcon(icon_3e2338385d4829746c11fc8305267809);
+        
+    
+        var popup_8b2307f67e7202c84909250057d484a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b191e1838e2fac2ceaf6a2903b3688ae = $(`<div id="html_b191e1838e2fac2ceaf6a2903b3688ae" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80906.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $75652.72</div>`)[0];
+                popup_8b2307f67e7202c84909250057d484a2.setContent(html_b191e1838e2fac2ceaf6a2903b3688ae);
+            
+        
+
+        marker_c166ee9d8158d35730c8cc148df01c14.bindPopup(popup_8b2307f67e7202c84909250057d484a2)
+        ;
+
+        
+    
+    
+            var marker_89aeb4ff2eac9a76897f9955f4d44635 = L.marker(
+                [38.87019249456417, -104.83132069604127],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d98e5d3f27d773e6714a631e14074b61 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_89aeb4ff2eac9a76897f9955f4d44635.setIcon(icon_d98e5d3f27d773e6714a631e14074b61);
+        
+    
+        var popup_3adc8aa4a1766f60269a5e80fd259394 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_98a0ac931621741dbf5aba75ba82177d = $(`<div id="html_98a0ac931621741dbf5aba75ba82177d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80907.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $42063.97</div>`)[0];
+                popup_3adc8aa4a1766f60269a5e80fd259394.setContent(html_98a0ac931621741dbf5aba75ba82177d);
+            
+        
+
+        marker_89aeb4ff2eac9a76897f9955f4d44635.bindPopup(popup_3adc8aa4a1766f60269a5e80fd259394)
+        ;
+
+        
+    
+    
+            var marker_659a50c588841807e535c405709949d0 = L.marker(
+                [38.8484146, -104.7723311],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_acc40144822b0e45771ae509ddd15156 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_659a50c588841807e535c405709949d0.setIcon(icon_acc40144822b0e45771ae509ddd15156);
+        
+    
+        var popup_c10e95cdf1dbd40cd8b8c911998b1a61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c13c6c9752c507db8546dc46d7aa96a = $(`<div id="html_4c13c6c9752c507db8546dc46d7aa96a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80909.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $11592.48</div>`)[0];
+                popup_c10e95cdf1dbd40cd8b8c911998b1a61.setContent(html_4c13c6c9752c507db8546dc46d7aa96a);
+            
+        
+
+        marker_659a50c588841807e535c405709949d0.bindPopup(popup_c10e95cdf1dbd40cd8b8c911998b1a61)
+        ;
+
+        
+    
+    
+            var marker_455a45dde8a78634811ca19543042495 = L.marker(
+                [38.8120722, -104.7467815],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_6b8f1ba25d7c043492456bbf9902c839 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_455a45dde8a78634811ca19543042495.setIcon(icon_6b8f1ba25d7c043492456bbf9902c839);
+        
+    
+        var popup_1c9e9472feecc9a5cf5a28f04571dd26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ede0c197ef5bc9d8002cd6011adea55e = $(`<div id="html_ede0c197ef5bc9d8002cd6011adea55e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80916.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $970.50</div>`)[0];
+                popup_1c9e9472feecc9a5cf5a28f04571dd26.setContent(html_ede0c197ef5bc9d8002cd6011adea55e);
+            
+        
+
+        marker_455a45dde8a78634811ca19543042495.bindPopup(popup_1c9e9472feecc9a5cf5a28f04571dd26)
+        ;
+
+        
+    
+    
+            var marker_6022bd1c94479d302859b740c0303d47 = L.marker(
+                [38.8930567, -104.72318159999999],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_69c5726cd9f315f24cfb7a11ea3a71e9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6022bd1c94479d302859b740c0303d47.setIcon(icon_69c5726cd9f315f24cfb7a11ea3a71e9);
+        
+    
+        var popup_755e77097674931c921916dec6779580 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b0d3bc0a0db73ea41aede02ee1b0854 = $(`<div id="html_6b0d3bc0a0db73ea41aede02ee1b0854" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80917.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $39536.80</div>`)[0];
+                popup_755e77097674931c921916dec6779580.setContent(html_6b0d3bc0a0db73ea41aede02ee1b0854);
+            
+        
+
+        marker_6022bd1c94479d302859b740c0303d47.bindPopup(popup_755e77097674931c921916dec6779580)
+        ;
+
+        
+    
+    
+            var marker_d9df04f6182d96919ff3edec5a6131dc = L.marker(
+                [38.92710089310802, -104.7835240980366],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_1ba64f7ef1b54a989ee7433024604785 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d9df04f6182d96919ff3edec5a6131dc.setIcon(icon_1ba64f7ef1b54a989ee7433024604785);
+        
+    
+        var popup_c495781072582a80b266ed46f133685f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83c4cf6f93e539c495c343b44da315fe = $(`<div id="html_83c4cf6f93e539c495c343b44da315fe" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80918.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $221743.98</div>`)[0];
+                popup_c495781072582a80b266ed46f133685f.setContent(html_83c4cf6f93e539c495c343b44da315fe);
+            
+        
+
+        marker_d9df04f6182d96919ff3edec5a6131dc.bindPopup(popup_c495781072582a80b266ed46f133685f)
+        ;
+
+        
+    
+    
+            var marker_29f71d091ccc8a46b058b780dbe320b1 = L.marker(
+                [38.913148008867665, -104.84633325690646],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_33ed5ac1b5bd2217fb7920e68388cc67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_29f71d091ccc8a46b058b780dbe320b1.setIcon(icon_33ed5ac1b5bd2217fb7920e68388cc67);
+        
+    
+        var popup_2338835d8fc6737027196662296c560a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae5e9a56818450d2b785c4433ca674f0 = $(`<div id="html_ae5e9a56818450d2b785c4433ca674f0" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80919.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $19339.44</div>`)[0];
+                popup_2338835d8fc6737027196662296c560a.setContent(html_ae5e9a56818450d2b785c4433ca674f0);
+            
+        
+
+        marker_29f71d091ccc8a46b058b780dbe320b1.bindPopup(popup_2338835d8fc6737027196662296c560a)
+        ;
+
+        
+    
+    
+            var marker_e334ad7cf5e09ad3109f77d1ca42b10b = L.marker(
+                [38.94642405704293, -104.78038024881616],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0d157392a918c16acc15d94e5ba88ce5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e334ad7cf5e09ad3109f77d1ca42b10b.setIcon(icon_0d157392a918c16acc15d94e5ba88ce5);
+        
+    
+        var popup_867dfaaad62334c1d2e2b478190a9129 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_89afa5cafc86899a6ccdf987de5ab270 = $(`<div id="html_89afa5cafc86899a6ccdf987de5ab270" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80920.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $99761.23</div>`)[0];
+                popup_867dfaaad62334c1d2e2b478190a9129.setContent(html_89afa5cafc86899a6ccdf987de5ab270);
+            
+        
+
+        marker_e334ad7cf5e09ad3109f77d1ca42b10b.bindPopup(popup_867dfaaad62334c1d2e2b478190a9129)
+        ;
+
+        
+    
+    
+            var marker_d8d6e82bfb5b303157955ef1eca35e3d = L.marker(
+                [39.026583444243876, -104.81451177389745],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_3a1c70bea2eaedf08c00b1db30557e28 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d8d6e82bfb5b303157955ef1eca35e3d.setIcon(icon_3a1c70bea2eaedf08c00b1db30557e28);
+        
+    
+        var popup_fe7fc4d86e8dc5628e62a2f937de63bb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cfc16a3accaecded94eda7ef19613471 = $(`<div id="html_cfc16a3accaecded94eda7ef19613471" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80921.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $41119.10</div>`)[0];
+                popup_fe7fc4d86e8dc5628e62a2f937de63bb.setContent(html_cfc16a3accaecded94eda7ef19613471);
+            
+        
+
+        marker_d8d6e82bfb5b303157955ef1eca35e3d.bindPopup(popup_fe7fc4d86e8dc5628e62a2f937de63bb)
+        ;
+
+        
+    
+    
+            var marker_6fbaf868d41d9bec31a9cdc89900cdce = L.marker(
+                [38.87981373102821, -104.72062337684258],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d6187a64f6e9d8d0ec3148c1c3cc4897 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6fbaf868d41d9bec31a9cdc89900cdce.setIcon(icon_d6187a64f6e9d8d0ec3148c1c3cc4897);
+        
+    
+        var popup_101b066198afede05ba82bf3164f1ca8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b08fa09d9ad8deb880214415782d0410 = $(`<div id="html_b08fa09d9ad8deb880214415782d0410" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80922.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $143701.34</div>`)[0];
+                popup_101b066198afede05ba82bf3164f1ca8.setContent(html_b08fa09d9ad8deb880214415782d0410);
+            
+        
+
+        marker_6fbaf868d41d9bec31a9cdc89900cdce.bindPopup(popup_101b066198afede05ba82bf3164f1ca8)
+        ;
+
+        
+    
+    
+            var marker_d2bdd03ce3b6eaa11c6bc9db283331bc = L.marker(
+                [38.9123312, -104.7159824864454],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_b479810329b5b689e5dffa50b380bc42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d2bdd03ce3b6eaa11c6bc9db283331bc.setIcon(icon_b479810329b5b689e5dffa50b380bc42);
+        
+    
+        var popup_76a1a1d0c4db7026e29d5153ac3e7c19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fd959a321f99ce80921a0603161a047e = $(`<div id="html_fd959a321f99ce80921a0603161a047e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80923.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $17972.29</div>`)[0];
+                popup_76a1a1d0c4db7026e29d5153ac3e7c19.setContent(html_fd959a321f99ce80921a0603161a047e);
+            
+        
+
+        marker_d2bdd03ce3b6eaa11c6bc9db283331bc.bindPopup(popup_76a1a1d0c4db7026e29d5153ac3e7c19)
+        ;
+
+        
+    
+    
+            var marker_e5e824752413dd66ec1f013750975fb3 = L.marker(
+                [38.9734494, -104.7460757],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_d3518d8132380c043296db99631aee35 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "olive",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e5e824752413dd66ec1f013750975fb3.setIcon(icon_d3518d8132380c043296db99631aee35);
+        
+    
+        var popup_07035f0d7528eb443bdd4d4066814a97 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38360a8225c2a0baf32d9a6bf7757001 = $(`<div id="html_38360a8225c2a0baf32d9a6bf7757001" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80924.0<br><strong>Route Description:</strong> 766 NORTH COL SPGS<br><strong>Profit:</strong> $19705.06</div>`)[0];
+                popup_07035f0d7528eb443bdd4d4066814a97.setContent(html_38360a8225c2a0baf32d9a6bf7757001);
+            
+        
+
+        marker_e5e824752413dd66ec1f013750975fb3.bindPopup(popup_07035f0d7528eb443bdd4d4066814a97)
+        ;
+
+        
+    
+    
+            var marker_6bb9c0b8ea41a9e5961772423ece0365 = L.marker(
+                [38.8680938, -104.6939718],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_2a08cd13fd41d712e84778cfc3bbd422 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6bb9c0b8ea41a9e5961772423ece0365.setIcon(icon_2a08cd13fd41d712e84778cfc3bbd422);
+        
+    
+        var popup_1f93430de9d0fff2364c73958836fcf4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1d1f3bdd82b87f94dbb0b41796f9577b = $(`<div id="html_1d1f3bdd82b87f94dbb0b41796f9577b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80951.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $20266.51</div>`)[0];
+                popup_1f93430de9d0fff2364c73958836fcf4.setContent(html_1d1f3bdd82b87f94dbb0b41796f9577b);
+            
+        
+
+        marker_6bb9c0b8ea41a9e5961772423ece0365.bindPopup(popup_1f93430de9d0fff2364c73958836fcf4)
+        ;
+
+        
+    
+    
+            var marker_30a9fb918fcdc7eed6c273b6705abfb4 = L.marker(
+                [38.24287355, -104.6457871524108],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_c7b27a83fed83d71182a3dc1ec669815 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_30a9fb918fcdc7eed6c273b6705abfb4.setIcon(icon_c7b27a83fed83d71182a3dc1ec669815);
+        
+    
+        var popup_b2895b17e0fa837437bc364779b37ebd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_014a33d0b261b4457679a0c5ceff9e10 = $(`<div id="html_014a33d0b261b4457679a0c5ceff9e10" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81005.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $13668.15</div>`)[0];
+                popup_b2895b17e0fa837437bc364779b37ebd.setContent(html_014a33d0b261b4457679a0c5ceff9e10);
+            
+        
+
+        marker_30a9fb918fcdc7eed6c273b6705abfb4.bindPopup(popup_b2895b17e0fa837437bc364779b37ebd)
+        ;
+
+        
+    
+    
+            var marker_b30db18f1b8b56978fb871c071769d9e = L.marker(
+                [38.298369109489364, -104.60707748914894],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_f6658128b2caa6c81a2e5f03ae41767f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b30db18f1b8b56978fb871c071769d9e.setIcon(icon_f6658128b2caa6c81a2e5f03ae41767f);
+        
+    
+        var popup_6c91fdbbba2d14a85c9bbd5dd09ca060 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c80ea13a9f863b2a711713dff0dab9a = $(`<div id="html_3c80ea13a9f863b2a711713dff0dab9a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81008.0<br><strong>Route Description:</strong> 755 SOUTH COL SPGS<br><strong>Profit:</strong> $60068.59</div>`)[0];
+                popup_6c91fdbbba2d14a85c9bbd5dd09ca060.setContent(html_3c80ea13a9f863b2a711713dff0dab9a);
+            
+        
+
+        marker_b30db18f1b8b56978fb871c071769d9e.bindPopup(popup_6c91fdbbba2d14a85c9bbd5dd09ca060)
+        ;
+
+        
+    
+    
+            var marker_9c380263479522edc76908d1627c04aa = L.marker(
+                [38.218972, -103.75803],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_db1aa91dfc5e270d4f9fb97b4662b287 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "black",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9c380263479522edc76908d1627c04aa.setIcon(icon_db1aa91dfc5e270d4f9fb97b4662b287);
+        
+    
+        var popup_fe6808de519f79b6d621df492b268143 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c28d8e88d9ef1ff4f1aa8bb7fee0e4a1 = $(`<div id="html_c28d8e88d9ef1ff4f1aa8bb7fee0e4a1" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81064.0<br><strong>Route Description:</strong> 767 LONGMONT<br><strong>Profit:</strong> $15898.98</div>`)[0];
+                popup_fe6808de519f79b6d621df492b268143.setContent(html_c28d8e88d9ef1ff4f1aa8bb7fee0e4a1);
+            
+        
+
+        marker_9c380263479522edc76908d1627c04aa.bindPopup(popup_fe6808de519f79b6d621df492b268143)
+        ;
+
+        
+    
+    
+            var marker_6adab006c5926eb862d15628d79442e0 = L.marker(
+                [37.6715459, -106.6554519],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_0f3097091586adba1445e6f92c166ea9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "navy",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6adab006c5926eb862d15628d79442e0.setIcon(icon_0f3097091586adba1445e6f92c166ea9);
+        
+    
+        var popup_8d61346c7609ae485af5294be274a638 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1bba4f732d87aa9c1095cd8122c059c7 = $(`<div id="html_1bba4f732d87aa9c1095cd8122c059c7" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81154.0<br><strong>Route Description:</strong> 752 HIGHLANDS RANCH<br><strong>Profit:</strong> $117425.00</div>`)[0];
+                popup_8d61346c7609ae485af5294be274a638.setContent(html_1bba4f732d87aa9c1095cd8122c059c7);
+            
+        
+
+        marker_6adab006c5926eb862d15628d79442e0.bindPopup(popup_8d61346c7609ae485af5294be274a638)
+        ;
+
+        
+    
+    
+            var marker_61fb731ec6a96086a9cdc336d54534c7 = L.marker(
+                [37.2962375, -107.8734713],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_7912a5c13329d86c7c773fe0d33daf62 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "lightgreen",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_61fb731ec6a96086a9cdc336d54534c7.setIcon(icon_7912a5c13329d86c7c773fe0d33daf62);
+        
+    
+        var popup_34256bc780c55662fbc80fbd7fb2500b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e14697a8f9f8d9056347592678dfeee = $(`<div id="html_7e14697a8f9f8d9056347592678dfeee" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81301.0<br><strong>Route Description:</strong> 764 FORT COLLINS<br><strong>Profit:</strong> $16204.83</div>`)[0];
+                popup_34256bc780c55662fbc80fbd7fb2500b.setContent(html_7e14697a8f9f8d9056347592678dfeee);
+            
+        
+
+        marker_61fb731ec6a96086a9cdc336d54534c7.bindPopup(popup_34256bc780c55662fbc80fbd7fb2500b)
+        ;
+
+        
+    
+    
+            var marker_a0517d07b7dce5abaf5928b6163e65fe = L.marker(
+                [37.3822787, -108.6096023],
+                {
+}
+            ).addTo(map_8848f9628f6d870bd53293993d10a1fc);
+        
+    
+            var icon_87b70e6101986877a46d51a1ba857c18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "cadetblue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a0517d07b7dce5abaf5928b6163e65fe.setIcon(icon_87b70e6101986877a46d51a1ba857c18);
+        
+    
+        var popup_cd93c2a6428f088f9ebd35e2dadaec05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_caaa4385161c2d3e471e62cbb8d2c480 = $(`<div id="html_caaa4385161c2d3e471e62cbb8d2c480" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81321.0<br><strong>Route Description:</strong> 761 BOULDER<br><strong>Profit:</strong> $60608.10</div>`)[0];
+                popup_cd93c2a6428f088f9ebd35e2dadaec05.setContent(html_caaa4385161c2d3e471e62cbb8d2c480);
+            
+        
+
+        marker_a0517d07b7dce5abaf5928b6163e65fe.bindPopup(popup_cd93c2a6428f088f9ebd35e2dadaec05)
+        ;
+
+        
+    
+</script>
+</html>

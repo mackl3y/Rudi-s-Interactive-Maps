@@ -1,0 +1,4833 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_a5d35c2824d4eaf2b18e823416193991 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 260px;
+    padding: 10px;
+    background-color: white;
+    border:2px solid grey;
+    z-index:9999;
+    font-size:14px;
+">
+    <b>Most Sold SKU Legend</b><br>
+    
+        <i style="background: red;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>100% BREAD WW<br>
+    
+        <i style="background: blue;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>GF SOURDOUGH<br>
+    
+        <i style="background: green;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>RMS 2PK<br>
+    
+        <i style="background: purple;
+                  width: 12px; height: 12px; float: left;
+                  margin-right: 8px; opacity:0.8;"></i>ROCKY MT SOUR<br>
+    
+</div>
+    
+            <div class="folium-map" id="map_a5d35c2824d4eaf2b18e823416193991" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_a5d35c2824d4eaf2b18e823416193991 = L.map(
+                "map_a5d35c2824d4eaf2b18e823416193991",
+                {
+                    center: [39.5501, -105.7821],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_058296dd8c74dc6c3e35309d5f2e457d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_058296dd8c74dc6c3e35309d5f2e457d.addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var marker_7aba85d00d510efcd8508971f9703ef0 = L.marker(
+                [39.7903083, -105.08238122079182],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_69a9725ee58816e79d4a74482a8fd1f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7aba85d00d510efcd8508971f9703ef0.setIcon(icon_69a9725ee58816e79d4a74482a8fd1f8);
+        
+    
+        var popup_16d2b4945fe4a827424f3670900e7198 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7296d6bfc285f191ff4e8af0199dc2d = $(`<div id="html_d7296d6bfc285f191ff4e8af0199dc2d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80002.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 20324</div>`)[0];
+                popup_16d2b4945fe4a827424f3670900e7198.setContent(html_d7296d6bfc285f191ff4e8af0199dc2d);
+            
+        
+
+        marker_7aba85d00d510efcd8508971f9703ef0.bindPopup(popup_16d2b4945fe4a827424f3670900e7198)
+        ;
+
+        
+    
+    
+            var marker_de940e7583b4b9baee54da2cb574b946 = L.marker(
+                [39.839903981615116, -105.0830070363366],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a10ac0a97ec56a693c42c31e3666b391 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_de940e7583b4b9baee54da2cb574b946.setIcon(icon_a10ac0a97ec56a693c42c31e3666b391);
+        
+    
+        var popup_d7bd4bd074be23668613a29505f3283c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c23917ce685d4752599106ed5bb5715 = $(`<div id="html_1c23917ce685d4752599106ed5bb5715" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80003.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4986</div>`)[0];
+                popup_d7bd4bd074be23668613a29505f3283c.setContent(html_1c23917ce685d4752599106ed5bb5715);
+            
+        
+
+        marker_de940e7583b4b9baee54da2cb574b946.bindPopup(popup_d7bd4bd074be23668613a29505f3283c)
+        ;
+
+        
+    
+    
+            var marker_496a6a5d8d7168c1fb78aaec36e992c4 = L.marker(
+                [39.81125505, -105.13647618077404],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_b37b9e8f13d96349b3c4a0a372ec82c8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_496a6a5d8d7168c1fb78aaec36e992c4.setIcon(icon_b37b9e8f13d96349b3c4a0a372ec82c8);
+        
+    
+        var popup_dc0ab329a672a65f35caae553724a8b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78ab36f4071c13b1e7eeaa44e1bf30c1 = $(`<div id="html_78ab36f4071c13b1e7eeaa44e1bf30c1" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80004.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1578</div>`)[0];
+                popup_dc0ab329a672a65f35caae553724a8b8.setContent(html_78ab36f4071c13b1e7eeaa44e1bf30c1);
+            
+        
+
+        marker_496a6a5d8d7168c1fb78aaec36e992c4.bindPopup(popup_dc0ab329a672a65f35caae553724a8b8)
+        ;
+
+        
+    
+    
+            var marker_b1c794fba90e0831291f0ca8e0343b66 = L.marker(
+                [39.830903784968356, -105.17109020352328],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_017f03706200cf6b95112e172834259e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b1c794fba90e0831291f0ca8e0343b66.setIcon(icon_017f03706200cf6b95112e172834259e);
+        
+    
+        var popup_9fdae067c2eb6b518962175e9eee3ffe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2045b340a75bedd5a26ff18b2b2a7231 = $(`<div id="html_2045b340a75bedd5a26ff18b2b2a7231" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80007.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5045</div>`)[0];
+                popup_9fdae067c2eb6b518962175e9eee3ffe.setContent(html_2045b340a75bedd5a26ff18b2b2a7231);
+            
+        
+
+        marker_b1c794fba90e0831291f0ca8e0343b66.bindPopup(popup_9fdae067c2eb6b518962175e9eee3ffe)
+        ;
+
+        
+    
+    
+            var marker_0b797bae4c8d2362fb9e3707765d76af = L.marker(
+                [39.6907919, -104.86865104182736],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_c622c2e8fb558f33c4f59d6f2ddeb48a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0b797bae4c8d2362fb9e3707765d76af.setIcon(icon_c622c2e8fb558f33c4f59d6f2ddeb48a);
+        
+    
+        var popup_7e631b35c7a0dd0fc8b39bf335eba63b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d06a563a33608e44f4ab143d5c17bd6c = $(`<div id="html_d06a563a33608e44f4ab143d5c17bd6c" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80012.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 11647</div>`)[0];
+                popup_7e631b35c7a0dd0fc8b39bf335eba63b.setContent(html_d06a563a33608e44f4ab143d5c17bd6c);
+            
+        
+
+        marker_0b797bae4c8d2362fb9e3707765d76af.bindPopup(popup_7e631b35c7a0dd0fc8b39bf335eba63b)
+        ;
+
+        
+    
+    
+            var marker_5f3807f9a773c528e412ddb824914b71 = L.marker(
+                [39.654473636720326, -104.78141512344767],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_58370798d0c99729de1b4e0ab72fc34c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5f3807f9a773c528e412ddb824914b71.setIcon(icon_58370798d0c99729de1b4e0ab72fc34c);
+        
+    
+        var popup_12654d0267fea9bb1805403ab874ef59 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_053ff053ba3823e6322ca8de9a4a7cb2 = $(`<div id="html_053ff053ba3823e6322ca8de9a4a7cb2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80013.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2434</div>`)[0];
+                popup_12654d0267fea9bb1805403ab874ef59.setContent(html_053ff053ba3823e6322ca8de9a4a7cb2);
+            
+        
+
+        marker_5f3807f9a773c528e412ddb824914b71.bindPopup(popup_12654d0267fea9bb1805403ab874ef59)
+        ;
+
+        
+    
+    
+            var marker_c4f629661cb76fac672d2f67ebdc3840 = L.marker(
+                [39.66080901513353, -104.82423889406529],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_5525dc739962a8f06fa51ec75cbdad18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c4f629661cb76fac672d2f67ebdc3840.setIcon(icon_5525dc739962a8f06fa51ec75cbdad18);
+        
+    
+        var popup_3d2ea8ee4ed205412153d434f4909c43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d712d45a0645c06417eb3551bc3d013 = $(`<div id="html_9d712d45a0645c06417eb3551bc3d013" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80014.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1994</div>`)[0];
+                popup_3d2ea8ee4ed205412153d434f4909c43.setContent(html_9d712d45a0645c06417eb3551bc3d013);
+            
+        
+
+        marker_c4f629661cb76fac672d2f67ebdc3840.bindPopup(popup_3d2ea8ee4ed205412153d434f4909c43)
+        ;
+
+        
+    
+    
+            var marker_5fbd2f96086adf92be74db246bf811a2 = L.marker(
+                [39.614125, -104.8120941],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_58e5596ec0c59f9a8eb1c9aeab4c30ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5fbd2f96086adf92be74db246bf811a2.setIcon(icon_58e5596ec0c59f9a8eb1c9aeab4c30ec);
+        
+    
+        var popup_83bf96d5a5336e615fc536f607470be7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_38fde4434d281b1012a208854b971e43 = $(`<div id="html_38fde4434d281b1012a208854b971e43" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80015.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1051</div>`)[0];
+                popup_83bf96d5a5336e615fc536f607470be7.setContent(html_38fde4434d281b1012a208854b971e43);
+            
+        
+
+        marker_5fbd2f96086adf92be74db246bf811a2.bindPopup(popup_83bf96d5a5336e615fc536f607470be7)
+        ;
+
+        
+    
+    
+            var marker_28643b5fce05f78a31f782900562b536 = L.marker(
+                [39.59433184775429, -104.72800905163776],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_971372ef34c8f7fca523ebd8d7c50176 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_28643b5fce05f78a31f782900562b536.setIcon(icon_971372ef34c8f7fca523ebd8d7c50176);
+        
+    
+        var popup_a1b8dae7396497d54f1b43048d3aff44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_55f8e60af1157b965866c105813e22ba = $(`<div id="html_55f8e60af1157b965866c105813e22ba" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80016.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6067</div>`)[0];
+                popup_a1b8dae7396497d54f1b43048d3aff44.setContent(html_55f8e60af1157b965866c105813e22ba);
+            
+        
+
+        marker_28643b5fce05f78a31f782900562b536.bindPopup(popup_a1b8dae7396497d54f1b43048d3aff44)
+        ;
+
+        
+    
+    
+            var marker_4f65085846fa4438886a2a31e44133a9 = L.marker(
+                [39.69482235, -104.78884012247906],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7b6a74c945fe66379720f5535c0a7dec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4f65085846fa4438886a2a31e44133a9.setIcon(icon_7b6a74c945fe66379720f5535c0a7dec);
+        
+    
+        var popup_2957f4380f9b14a0b225aa4dcfe593c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3486e804c58a0b4c8fb2a1e7996cc99 = $(`<div id="html_a3486e804c58a0b4c8fb2a1e7996cc99" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80017.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 606</div>`)[0];
+                popup_2957f4380f9b14a0b225aa4dcfe593c5.setContent(html_a3486e804c58a0b4c8fb2a1e7996cc99);
+            
+        
+
+        marker_4f65085846fa4438886a2a31e44133a9.bindPopup(popup_2957f4380f9b14a0b225aa4dcfe593c5)
+        ;
+
+        
+    
+    
+            var marker_e599db72bffb45bb15c8069da6f42a2b = L.marker(
+                [39.93468187874465, -105.05465795294991],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_cae9229333fbc3ed0fa647cec2d4e988 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e599db72bffb45bb15c8069da6f42a2b.setIcon(icon_cae9229333fbc3ed0fa647cec2d4e988);
+        
+    
+        var popup_1529d89e02e30ef5bcc28695e7a0e19a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8a0e98e3f5da4b008e1e4e44d0d0547 = $(`<div id="html_d8a0e98e3f5da4b008e1e4e44d0d0547" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80020.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3133</div>`)[0];
+                popup_1529d89e02e30ef5bcc28695e7a0e19a.setContent(html_d8a0e98e3f5da4b008e1e4e44d0d0547);
+            
+        
+
+        marker_e599db72bffb45bb15c8069da6f42a2b.bindPopup(popup_1529d89e02e30ef5bcc28695e7a0e19a)
+        ;
+
+        
+    
+    
+            var marker_6ffdfb6e507ef8f12aed14090f436f9a = L.marker(
+                [39.902436119248826, -105.10616556502347],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_efa786c4c62d8ce93c4ad77d589b37de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6ffdfb6e507ef8f12aed14090f436f9a.setIcon(icon_efa786c4c62d8ce93c4ad77d589b37de);
+        
+    
+        var popup_f42f5095bf314df5d45bfda5f14ec70d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_66a63c4a07afd25029716fceba40e95b = $(`<div id="html_66a63c4a07afd25029716fceba40e95b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80021.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4566</div>`)[0];
+                popup_f42f5095bf314df5d45bfda5f14ec70d.setContent(html_66a63c4a07afd25029716fceba40e95b);
+            
+        
+
+        marker_6ffdfb6e507ef8f12aed14090f436f9a.bindPopup(popup_f42f5095bf314df5d45bfda5f14ec70d)
+        ;
+
+        
+    
+    
+            var marker_271e04ac03b73b5101e7f5bca60f6d95 = L.marker(
+                [39.85755658000001, -104.8535617952673],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2f70cd7da98fbf0c60a2c0f38ef59fb2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_271e04ac03b73b5101e7f5bca60f6d95.setIcon(icon_2f70cd7da98fbf0c60a2c0f38ef59fb2);
+        
+    
+        var popup_39660ad1a7f3398895026a844221d8c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31709a24e9b6a9f21365a592be0d9314 = $(`<div id="html_31709a24e9b6a9f21365a592be0d9314" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80022.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1443</div>`)[0];
+                popup_39660ad1a7f3398895026a844221d8c6.setContent(html_31709a24e9b6a9f21365a592be0d9314);
+            
+        
+
+        marker_271e04ac03b73b5101e7f5bca60f6d95.bindPopup(popup_39660ad1a7f3398895026a844221d8c6)
+        ;
+
+        
+    
+    
+            var marker_7c6a5605a1c0ad8908d7a9afddece0ab = L.marker(
+                [39.99075515, -104.9850649737404],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_467a94568756b07dfc5d623838416aec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7c6a5605a1c0ad8908d7a9afddece0ab.setIcon(icon_467a94568756b07dfc5d623838416aec);
+        
+    
+        var popup_98ce33c254e40f693f929748087455ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aed094802f2667bf9687a83c30619598 = $(`<div id="html_aed094802f2667bf9687a83c30619598" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80023.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 16964</div>`)[0];
+                popup_98ce33c254e40f693f929748087455ff.setContent(html_aed094802f2667bf9687a83c30619598);
+            
+        
+
+        marker_7c6a5605a1c0ad8908d7a9afddece0ab.bindPopup(popup_98ce33c254e40f693f929748087455ff)
+        ;
+
+        
+    
+    
+            var marker_57c8145b9ed32fed8b6aab4b8d1f14ea = L.marker(
+                [39.991389303807104, -105.09498693105898],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_c7424c1869142683f910f4ac22eea7d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_57c8145b9ed32fed8b6aab4b8d1f14ea.setIcon(icon_c7424c1869142683f910f4ac22eea7d0);
+        
+    
+        var popup_2a4f19642a094c9632a35e97a24dc9cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19d97ab4f3d8dff93a72c5c11d223b1f = $(`<div id="html_19d97ab4f3d8dff93a72c5c11d223b1f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80026.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2908</div>`)[0];
+                popup_2a4f19642a094c9632a35e97a24dc9cb.setContent(html_19d97ab4f3d8dff93a72c5c11d223b1f);
+            
+        
+
+        marker_57c8145b9ed32fed8b6aab4b8d1f14ea.bindPopup(popup_2a4f19642a094c9632a35e97a24dc9cb)
+        ;
+
+        
+    
+    
+            var marker_e5ff1adc6f87513d66d417f5fb330600 = L.marker(
+                [39.9594977, -105.1744400030314],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_5b6e0db818e54683e3e4026fa736d681 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e5ff1adc6f87513d66d417f5fb330600.setIcon(icon_5b6e0db818e54683e3e4026fa736d681);
+        
+    
+        var popup_18f025cf376944e8e4aa5cc23c58cccd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b1e6a5a509a31d5dd9203655cc271734 = $(`<div id="html_b1e6a5a509a31d5dd9203655cc271734" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80027.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 16947</div>`)[0];
+                popup_18f025cf376944e8e4aa5cc23c58cccd.setContent(html_b1e6a5a509a31d5dd9203655cc271734);
+            
+        
+
+        marker_e5ff1adc6f87513d66d417f5fb330600.bindPopup(popup_18f025cf376944e8e4aa5cc23c58cccd)
+        ;
+
+        
+    
+    
+            var marker_9cbd0edf2d67f1f1ac95986ac2233334 = L.marker(
+                [39.9124305, -105.0507693],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_4731a918be44a745c498f5954c67e667 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9cbd0edf2d67f1f1ac95986ac2233334.setIcon(icon_4731a918be44a745c498f5954c67e667);
+        
+    
+        var popup_ecee69d700a7272040a054d79d6c4d60 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b2c82654e4010797ddab251c690b409 = $(`<div id="html_5b2c82654e4010797ddab251c690b409" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80030.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 952</div>`)[0];
+                popup_ecee69d700a7272040a054d79d6c4d60.setContent(html_5b2c82654e4010797ddab251c690b409);
+            
+        
+
+        marker_9cbd0edf2d67f1f1ac95986ac2233334.bindPopup(popup_ecee69d700a7272040a054d79d6c4d60)
+        ;
+
+        
+    
+    
+            var marker_b3e5dd485363be7bdbff975511273443 = L.marker(
+                [39.90113907328767, -105.04847065734766],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ee17601942f139cf247ac77f93a1ef26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b3e5dd485363be7bdbff975511273443.setIcon(icon_ee17601942f139cf247ac77f93a1ef26);
+        
+    
+        var popup_9a8d9cd82541d9672ab61493a952fbff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fa2698c2ce373e0c0f98553834f2dcb = $(`<div id="html_1fa2698c2ce373e0c0f98553834f2dcb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80031.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5535</div>`)[0];
+                popup_9a8d9cd82541d9672ab61493a952fbff.setContent(html_1fa2698c2ce373e0c0f98553834f2dcb);
+            
+        
+
+        marker_b3e5dd485363be7bdbff975511273443.bindPopup(popup_9a8d9cd82541d9672ab61493a952fbff)
+        ;
+
+        
+    
+    
+            var marker_ab2c3d37d0cfd668e7adc8a6dae4c0ea = L.marker(
+                [39.77710158024251, -105.10330938930453],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_b0529977b985cf2788237f0eb9c68bc5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ab2c3d37d0cfd668e7adc8a6dae4c0ea.setIcon(icon_b0529977b985cf2788237f0eb9c68bc5);
+        
+    
+        var popup_170f8458050482bfb9b059f8d5af9eac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97bccbee13dae6e2be193b478e69ad80 = $(`<div id="html_97bccbee13dae6e2be193b478e69ad80" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80033.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5097</div>`)[0];
+                popup_170f8458050482bfb9b059f8d5af9eac.setContent(html_97bccbee13dae6e2be193b478e69ad80);
+            
+        
+
+        marker_ab2c3d37d0cfd668e7adc8a6dae4c0ea.bindPopup(popup_170f8458050482bfb9b059f8d5af9eac)
+        ;
+
+        
+    
+    
+            var marker_b91c7687814b0a5c04108eef5d99db65 = L.marker(
+                [39.395150893679464, -104.86051519525947],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_71dd995a2a137838926a8144e7ff3dd8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b91c7687814b0a5c04108eef5d99db65.setIcon(icon_71dd995a2a137838926a8144e7ff3dd8);
+        
+    
+        var popup_011148006c20ac7d9d6c6906ab47f839 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c08076edff95701a29dde8f3fd6dfc5 = $(`<div id="html_4c08076edff95701a29dde8f3fd6dfc5" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80104.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3875</div>`)[0];
+                popup_011148006c20ac7d9d6c6906ab47f839.setContent(html_4c08076edff95701a29dde8f3fd6dfc5);
+            
+        
+
+        marker_b91c7687814b0a5c04108eef5d99db65.bindPopup(popup_011148006c20ac7d9d6c6906ab47f839)
+        ;
+
+        
+    
+    
+            var marker_1d6f13adb8b511e467aa9ccec8ca3cba = L.marker(
+                [39.43572008869048, -104.87908230654762],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_53523b18b13fcf2302fd59a4eee0ca4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1d6f13adb8b511e467aa9ccec8ca3cba.setIcon(icon_53523b18b13fcf2302fd59a4eee0ca4d);
+        
+    
+        var popup_7cfb060b4e0feed386eec5a62c803917 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de1fef5ed4481bc84ca322c5f573d8e8 = $(`<div id="html_de1fef5ed4481bc84ca322c5f573d8e8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80108.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 8206</div>`)[0];
+                popup_7cfb060b4e0feed386eec5a62c803917.setContent(html_de1fef5ed4481bc84ca322c5f573d8e8);
+            
+        
+
+        marker_1d6f13adb8b511e467aa9ccec8ca3cba.bindPopup(popup_7cfb060b4e0feed386eec5a62c803917)
+        ;
+
+        
+    
+    
+            var marker_a4db9bb569319ef1d8935e444faf7fea = L.marker(
+                [39.4130056, -104.86496679999999],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_4aa78a09c3d75d57c11763defaeb422d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a4db9bb569319ef1d8935e444faf7fea.setIcon(icon_4aa78a09c3d75d57c11763defaeb422d);
+        
+    
+        var popup_08a0e10d642dcbfa1f693e1c74776cbf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b655098f78f637976e4689255c221a9 = $(`<div id="html_7b655098f78f637976e4689255c221a9" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80109.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 988</div>`)[0];
+                popup_08a0e10d642dcbfa1f693e1c74776cbf.setContent(html_7b655098f78f637976e4689255c221a9);
+            
+        
+
+        marker_a4db9bb569319ef1d8935e444faf7fea.bindPopup(popup_08a0e10d642dcbfa1f693e1c74776cbf)
+        ;
+
+        
+    
+    
+            var marker_1d3c14db1d43915b3aeabfeab6954377 = L.marker(
+                [39.6441544, -105.00640099999998],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_84067270a4a34bf8d487440715688290 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1d3c14db1d43915b3aeabfeab6954377.setIcon(icon_84067270a4a34bf8d487440715688290);
+        
+    
+        var popup_2262c8ff9ccf6e327cb5a988397b5c42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a497629a9820ca11b6fd2633bc32253b = $(`<div id="html_a497629a9820ca11b6fd2633bc32253b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80110.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 12181</div>`)[0];
+                popup_2262c8ff9ccf6e327cb5a988397b5c42.setContent(html_a497629a9820ca11b6fd2633bc32253b);
+            
+        
+
+        marker_1d3c14db1d43915b3aeabfeab6954377.bindPopup(popup_2262c8ff9ccf6e327cb5a988397b5c42)
+        ;
+
+        
+    
+    
+            var marker_b7723d853bc58ebdd66695517d045622 = L.marker(
+                [39.61723202487923, -104.90222923796898],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_0bdbe2f34e1d15b14c6197726110f3c8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b7723d853bc58ebdd66695517d045622.setIcon(icon_0bdbe2f34e1d15b14c6197726110f3c8);
+        
+    
+        var popup_d336f59899a1a4f69d2d2ff3af3aebe0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c7a117adc3149c2fd3fe54591a6e98a = $(`<div id="html_3c7a117adc3149c2fd3fe54591a6e98a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80111.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3862</div>`)[0];
+                popup_d336f59899a1a4f69d2d2ff3af3aebe0.setContent(html_3c7a117adc3149c2fd3fe54591a6e98a);
+            
+        
+
+        marker_b7723d853bc58ebdd66695517d045622.bindPopup(popup_d336f59899a1a4f69d2d2ff3af3aebe0)
+        ;
+
+        
+    
+    
+            var marker_28e148b1ab8b2c3bf50ec31a16b73665 = L.marker(
+                [39.59443862048193, -104.8812117995984],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_5ca7b452ae75239a9b3e700dd50af54e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_28e148b1ab8b2c3bf50ec31a16b73665.setIcon(icon_5ca7b452ae75239a9b3e700dd50af54e);
+        
+    
+        var popup_cce0e0098d3793b48621e44bd7367c0c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2be6f0c6be6b7f546c78973999c4d6e3 = $(`<div id="html_2be6f0c6be6b7f546c78973999c4d6e3" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80112.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1684</div>`)[0];
+                popup_cce0e0098d3793b48621e44bd7367c0c.setContent(html_2be6f0c6be6b7f546c78973999c4d6e3);
+            
+        
+
+        marker_28e148b1ab8b2c3bf50ec31a16b73665.bindPopup(popup_cce0e0098d3793b48621e44bd7367c0c)
+        ;
+
+        
+    
+    
+            var marker_d7e72dd7f4affb3be363460ad852ee05 = L.marker(
+                [39.64554509736842, -104.97768212023054],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_fc83fcf197a2b8cab41cf6bb4927403f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d7e72dd7f4affb3be363460ad852ee05.setIcon(icon_fc83fcf197a2b8cab41cf6bb4927403f);
+        
+    
+        var popup_d31510d8a4d4e4b6a4f3755d70df15a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_99130cd5224ff1d7e1b86df2b7ac314f = $(`<div id="html_99130cd5224ff1d7e1b86df2b7ac314f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80113.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4256</div>`)[0];
+                popup_d31510d8a4d4e4b6a4f3755d70df15a5.setContent(html_99130cd5224ff1d7e1b86df2b7ac314f);
+            
+        
+
+        marker_d7e72dd7f4affb3be363460ad852ee05.bindPopup(popup_d31510d8a4d4e4b6a4f3755d70df15a5)
+        ;
+
+        
+    
+    
+            var marker_f8e6e50d41b889b367240e182d9ec293 = L.marker(
+                [39.5647545, -104.8730821],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a70cd6e50a9ca29dc37ffbddc4ee8de4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f8e6e50d41b889b367240e182d9ec293.setIcon(icon_a70cd6e50a9ca29dc37ffbddc4ee8de4);
+        
+    
+        var popup_0b7e9a12f0a8112aee378cd278162f91 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b25ac6cd3d0b72bca48d8df51331f3d2 = $(`<div id="html_b25ac6cd3d0b72bca48d8df51331f3d2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80114.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 18454</div>`)[0];
+                popup_0b7e9a12f0a8112aee378cd278162f91.setContent(html_b25ac6cd3d0b72bca48d8df51331f3d2);
+            
+        
+
+        marker_f8e6e50d41b889b367240e182d9ec293.bindPopup(popup_0b7e9a12f0a8112aee378cd278162f91)
+        ;
+
+        
+    
+    
+            var marker_947838837a6140402dc939d869ee6d47 = L.marker(
+                [39.5748722, -104.99188129999999],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_685724a79a39875431d110938dae3cf1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_947838837a6140402dc939d869ee6d47.setIcon(icon_685724a79a39875431d110938dae3cf1);
+        
+    
+        var popup_40cbac7cc5159618440e8209e74c33d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3af45dcac8236050330e185a1429a798 = $(`<div id="html_3af45dcac8236050330e185a1429a798" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80120.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1061</div>`)[0];
+                popup_40cbac7cc5159618440e8209e74c33d2.setContent(html_3af45dcac8236050330e185a1429a798);
+            
+        
+
+        marker_947838837a6140402dc939d869ee6d47.bindPopup(popup_40cbac7cc5159618440e8209e74c33d2)
+        ;
+
+        
+    
+    
+            var marker_9c0a54153486e07dd4ad85fc28b5d556 = L.marker(
+                [39.5943915, -104.928758],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_9e0b05480335a662afab242151dd2530 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9c0a54153486e07dd4ad85fc28b5d556.setIcon(icon_9e0b05480335a662afab242151dd2530);
+        
+    
+        var popup_5c94c936f0de818e609253aefc52d64a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a37e70edf375fd91d94051a3e652f019 = $(`<div id="html_a37e70edf375fd91d94051a3e652f019" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80121.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 512</div>`)[0];
+                popup_5c94c936f0de818e609253aefc52d64a.setContent(html_a37e70edf375fd91d94051a3e652f019);
+            
+        
+
+        marker_9c0a54153486e07dd4ad85fc28b5d556.bindPopup(popup_5c94c936f0de818e609253aefc52d64a)
+        ;
+
+        
+    
+    
+            var marker_2100acf6ac1225fbb3c3ba8c9938f4ca = L.marker(
+                [39.58013252109929, -104.94921768705673],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_adc69c56bae6acee3799f9f3212bb56d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2100acf6ac1225fbb3c3ba8c9938f4ca.setIcon(icon_adc69c56bae6acee3799f9f3212bb56d);
+        
+    
+        var popup_7eb0f8355a3cbe662ec61352add0fcff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_678f2773b7d00248c53099a206f27096 = $(`<div id="html_678f2773b7d00248c53099a206f27096" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80122.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6841</div>`)[0];
+                popup_7eb0f8355a3cbe662ec61352add0fcff.setContent(html_678f2773b7d00248c53099a206f27096);
+            
+        
+
+        marker_2100acf6ac1225fbb3c3ba8c9938f4ca.bindPopup(popup_7eb0f8355a3cbe662ec61352add0fcff)
+        ;
+
+        
+    
+    
+            var marker_0c91b780431dbb15f607f7dfea99ea28 = L.marker(
+                [39.61717971978261, -105.09490002007408],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_4b817a6f48917aff59577d3749e5f2e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0c91b780431dbb15f607f7dfea99ea28.setIcon(icon_4b817a6f48917aff59577d3749e5f2e2);
+        
+    
+        var popup_f74f468e5f2bda5cc1ec255d3da8c5b8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4bea4cfd37158d3023e53dcef9b4adec = $(`<div id="html_4bea4cfd37158d3023e53dcef9b4adec" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80123.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 7285</div>`)[0];
+                popup_f74f468e5f2bda5cc1ec255d3da8c5b8.setContent(html_4bea4cfd37158d3023e53dcef9b4adec);
+            
+        
+
+        marker_0c91b780431dbb15f607f7dfea99ea28.bindPopup(popup_f74f468e5f2bda5cc1ec255d3da8c5b8)
+        ;
+
+        
+    
+    
+            var marker_1345c86c2446d653daea921309ce4440 = L.marker(
+                [39.5355265375, -104.88193325010923],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_0d1e7674e789c96ed0f69001db926bab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1345c86c2446d653daea921309ce4440.setIcon(icon_0d1e7674e789c96ed0f69001db926bab);
+        
+    
+        var popup_dc2400d3785a2a782e043aec455283e4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c63f25b215a73dc609cae4b54e323f7 = $(`<div id="html_1c63f25b215a73dc609cae4b54e323f7" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80124.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4095</div>`)[0];
+                popup_dc2400d3785a2a782e043aec455283e4.setContent(html_1c63f25b215a73dc609cae4b54e323f7);
+            
+        
+
+        marker_1345c86c2446d653daea921309ce4440.bindPopup(popup_dc2400d3785a2a782e043aec455283e4)
+        ;
+
+        
+    
+    
+            var marker_86b1eff2beab0652c0e7e1356b3fa3a1 = L.marker(
+                [39.5038546, -105.0733028],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_67314c94aef884f9c690725dcd697b0c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_86b1eff2beab0652c0e7e1356b3fa3a1.setIcon(icon_67314c94aef884f9c690725dcd697b0c);
+        
+    
+        var popup_8cb591f4660bfecd6172fa1c5667a1d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3e2d2a89dbece84fef812e8be847340f = $(`<div id="html_3e2d2a89dbece84fef812e8be847340f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80125.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 176</div>`)[0];
+                popup_8cb591f4660bfecd6172fa1c5667a1d8.setContent(html_3e2d2a89dbece84fef812e8be847340f);
+            
+        
+
+        marker_86b1eff2beab0652c0e7e1356b3fa3a1.bindPopup(popup_8cb591f4660bfecd6172fa1c5667a1d8)
+        ;
+
+        
+    
+    
+            var marker_58dce2284aac0e1e683d0551cac2930c = L.marker(
+                [39.552392907178834, -104.94253888449987],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_3551eac6ac7f4e5830c2de867ecd6138 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_58dce2284aac0e1e683d0551cac2930c.setIcon(icon_3551eac6ac7f4e5830c2de867ecd6138);
+        
+    
+        var popup_f26af0e6ace7065521384363ed2e3fab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aba433e1baba0ea0d0830b0062b5ddfe = $(`<div id="html_aba433e1baba0ea0d0830b0062b5ddfe" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80126.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 10098</div>`)[0];
+                popup_f26af0e6ace7065521384363ed2e3fab.setContent(html_aba433e1baba0ea0d0830b0062b5ddfe);
+            
+        
+
+        marker_58dce2284aac0e1e683d0551cac2930c.bindPopup(popup_f26af0e6ace7065521384363ed2e3fab)
+        ;
+
+        
+    
+    
+            var marker_a1fd55424bf99f690479339e33a9b59c = L.marker(
+                [39.593875201242234, -105.1247759470497],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ef0def112f6d0f9435639a43fd7a19dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a1fd55424bf99f690479339e33a9b59c.setIcon(icon_ef0def112f6d0f9435639a43fd7a19dc);
+        
+    
+        var popup_25f6d754d34f4ab2e89f50321dfce41f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5f3f25ad3f2298a850a27e4409556e3 = $(`<div id="html_e5f3f25ad3f2298a850a27e4409556e3" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80127.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5454</div>`)[0];
+                popup_25f6d754d34f4ab2e89f50321dfce41f.setContent(html_e5f3f25ad3f2298a850a27e4409556e3);
+            
+        
+
+        marker_a1fd55424bf99f690479339e33a9b59c.bindPopup(popup_25f6d754d34f4ab2e89f50321dfce41f)
+        ;
+
+        
+    
+    
+            var marker_5f8eae64a3690b583139b1399410f9ff = L.marker(
+                [39.587811857803466, -105.06552699017341],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_75fc23fc4c1a0f145e45ec76eb42961c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5f8eae64a3690b583139b1399410f9ff.setIcon(icon_75fc23fc4c1a0f145e45ec76eb42961c);
+        
+    
+        var popup_6c7b76f88a7940aa3305cfe896e1767c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29134c4e86b6fdd467773db939f30f34 = $(`<div id="html_29134c4e86b6fdd467773db939f30f34" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80128.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2124</div>`)[0];
+                popup_6c7b76f88a7940aa3305cfe896e1767c.setContent(html_29134c4e86b6fdd467773db939f30f34);
+            
+        
+
+        marker_5f8eae64a3690b583139b1399410f9ff.bindPopup(popup_6c7b76f88a7940aa3305cfe896e1767c)
+        ;
+
+        
+    
+    
+            var marker_0aced2a8fe851b4339b121baf3f8bd32 = L.marker(
+                [39.54033350668486, -104.99581990891286],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_02ea4ebb801e7ea57e38da84a9cff193 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0aced2a8fe851b4339b121baf3f8bd32.setIcon(icon_02ea4ebb801e7ea57e38da84a9cff193);
+        
+    
+        var popup_a1f7adc3b79947373634b488213d8916 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84f61b769216b010ca36beea09414d04 = $(`<div id="html_84f61b769216b010ca36beea09414d04" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80129.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 7016</div>`)[0];
+                popup_a1f7adc3b79947373634b488213d8916.setContent(html_84f61b769216b010ca36beea09414d04);
+            
+        
+
+        marker_0aced2a8fe851b4339b121baf3f8bd32.bindPopup(popup_a1f7adc3b79947373634b488213d8916)
+        ;
+
+        
+    
+    
+            var marker_d012be0d82c574c1721371cd7d916140 = L.marker(
+                [39.55259466543779, -104.91127060691245],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_d28b39529c6c5fb3baabc0e097316614 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d012be0d82c574c1721371cd7d916140.setIcon(icon_d28b39529c6c5fb3baabc0e097316614);
+        
+    
+        var popup_327f38e1d86ba19cbf6c4fb96dbb3187 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4abedc200c5981e2e953342f9146a79f = $(`<div id="html_4abedc200c5981e2e953342f9146a79f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80130.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3484</div>`)[0];
+                popup_327f38e1d86ba19cbf6c4fb96dbb3187.setContent(html_4abedc200c5981e2e953342f9146a79f);
+            
+        
+
+        marker_d012be0d82c574c1721371cd7d916140.bindPopup(popup_327f38e1d86ba19cbf6c4fb96dbb3187)
+        ;
+
+        
+    
+    
+            var marker_d1a5eb0f3d6cc904ff0922cd90f0cf18 = L.marker(
+                [39.07793399028986, -104.85298463666668],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_45c56077e18d65bf91d9080182a7ff15 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d1a5eb0f3d6cc904ff0922cd90f0cf18.setIcon(icon_45c56077e18d65bf91d9080182a7ff15);
+        
+    
+        var popup_b6c8fd66e4a74301c49c4de1829ff159 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d3ed02be6b340613aa7a68258010cbd = $(`<div id="html_9d3ed02be6b340613aa7a68258010cbd" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80132.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 7633</div>`)[0];
+                popup_b6c8fd66e4a74301c49c4de1829ff159.setContent(html_9d3ed02be6b340613aa7a68258010cbd);
+            
+        
+
+        marker_d1a5eb0f3d6cc904ff0922cd90f0cf18.bindPopup(popup_b6c8fd66e4a74301c49c4de1829ff159)
+        ;
+
+        
+    
+    
+            var marker_21c86d6ddd40753231a87fb673cb2120 = L.marker(
+                [39.522797768830614, -104.77248474211285],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_c7342b3d982b984dab108aaeb72e230b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_21c86d6ddd40753231a87fb673cb2120.setIcon(icon_c7342b3d982b984dab108aaeb72e230b);
+        
+    
+        var popup_342d2944240ebc20cf2e01139e2fde93 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9e67915ab8efb752405f9030f9dc3e48 = $(`<div id="html_9e67915ab8efb752405f9030f9dc3e48" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80134.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 12310</div>`)[0];
+                popup_342d2944240ebc20cf2e01139e2fde93.setContent(html_9e67915ab8efb752405f9030f9dc3e48);
+            
+        
+
+        marker_21c86d6ddd40753231a87fb673cb2120.bindPopup(popup_342d2944240ebc20cf2e01139e2fde93)
+        ;
+
+        
+    
+    
+            var marker_8a8a86b3168d1b661484b59999f17815 = L.marker(
+                [39.755719048554916, -105.00057851965319],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7b561e360f969dc060548119a0fd7c8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8a8a86b3168d1b661484b59999f17815.setIcon(icon_7b561e360f969dc060548119a0fd7c8b);
+        
+    
+        var popup_54424f9513ab8dfd27f2b64518bf5bf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02a1dc0b52768e379b4d84b576b4c7a8 = $(`<div id="html_02a1dc0b52768e379b4d84b576b4c7a8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80202.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5734</div>`)[0];
+                popup_54424f9513ab8dfd27f2b64518bf5bf1.setContent(html_02a1dc0b52768e379b4d84b576b4c7a8);
+            
+        
+
+        marker_8a8a86b3168d1b661484b59999f17815.bindPopup(popup_54424f9513ab8dfd27f2b64518bf5bf1)
+        ;
+
+        
+    
+    
+            var marker_99efb7cca1daee1facbc586922585227 = L.marker(
+                [39.73930785, -104.97908618827748],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7cdcb8bdbeab5ea8ee58fdb2ffcc6531 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_99efb7cca1daee1facbc586922585227.setIcon(icon_7cdcb8bdbeab5ea8ee58fdb2ffcc6531);
+        
+    
+        var popup_229d5c2a4202d9c638a7598d3ceca5d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef6976bfeebb6a8f1ab795aafbc2bc5b = $(`<div id="html_ef6976bfeebb6a8f1ab795aafbc2bc5b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80203.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1056</div>`)[0];
+                popup_229d5c2a4202d9c638a7598d3ceca5d3.setContent(html_ef6976bfeebb6a8f1ab795aafbc2bc5b);
+            
+        
+
+        marker_99efb7cca1daee1facbc586922585227.bindPopup(popup_229d5c2a4202d9c638a7598d3ceca5d3)
+        ;
+
+        
+    
+    
+            var marker_581ffced3d4662d3ae13748ad276a66f = L.marker(
+                [39.7476384, -104.97721889999998],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2f79311c981d748e60bc50a511db370c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_581ffced3d4662d3ae13748ad276a66f.setIcon(icon_2f79311c981d748e60bc50a511db370c);
+        
+    
+        var popup_860cc2d9b33492396d0d4b45e6a38b4d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_45de01b032e3b2f5599236c2dfc702b4 = $(`<div id="html_45de01b032e3b2f5599236c2dfc702b4" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80205.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1230</div>`)[0];
+                popup_860cc2d9b33492396d0d4b45e6a38b4d.setContent(html_45de01b032e3b2f5599236c2dfc702b4);
+            
+        
+
+        marker_581ffced3d4662d3ae13748ad276a66f.bindPopup(popup_860cc2d9b33492396d0d4b45e6a38b4d)
+        ;
+
+        
+    
+    
+            var marker_e683eb6a3abb2fbf2013a44bd3856a23 = L.marker(
+                [39.725803082300885, -104.95340931127994],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7aa595e9a195c10ee7780415ee9fc127 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e683eb6a3abb2fbf2013a44bd3856a23.setIcon(icon_7aa595e9a195c10ee7780415ee9fc127);
+        
+    
+        var popup_3fcc10e715c5a068e1fa4611b41ba445 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_13742725d0832e5bd1448d1168cc9480 = $(`<div id="html_13742725d0832e5bd1448d1168cc9480" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80206.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 10044</div>`)[0];
+                popup_3fcc10e715c5a068e1fa4611b41ba445.setContent(html_13742725d0832e5bd1448d1168cc9480);
+            
+        
+
+        marker_e683eb6a3abb2fbf2013a44bd3856a23.bindPopup(popup_3fcc10e715c5a068e1fa4611b41ba445)
+        ;
+
+        
+    
+    
+            var marker_6deaa53a0ec323bc8e0e4f8476cdf453 = L.marker(
+                [39.70415535782608, -104.98690277117177],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_74306037efa23856dc274e6847216370 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_6deaa53a0ec323bc8e0e4f8476cdf453.setIcon(icon_74306037efa23856dc274e6847216370);
+        
+    
+        var popup_9d9fa5845bc512b70b72d6b7c4c17b65 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19819860c04010adb85853d9902294ad = $(`<div id="html_19819860c04010adb85853d9902294ad" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80209.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4856</div>`)[0];
+                popup_9d9fa5845bc512b70b72d6b7c4c17b65.setContent(html_19819860c04010adb85853d9902294ad);
+            
+        
+
+        marker_6deaa53a0ec323bc8e0e4f8476cdf453.bindPopup(popup_9d9fa5845bc512b70b72d6b7c4c17b65)
+        ;
+
+        
+    
+    
+            var marker_9d51b05f91fffaf8ed07302a2146eeeb = L.marker(
+                [39.689386652034884, -104.97708920822754],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_3b663a386fba9b5a9778157944556374 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9d51b05f91fffaf8ed07302a2146eeeb.setIcon(icon_3b663a386fba9b5a9778157944556374);
+        
+    
+        var popup_cf2449aab9575034e50bf99e2e5092af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79304e21e060a38c0315f107f855e683 = $(`<div id="html_79304e21e060a38c0315f107f855e683" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80210.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6269</div>`)[0];
+                popup_cf2449aab9575034e50bf99e2e5092af.setContent(html_79304e21e060a38c0315f107f855e683);
+            
+        
+
+        marker_9d51b05f91fffaf8ed07302a2146eeeb.bindPopup(popup_cf2449aab9575034e50bf99e2e5092af)
+        ;
+
+        
+    
+    
+            var marker_2058aa7ef9988e557713d7d6fd437b48 = L.marker(
+                [39.7760152, -105.0366718],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_90e5f81610ce26fdc08eeee6e93030bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2058aa7ef9988e557713d7d6fd437b48.setIcon(icon_90e5f81610ce26fdc08eeee6e93030bf);
+        
+    
+        var popup_1e6ea9d6a43e1a6c26207f2f98aa6916 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_655534dfcb2e2ca956beb372bcb7441d = $(`<div id="html_655534dfcb2e2ca956beb372bcb7441d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80211.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1308</div>`)[0];
+                popup_1e6ea9d6a43e1a6c26207f2f98aa6916.setContent(html_655534dfcb2e2ca956beb372bcb7441d);
+            
+        
+
+        marker_2058aa7ef9988e557713d7d6fd437b48.bindPopup(popup_1e6ea9d6a43e1a6c26207f2f98aa6916)
+        ;
+
+        
+    
+    
+            var marker_b9eef766178b1c68712a0edd4e76a1de = L.marker(
+                [39.77242294145161, -105.04903910724343],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ef726e39673f542f82b15343a03e3b8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b9eef766178b1c68712a0edd4e76a1de.setIcon(icon_ef726e39673f542f82b15343a03e3b8b);
+        
+    
+        var popup_903906cd0e72c2131667d5f0ae94aa5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4b083ea61cc7e244c9a5389c75de444 = $(`<div id="html_a4b083ea61cc7e244c9a5389c75de444" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80212.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1621</div>`)[0];
+                popup_903906cd0e72c2131667d5f0ae94aa5b.setContent(html_a4b083ea61cc7e244c9a5389c75de444);
+            
+        
+
+        marker_b9eef766178b1c68712a0edd4e76a1de.bindPopup(popup_903906cd0e72c2131667d5f0ae94aa5b)
+        ;
+
+        
+    
+    
+            var marker_d1d00ba206fb7c58e55894a7873d16ec = L.marker(
+                [39.74807450542264, -105.0744525826557],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_218b565c52fa7f83bf04e5f8ad2ce180 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d1d00ba206fb7c58e55894a7873d16ec.setIcon(icon_218b565c52fa7f83bf04e5f8ad2ce180);
+        
+    
+        var popup_d21aa772943649166e34de2a642ca771 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6497d8b2b46b0bc6abfe8f063be273cb = $(`<div id="html_6497d8b2b46b0bc6abfe8f063be273cb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80214.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3988</div>`)[0];
+                popup_d21aa772943649166e34de2a642ca771.setContent(html_6497d8b2b46b0bc6abfe8f063be273cb);
+            
+        
+
+        marker_d1d00ba206fb7c58e55894a7873d16ec.bindPopup(popup_d21aa772943649166e34de2a642ca771)
+        ;
+
+        
+    
+    
+            var marker_1998212e13aac7215c7e9ab44149dc94 = L.marker(
+                [39.75041663525773, -105.12314594020619],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_4616d9bd3ed1ddc898a7c6c64bac151c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1998212e13aac7215c7e9ab44149dc94.setIcon(icon_4616d9bd3ed1ddc898a7c6c64bac151c);
+        
+    
+        var popup_69704798290b78e9ebe902826c032ae1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8fefdecac95aa9d46a4570eee133736c = $(`<div id="html_8fefdecac95aa9d46a4570eee133736c" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80215.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2393</div>`)[0];
+                popup_69704798290b78e9ebe902826c032ae1.setContent(html_8fefdecac95aa9d46a4570eee133736c);
+            
+        
+
+        marker_1998212e13aac7215c7e9ab44149dc94.bindPopup(popup_69704798290b78e9ebe902826c032ae1)
+        ;
+
+        
+    
+    
+            var marker_1ff5f7d43462a80c1c5a31e9a63aa34d = L.marker(
+                [39.7835086, -104.9787999],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_53c8b32d3f09734cd1410f8d224c78d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1ff5f7d43462a80c1c5a31e9a63aa34d.setIcon(icon_53c8b32d3f09734cd1410f8d224c78d5);
+        
+    
+        var popup_b08920c15c0a9ff3a496892b02eedd8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c05bacf9d7603b6f82963ccdcfe2c1e = $(`<div id="html_7c05bacf9d7603b6f82963ccdcfe2c1e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80216.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 616</div>`)[0];
+                popup_b08920c15c0a9ff3a496892b02eedd8c.setContent(html_7c05bacf9d7603b6f82963ccdcfe2c1e);
+            
+        
+
+        marker_1ff5f7d43462a80c1c5a31e9a63aa34d.bindPopup(popup_b08920c15c0a9ff3a496892b02eedd8c)
+        ;
+
+        
+    
+    
+            var marker_65f738679770bb6f416a7bc9ae10fba1 = L.marker(
+                [39.73004709118774, -104.97390878275735],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_9a5c04a319782d079dbff1d71e979db9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_65f738679770bb6f416a7bc9ae10fba1.setIcon(icon_9a5c04a319782d079dbff1d71e979db9);
+        
+    
+        var popup_9d368799969f4fc00f8c67367b81b329 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab36e39235ecc1a2ce55f1ca977e0194 = $(`<div id="html_ab36e39235ecc1a2ce55f1ca977e0194" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80218.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5178</div>`)[0];
+                popup_9d368799969f4fc00f8c67367b81b329.setContent(html_ab36e39235ecc1a2ce55f1ca977e0194);
+            
+        
+
+        marker_65f738679770bb6f416a7bc9ae10fba1.bindPopup(popup_9d368799969f4fc00f8c67367b81b329)
+        ;
+
+        
+    
+    
+            var marker_7e7fa1c01aaed95e0be8456f19fa365d = L.marker(
+                [39.6822197, -105.0391993],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_59c2fe828a37aaf0cef641c88e7bf219 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7e7fa1c01aaed95e0be8456f19fa365d.setIcon(icon_59c2fe828a37aaf0cef641c88e7bf219);
+        
+    
+        var popup_c5cca246e6758b1c0f9640cd47701dc5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60a9a3c0dd5cba0880b35c7917f92ae4 = $(`<div id="html_60a9a3c0dd5cba0880b35c7917f92ae4" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80219.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 632</div>`)[0];
+                popup_c5cca246e6758b1c0f9640cd47701dc5.setContent(html_60a9a3c0dd5cba0880b35c7917f92ae4);
+            
+        
+
+        marker_7e7fa1c01aaed95e0be8456f19fa365d.bindPopup(popup_c5cca246e6758b1c0f9640cd47701dc5)
+        ;
+
+        
+    
+    
+            var marker_4a6e1ce4b48ade2125be6fce17fd241a = L.marker(
+                [39.73743532876344, -104.91673726863552],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7f30cb111cb671a49d767d7598487785 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4a6e1ce4b48ade2125be6fce17fd241a.setIcon(icon_7f30cb111cb671a49d767d7598487785);
+        
+    
+        var popup_d7cfea0f6322095c0c684af66780e9af = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5a26878c12333178a05f2c47c140a7e = $(`<div id="html_a5a26878c12333178a05f2c47c140a7e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80220.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1717</div>`)[0];
+                popup_d7cfea0f6322095c0c684af66780e9af.setContent(html_a5a26878c12333178a05f2c47c140a7e);
+            
+        
+
+        marker_4a6e1ce4b48ade2125be6fce17fd241a.bindPopup(popup_d7cfea0f6322095c0c684af66780e9af)
+        ;
+
+        
+    
+    
+            var marker_db16f6b62e1407c4d5fbbaf2d5323d75 = L.marker(
+                [39.66321816611941, -104.92809523286799],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_32aa059b994220507b296ea7cdbed9f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_db16f6b62e1407c4d5fbbaf2d5323d75.setIcon(icon_32aa059b994220507b296ea7cdbed9f7);
+        
+    
+        var popup_5ad06a4efe206141a814dcc5abe933e9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_096cb8ea5095099c03d77c80bbb10134 = $(`<div id="html_096cb8ea5095099c03d77c80bbb10134" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80222.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4241</div>`)[0];
+                popup_5ad06a4efe206141a814dcc5abe933e9.setContent(html_096cb8ea5095099c03d77c80bbb10134);
+            
+        
+
+        marker_db16f6b62e1407c4d5fbbaf2d5323d75.bindPopup(popup_5ad06a4efe206141a814dcc5abe933e9)
+        ;
+
+        
+    
+    
+            var marker_62d3a8373cec935ad6a91f4853ef92c4 = L.marker(
+                [39.7112606, -104.9998165],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a3fc0c924e1a266cc423cffedf822dbc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_62d3a8373cec935ad6a91f4853ef92c4.setIcon(icon_a3fc0c924e1a266cc423cffedf822dbc);
+        
+    
+        var popup_1457f1f2d05b28969767d9c5265bff3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8b67bcb2fa3e0800f72f09ca3a85078 = $(`<div id="html_e8b67bcb2fa3e0800f72f09ca3a85078" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80223.0<br><strong>Most Sold SKU:</strong> GF SOURDOUGH<br><strong>Gross Units:</strong> 456</div>`)[0];
+                popup_1457f1f2d05b28969767d9c5265bff3d.setContent(html_e8b67bcb2fa3e0800f72f09ca3a85078);
+            
+        
+
+        marker_62d3a8373cec935ad6a91f4853ef92c4.bindPopup(popup_1457f1f2d05b28969767d9c5265bff3d)
+        ;
+
+        
+    
+    
+            var marker_184a5cf48dec3dde1a9188be3f82ea4f = L.marker(
+                [39.7010741, -104.911365],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_b06865e22f6d42ed57ab564ae0e0ec24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_184a5cf48dec3dde1a9188be3f82ea4f.setIcon(icon_b06865e22f6d42ed57ab564ae0e0ec24);
+        
+    
+        var popup_5b90e57c0c3ebbe5e0e69960687317f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2bd5566632f0e35ca7904106b4f2b8c2 = $(`<div id="html_2bd5566632f0e35ca7904106b4f2b8c2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80224.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 823</div>`)[0];
+                popup_5b90e57c0c3ebbe5e0e69960687317f7.setContent(html_2bd5566632f0e35ca7904106b4f2b8c2);
+            
+        
+
+        marker_184a5cf48dec3dde1a9188be3f82ea4f.bindPopup(popup_5b90e57c0c3ebbe5e0e69960687317f7)
+        ;
+
+        
+    
+    
+            var marker_879f41510a291e62384070a474eab980 = L.marker(
+                [39.7131424997076, -105.08104778508572],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_05c306e854bc5059ea2d87dd2718e80b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_879f41510a291e62384070a474eab980.setIcon(icon_05c306e854bc5059ea2d87dd2718e80b);
+        
+    
+        var popup_1a2a33eaefb96924bf0796641bad8269 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a433149f95fa2cf984ecd9fd0573fa2 = $(`<div id="html_4a433149f95fa2cf984ecd9fd0573fa2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80226.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6830</div>`)[0];
+                popup_1a2a33eaefb96924bf0796641bad8269.setContent(html_4a433149f95fa2cf984ecd9fd0573fa2);
+            
+        
+
+        marker_879f41510a291e62384070a474eab980.bindPopup(popup_1a2a33eaefb96924bf0796641bad8269)
+        ;
+
+        
+    
+    
+            var marker_f9e7da0fb9a16bcfce1cfb4e02343f6a = L.marker(
+                [39.6546824, -105.0512763],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a91af7e486a6b7e6b67031452e09769b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f9e7da0fb9a16bcfce1cfb4e02343f6a.setIcon(icon_a91af7e486a6b7e6b67031452e09769b);
+        
+    
+        var popup_81de99acb400898ce70239403ef89571 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3ed18a2ae3d61f5371629dac923c6af = $(`<div id="html_e3ed18a2ae3d61f5371629dac923c6af" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80227.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1438</div>`)[0];
+                popup_81de99acb400898ce70239403ef89571.setContent(html_e3ed18a2ae3d61f5371629dac923c6af);
+            
+        
+
+        marker_f9e7da0fb9a16bcfce1cfb4e02343f6a.bindPopup(popup_81de99acb400898ce70239403ef89571)
+        ;
+
+        
+    
+    
+            var marker_cee2d1ca210b64b944558e17267910cc = L.marker(
+                [39.70365624334764, -105.13974704394005],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ba8487c6a7d6db61780a6b621e9895a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cee2d1ca210b64b944558e17267910cc.setIcon(icon_ba8487c6a7d6db61780a6b621e9895a3);
+        
+    
+        var popup_ee9dae1f8cf22a37059685bb23495ff2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb00abe5e4c72c68888a25fcc72871b3 = $(`<div id="html_cb00abe5e4c72c68888a25fcc72871b3" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80228.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3799</div>`)[0];
+                popup_ee9dae1f8cf22a37059685bb23495ff2.setContent(html_cb00abe5e4c72c68888a25fcc72871b3);
+            
+        
+
+        marker_cee2d1ca210b64b944558e17267910cc.bindPopup(popup_ee9dae1f8cf22a37059685bb23495ff2)
+        ;
+
+        
+    
+    
+            var marker_8c4bed0b307eb797593ff67b1b81a1ad = L.marker(
+                [39.85515300757576, -104.98352265151514],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_c1632ba15b3d63f740e9153196aaa847 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8c4bed0b307eb797593ff67b1b81a1ad.setIcon(icon_c1632ba15b3d63f740e9153196aaa847);
+        
+    
+        var popup_609e865e67518b2c6a8809e8df583081 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c174cfd14204b743bfd6d8c61c091842 = $(`<div id="html_c174cfd14204b743bfd6d8c61c091842" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80229.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 575</div>`)[0];
+                popup_609e865e67518b2c6a8809e8df583081.setContent(html_c174cfd14204b743bfd6d8c61c091842);
+            
+        
+
+        marker_8c4bed0b307eb797593ff67b1b81a1ad.bindPopup(popup_609e865e67518b2c6a8809e8df583081)
+        ;
+
+        
+    
+    
+            var marker_ee1e271296444e004ad1f5395c733729 = L.marker(
+                [39.7169518, -104.9063788],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ac410b233e9123b38ea55dab614d1a76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ee1e271296444e004ad1f5395c733729.setIcon(icon_ac410b233e9123b38ea55dab614d1a76);
+        
+    
+        var popup_cf4a30e8641df9ace7cb52249f2874a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64526c9071da3f29ba06534c05e8c001 = $(`<div id="html_64526c9071da3f29ba06534c05e8c001" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80230.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 894</div>`)[0];
+                popup_cf4a30e8641df9ace7cb52249f2874a3.setContent(html_64526c9071da3f29ba06534c05e8c001);
+            
+        
+
+        marker_ee1e271296444e004ad1f5395c733729.bindPopup(popup_cf4a30e8641df9ace7cb52249f2874a3)
+        ;
+
+        
+    
+    
+            var marker_406f01f439dec76d5a88c159605aa746 = L.marker(
+                [39.691449379761906, -105.10077714285714],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_137c1cebebd84b52e124804343e465ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_406f01f439dec76d5a88c159605aa746.setIcon(icon_137c1cebebd84b52e124804343e465ee);
+        
+    
+        var popup_1462bed534c3003e816bdc50d0b85595 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_78ce6fc37ecec16cb05d8c8231cb9bc6 = $(`<div id="html_78ce6fc37ecec16cb05d8c8231cb9bc6" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80232.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1849</div>`)[0];
+                popup_1462bed534c3003e816bdc50d0b85595.setContent(html_78ce6fc37ecec16cb05d8c8231cb9bc6);
+            
+        
+
+        marker_406f01f439dec76d5a88c159605aa746.bindPopup(popup_1462bed534c3003e816bdc50d0b85595)
+        ;
+
+        
+    
+    
+            var marker_c92ca8d7dcfb8f44c68a261db479c0b0 = L.marker(
+                [39.90031545322384, -104.96944016045313],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a04a2db964d57fe48827792638f9fc78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c92ca8d7dcfb8f44c68a261db479c0b0.setIcon(icon_a04a2db964d57fe48827792638f9fc78);
+        
+    
+        var popup_ba2d3f4a6baebdfc14b894493fc6b199 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f8b79c7d69547ee7718843c4e81856d = $(`<div id="html_6f8b79c7d69547ee7718843c4e81856d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80233.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3557</div>`)[0];
+                popup_ba2d3f4a6baebdfc14b894493fc6b199.setContent(html_6f8b79c7d69547ee7718843c4e81856d);
+            
+        
+
+        marker_c92ca8d7dcfb8f44c68a261db479c0b0.bindPopup(popup_ba2d3f4a6baebdfc14b894493fc6b199)
+        ;
+
+        
+    
+    
+            var marker_9398f5d962e07579d4f8049bcfa08750 = L.marker(
+                [39.9404108, -104.99061487008828],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_db9d81e749c45aa7699b76746deb37b5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9398f5d962e07579d4f8049bcfa08750.setIcon(icon_db9d81e749c45aa7699b76746deb37b5);
+        
+    
+        var popup_b2e9b7354ffe90a208e61a2bb571eeeb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2dbd7a0c07e682d688fb7371fbf364d6 = $(`<div id="html_2dbd7a0c07e682d688fb7371fbf364d6" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80234.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1043</div>`)[0];
+                popup_b2e9b7354ffe90a208e61a2bb571eeeb.setContent(html_2dbd7a0c07e682d688fb7371fbf364d6);
+            
+        
+
+        marker_9398f5d962e07579d4f8049bcfa08750.bindPopup(popup_b2e9b7354ffe90a208e61a2bb571eeeb)
+        ;
+
+        
+    
+    
+            var marker_fa0ac2d882ccdea9eee5cf0d4737ffec = L.marker(
+                [39.6366908, -105.08654292580904],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_618876d7e29614c205bc9b9bae634964 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fa0ac2d882ccdea9eee5cf0d4737ffec.setIcon(icon_618876d7e29614c205bc9b9bae634964);
+        
+    
+        var popup_48d2844526c4297e03f55dbdcb94e184 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73a706bbba3c7c7aac238b76ad4606bc = $(`<div id="html_73a706bbba3c7c7aac238b76ad4606bc" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80235.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 16850</div>`)[0];
+                popup_48d2844526c4297e03f55dbdcb94e184.setContent(html_73a706bbba3c7c7aac238b76ad4606bc);
+            
+        
+
+        marker_fa0ac2d882ccdea9eee5cf0d4737ffec.bindPopup(popup_48d2844526c4297e03f55dbdcb94e184)
+        ;
+
+        
+    
+    
+            var marker_66335513825d6278103a3181244bc2cd = L.marker(
+                [39.6522552, -104.9017769],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_93b02443a93aebec9dde4a55654f7962 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_66335513825d6278103a3181244bc2cd.setIcon(icon_93b02443a93aebec9dde4a55654f7962);
+        
+    
+        var popup_47cad57ab8313321c77fef597b32eac2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb9c7dcd0fc50132edfc2d2685e9ba64 = $(`<div id="html_eb9c7dcd0fc50132edfc2d2685e9ba64" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80237.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6302</div>`)[0];
+                popup_47cad57ab8313321c77fef597b32eac2.setContent(html_eb9c7dcd0fc50132edfc2d2685e9ba64);
+            
+        
+
+        marker_66335513825d6278103a3181244bc2cd.bindPopup(popup_47cad57ab8313321c77fef597b32eac2)
+        ;
+
+        
+    
+    
+            var marker_9257ca5b509af6cd88bfb44739415a4c = L.marker(
+                [39.767409177215185, -104.88936423789417],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2833745a2441e54d65822f007fa4997f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9257ca5b509af6cd88bfb44739415a4c.setIcon(icon_2833745a2441e54d65822f007fa4997f);
+        
+    
+        var popup_19618c8aee8634e5760434589b8b3c3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3e285c8f7e3e6391c66b8a5f6d4b735 = $(`<div id="html_a3e285c8f7e3e6391c66b8a5f6d4b735" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80238.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3878</div>`)[0];
+                popup_19618c8aee8634e5760434589b8b3c3d.setContent(html_a3e285c8f7e3e6391c66b8a5f6d4b735);
+            
+        
+
+        marker_9257ca5b509af6cd88bfb44739415a4c.bindPopup(popup_19618c8aee8634e5760434589b8b3c3d)
+        ;
+
+        
+    
+    
+            var marker_0095e9e64dd3abf8982385ffe2261ce5 = L.marker(
+                [39.7853307, -104.7944861],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7443647f813ad7cdf33a33ce4d520f01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0095e9e64dd3abf8982385ffe2261ce5.setIcon(icon_7443647f813ad7cdf33a33ce4d520f01);
+        
+    
+        var popup_06341449be69e5ec5e68b5d3c49be225 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb2141ae206a17dd6b39990c8ef7261d = $(`<div id="html_bb2141ae206a17dd6b39990c8ef7261d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80239.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 8859</div>`)[0];
+                popup_06341449be69e5ec5e68b5d3c49be225.setContent(html_bb2141ae206a17dd6b39990c8ef7261d);
+            
+        
+
+        marker_0095e9e64dd3abf8982385ffe2261ce5.bindPopup(popup_06341449be69e5ec5e68b5d3c49be225)
+        ;
+
+        
+    
+    
+            var marker_51af4e6b4eb8285ef7c193878b06e1b7 = L.marker(
+                [39.936820191411044, -104.96048249938652],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a40e28860e2530a5c114494bcea986da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_51af4e6b4eb8285ef7c193878b06e1b7.setIcon(icon_a40e28860e2530a5c114494bcea986da);
+        
+    
+        var popup_6f15f3b666ac88a8c34a85321c023588 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57d2a37c60139553fe873df9f6fbb5fb = $(`<div id="html_57d2a37c60139553fe873df9f6fbb5fb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80241.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1590</div>`)[0];
+                popup_6f15f3b666ac88a8c34a85321c023588.setContent(html_57d2a37c60139553fe873df9f6fbb5fb);
+            
+        
+
+        marker_51af4e6b4eb8285ef7c193878b06e1b7.bindPopup(popup_6f15f3b666ac88a8c34a85321c023588)
+        ;
+
+        
+    
+    
+            var marker_ad3c0084cc96058f4c08e66e9156e5b4 = L.marker(
+                [39.704623589175974, -104.9376819645628],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7735f7a93de05e64ce48c3c0764e7959 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ad3c0084cc96058f4c08e66e9156e5b4.setIcon(icon_7735f7a93de05e64ce48c3c0764e7959);
+        
+    
+        var popup_be5d8b9dc558314d97a8443e3cc7f8b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dce83772d83ea543d23ca34f56ff0357 = $(`<div id="html_dce83772d83ea543d23ca34f56ff0357" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80246.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 10863</div>`)[0];
+                popup_be5d8b9dc558314d97a8443e3cc7f8b4.setContent(html_dce83772d83ea543d23ca34f56ff0357);
+            
+        
+
+        marker_ad3c0084cc96058f4c08e66e9156e5b4.bindPopup(popup_be5d8b9dc558314d97a8443e3cc7f8b4)
+        ;
+
+        
+    
+    
+            var marker_74c4d2ec39859588d266d8a3e16c74d8 = L.marker(
+                [39.794045795867774, -104.77148990412046],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_558dacbad131cbb1f2d309e7d0184798 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_74c4d2ec39859588d266d8a3e16c74d8.setIcon(icon_558dacbad131cbb1f2d309e7d0184798);
+        
+    
+        var popup_e1d477733b5c72be02a7178bef0316c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9076cf541194a2104eff9e7a58a6a4c2 = $(`<div id="html_9076cf541194a2104eff9e7a58a6a4c2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80249.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1562</div>`)[0];
+                popup_e1d477733b5c72be02a7178bef0316c3.setContent(html_9076cf541194a2104eff9e7a58a6a4c2);
+            
+        
+
+        marker_74c4d2ec39859588d266d8a3e16c74d8.bindPopup(popup_e1d477733b5c72be02a7178bef0316c3)
+        ;
+
+        
+    
+    
+            var marker_3ff8664f5d1b156d6d439fdf4108b063 = L.marker(
+                [39.883449239263804, -105.025219601227],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2ce03c875391bdf6687d6da6703dc762 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3ff8664f5d1b156d6d439fdf4108b063.setIcon(icon_2ce03c875391bdf6687d6da6703dc762);
+        
+    
+        var popup_2a84e7945c77f7aabb86849d275cbc9e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7a1065007bd2a63537d8a337686eab33 = $(`<div id="html_7a1065007bd2a63537d8a337686eab33" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80260.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1160</div>`)[0];
+                popup_2a84e7945c77f7aabb86849d275cbc9e.setContent(html_7a1065007bd2a63537d8a337686eab33);
+            
+        
+
+        marker_3ff8664f5d1b156d6d439fdf4108b063.bindPopup(popup_2a84e7945c77f7aabb86849d275cbc9e)
+        ;
+
+        
+    
+    
+            var marker_27c758f81dfc27305562f2f3a22a82b4 = L.marker(
+                [39.7400043, -104.99309299999999],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_0893ead4888ed667e640e4b915f33b4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_27c758f81dfc27305562f2f3a22a82b4.setIcon(icon_0893ead4888ed667e640e4b915f33b4d);
+        
+    
+        var popup_71eb211fab387c1eab106c3ec0a4307a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dcffae7ea2d2bc8904f76f07989681ca = $(`<div id="html_dcffae7ea2d2bc8904f76f07989681ca" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80293.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 654</div>`)[0];
+                popup_71eb211fab387c1eab106c3ec0a4307a.setContent(html_dcffae7ea2d2bc8904f76f07989681ca);
+            
+        
+
+        marker_27c758f81dfc27305562f2f3a22a82b4.bindPopup(popup_71eb211fab387c1eab106c3ec0a4307a)
+        ;
+
+        
+    
+    
+            var marker_170358ad2b8a90c946f2c6ddb270850c = L.marker(
+                [40.032201966765875, -105.24236520144652],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_fcf469cf7012283d238d7aa5562aab67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_170358ad2b8a90c946f2c6ddb270850c.setIcon(icon_fcf469cf7012283d238d7aa5562aab67);
+        
+    
+        var popup_e3457293bedbbfbdac5d640281528436 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b74c309654e83aad0d3a9548d28aaf2 = $(`<div id="html_2b74c309654e83aad0d3a9548d28aaf2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80301.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 14559</div>`)[0];
+                popup_e3457293bedbbfbdac5d640281528436.setContent(html_2b74c309654e83aad0d3a9548d28aaf2);
+            
+        
+
+        marker_170358ad2b8a90c946f2c6ddb270850c.bindPopup(popup_e3457293bedbbfbdac5d640281528436)
+        ;
+
+        
+    
+    
+            var marker_3e1e244cbebba4213d740d2fb9f154b2 = L.marker(
+                [39.999823593251534, -105.24416395352482],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_29193a80c1f606ed80ccaf4569733505 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_3e1e244cbebba4213d740d2fb9f154b2.setIcon(icon_29193a80c1f606ed80ccaf4569733505);
+        
+    
+        var popup_5353bb352c6d50b0390c4521c3bf664c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_831c70e87142c764aa4ded731d1a29c8 = $(`<div id="html_831c70e87142c764aa4ded731d1a29c8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80303.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1551</div>`)[0];
+                popup_5353bb352c6d50b0390c4521c3bf664c.setContent(html_831c70e87142c764aa4ded731d1a29c8);
+            
+        
+
+        marker_3e1e244cbebba4213d740d2fb9f154b2.bindPopup(popup_5353bb352c6d50b0390c4521c3bf664c)
+        ;
+
+        
+    
+    
+            var marker_e0365bc4c84d4be1f79fb65a7e7af349 = L.marker(
+                [40.03121051561338, -105.26924495424812],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_00801cac6da2175b08411a8957aef0b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e0365bc4c84d4be1f79fb65a7e7af349.setIcon(icon_00801cac6da2175b08411a8957aef0b3);
+        
+    
+        var popup_6ad813f65ac133027a04a606e8fde5f6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_226edfbc74b8598566b87399fdc91fb8 = $(`<div id="html_226edfbc74b8598566b87399fdc91fb8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80304.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6200</div>`)[0];
+                popup_6ad813f65ac133027a04a606e8fde5f6.setContent(html_226edfbc74b8598566b87399fdc91fb8);
+            
+        
+
+        marker_e0365bc4c84d4be1f79fb65a7e7af349.bindPopup(popup_6ad813f65ac133027a04a606e8fde5f6)
+        ;
+
+        
+    
+    
+            var marker_642b3006c99c4a5a037161ac662cbccb = L.marker(
+                [39.98327004931507, -105.25041419212619],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_e2574d80ed847102253b43cbb6a396da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_642b3006c99c4a5a037161ac662cbccb.setIcon(icon_e2574d80ed847102253b43cbb6a396da);
+        
+    
+        var popup_1baf424a300a1c24598b92e229ebbe8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92e4955b381ac94f1c3bd379ab17d767 = $(`<div id="html_92e4955b381ac94f1c3bd379ab17d767" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80305.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5998</div>`)[0];
+                popup_1baf424a300a1c24598b92e229ebbe8c.setContent(html_92e4955b381ac94f1c3bd379ab17d767);
+            
+        
+
+        marker_642b3006c99c4a5a037161ac662cbccb.bindPopup(popup_1baf424a300a1c24598b92e229ebbe8c)
+        ;
+
+        
+    
+    
+            var marker_09f6f9e9752ba7ba7156e5f61e3f4a65 = L.marker(
+                [40.0244843, -105.2541933],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2563a6518f967dd05d856893f1165f3e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_09f6f9e9752ba7ba7156e5f61e3f4a65.setIcon(icon_2563a6518f967dd05d856893f1165f3e);
+        
+    
+        var popup_793ead34df2d9c2efb0d82c06d405925 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3901a9274a472c90bcef86f6878b260 = $(`<div id="html_f3901a9274a472c90bcef86f6878b260" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80309.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3114</div>`)[0];
+                popup_793ead34df2d9c2efb0d82c06d405925.setContent(html_f3901a9274a472c90bcef86f6878b260);
+            
+        
+
+        marker_09f6f9e9752ba7ba7156e5f61e3f4a65.bindPopup(popup_793ead34df2d9c2efb0d82c06d405925)
+        ;
+
+        
+    
+    
+            var marker_27edcfd850df528b1ab55366f7e3f452 = L.marker(
+                [40.0136119, -105.2524643],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_dfc53a5784ab2ff67b06c635f80c74f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_27edcfd850df528b1ab55366f7e3f452.setIcon(icon_dfc53a5784ab2ff67b06c635f80c74f5);
+        
+    
+        var popup_a5fa458912e69832ea65bd71c4c2b530 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6f3a49c74c71dfeef44a255c63a76359 = $(`<div id="html_6f3a49c74c71dfeef44a255c63a76359" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80310.0<br><strong>Most Sold SKU:</strong> 100% BREAD WW<br><strong>Gross Units:</strong> 6879</div>`)[0];
+                popup_a5fa458912e69832ea65bd71c4c2b530.setContent(html_6f3a49c74c71dfeef44a255c63a76359);
+            
+        
+
+        marker_27edcfd850df528b1ab55366f7e3f452.bindPopup(popup_a5fa458912e69832ea65bd71c4c2b530)
+        ;
+
+        
+    
+    
+            var marker_7c4fb7fad02f289e9b1f6faafa13ae00 = L.marker(
+                [39.74247055175439, -105.19082478345433],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_320f83fb4c4ff094099ad7a1a55ffee8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_7c4fb7fad02f289e9b1f6faafa13ae00.setIcon(icon_320f83fb4c4ff094099ad7a1a55ffee8);
+        
+    
+        var popup_e567369ea40ac86504f132ef26b4246f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6b5516ef1a34027c3cddfd14e7c43bac = $(`<div id="html_6b5516ef1a34027c3cddfd14e7c43bac" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80401.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 8221</div>`)[0];
+                popup_e567369ea40ac86504f132ef26b4246f.setContent(html_6b5516ef1a34027c3cddfd14e7c43bac);
+            
+        
+
+        marker_7c4fb7fad02f289e9b1f6faafa13ae00.bindPopup(popup_e567369ea40ac86504f132ef26b4246f)
+        ;
+
+        
+    
+    
+            var marker_4d753902b2564a8ef346ac37c9258bce = L.marker(
+                [39.5273031, -105.30338904552113],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ab47cf2484f2843ad1e26080a145232c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4d753902b2564a8ef346ac37c9258bce.setIcon(icon_ab47cf2484f2843ad1e26080a145232c);
+        
+    
+        var popup_35f29f174859c110311809768a40eb37 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec71c06f2928a391ad31599aeb061931 = $(`<div id="html_ec71c06f2928a391ad31599aeb061931" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80433.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1257</div>`)[0];
+                popup_35f29f174859c110311809768a40eb37.setContent(html_ec71c06f2928a391ad31599aeb061931);
+            
+        
+
+        marker_4d753902b2564a8ef346ac37c9258bce.bindPopup(popup_35f29f174859c110311809768a40eb37)
+        ;
+
+        
+    
+    
+            var marker_58c2c4abe267d52d86160d6587f7e81c = L.marker(
+                [39.694093, -105.35674790000002],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_d83d563405ec682c870df7f537851fdb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_58c2c4abe267d52d86160d6587f7e81c.setIcon(icon_d83d563405ec682c870df7f537851fdb);
+        
+    
+        var popup_7b184e5e3c230bf79b74d3c95104bd43 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f52332863021a09a110b2ff4082effb4 = $(`<div id="html_f52332863021a09a110b2ff4082effb4" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80437.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1618</div>`)[0];
+                popup_7b184e5e3c230bf79b74d3c95104bd43.setContent(html_f52332863021a09a110b2ff4082effb4);
+            
+        
+
+        marker_58c2c4abe267d52d86160d6587f7e81c.bindPopup(popup_7b184e5e3c230bf79b74d3c95104bd43)
+        ;
+
+        
+    
+    
+            var marker_0039048e879ce2da0ac1416d18198729 = L.marker(
+                [39.69648517309237, -105.34562346024096],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_03322f4f269465af0b683312247d1e54 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0039048e879ce2da0ac1416d18198729.setIcon(icon_03322f4f269465af0b683312247d1e54);
+        
+    
+        var popup_f745ab1ce0cc26489f7b697366eac1f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5b4b22eeb3f6a3439ff2af259372337 = $(`<div id="html_a5b4b22eeb3f6a3439ff2af259372337" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80439.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3034</div>`)[0];
+                popup_f745ab1ce0cc26489f7b697366eac1f2.setContent(html_a5b4b22eeb3f6a3439ff2af259372337);
+            
+        
+
+        marker_0039048e879ce2da0ac1416d18198729.bindPopup(popup_f745ab1ce0cc26489f7b697366eac1f2)
+        ;
+
+        
+    
+    
+            var marker_07eb9e10cd61763bed39d0ce42f0461d = L.marker(
+                [39.5915421, -105.2218952],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_6d4ae750cb2a530759859beab0a6c89f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_07eb9e10cd61763bed39d0ce42f0461d.setIcon(icon_6d4ae750cb2a530759859beab0a6c89f);
+        
+    
+        var popup_6ec6ad3afb104af76bf3711c4681594c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_55097987abe17572776066d952ac73db = $(`<div id="html_55097987abe17572776066d952ac73db" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80454.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1216</div>`)[0];
+                popup_6ec6ad3afb104af76bf3711c4681594c.setContent(html_55097987abe17572776066d952ac73db);
+            
+        
+
+        marker_07eb9e10cd61763bed39d0ce42f0461d.bindPopup(popup_6ec6ad3afb104af76bf3711c4681594c)
+        ;
+
+        
+    
+    
+            var marker_151a818ddc0c15da5025f005062cac4a = L.marker(
+                [40.1509433, -105.087412],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_af7008d38834fda7d286955c5712310b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_151a818ddc0c15da5025f005062cac4a.setIcon(icon_af7008d38834fda7d286955c5712310b);
+        
+    
+        var popup_6b561122840f7c5d2f035138f796d46a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f42a40ffaba07b11c5f227bdeb397993 = $(`<div id="html_f42a40ffaba07b11c5f227bdeb397993" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80501.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 15596</div>`)[0];
+                popup_6b561122840f7c5d2f035138f796d46a.setContent(html_f42a40ffaba07b11c5f227bdeb397993);
+            
+        
+
+        marker_151a818ddc0c15da5025f005062cac4a.bindPopup(popup_6b561122840f7c5d2f035138f796d46a)
+        ;
+
+        
+    
+    
+            var marker_00f97012986fdee99925acdfab154099 = L.marker(
+                [40.13930069139535, -105.14019244204646],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_00c652a6adff115f530240479041ff28 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_00f97012986fdee99925acdfab154099.setIcon(icon_00c652a6adff115f530240479041ff28);
+        
+    
+        var popup_3c2447cbe5fa6a6572a146d1d4ab125a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b3d80bfb35273a86f1d2cd70502182e = $(`<div id="html_2b3d80bfb35273a86f1d2cd70502182e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80503.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 10206</div>`)[0];
+                popup_3c2447cbe5fa6a6572a146d1d4ab125a.setContent(html_2b3d80bfb35273a86f1d2cd70502182e);
+            
+        
+
+        marker_00f97012986fdee99925acdfab154099.bindPopup(popup_3c2447cbe5fa6a6572a146d1d4ab125a)
+        ;
+
+        
+    
+    
+            var marker_70fedf9d84e0ab78d0af16ba2cc5ab77 = L.marker(
+                [40.16913512231759, -105.01481391250856],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2256cd2af29d6cdd7578b1bd6957ab11 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_70fedf9d84e0ab78d0af16ba2cc5ab77.setIcon(icon_2256cd2af29d6cdd7578b1bd6957ab11);
+        
+    
+        var popup_d9d1584945c32797d96f7a7c5c982560 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d08fa60738965a0809e64e665fb2b464 = $(`<div id="html_d08fa60738965a0809e64e665fb2b464" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80504.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 4585</div>`)[0];
+                popup_d9d1584945c32797d96f7a7c5c982560.setContent(html_d08fa60738965a0809e64e665fb2b464);
+            
+        
+
+        marker_70fedf9d84e0ab78d0af16ba2cc5ab77.bindPopup(popup_d9d1584945c32797d96f7a7c5c982560)
+        ;
+
+        
+    
+    
+            var marker_d504e936096556a2d574205c0350a1df = L.marker(
+                [40.01693, -105.1012204],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_fd3d995f606c866ad70702570d76fd0e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d504e936096556a2d574205c0350a1df.setIcon(icon_fd3d995f606c866ad70702570d76fd0e);
+        
+    
+        var popup_591301dc6a73c152ffb0b27b1b183da5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76acfb884a47b874bf20dc705030eade = $(`<div id="html_76acfb884a47b874bf20dc705030eade" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80516.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 824</div>`)[0];
+                popup_591301dc6a73c152ffb0b27b1b183da5.setContent(html_76acfb884a47b874bf20dc705030eade);
+            
+        
+
+        marker_d504e936096556a2d574205c0350a1df.bindPopup(popup_591301dc6a73c152ffb0b27b1b183da5)
+        ;
+
+        
+    
+    
+            var marker_c9670f23703c52601f5154ddd7c01971 = L.marker(
+                [40.5729907, -105.1156931],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_1f27b94bbf940b1f6c7adedc6d02f256 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c9670f23703c52601f5154ddd7c01971.setIcon(icon_1f27b94bbf940b1f6c7adedc6d02f256);
+        
+    
+        var popup_7fa6388089787b333a9680710be5d079 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5af7467b0e8d259146c0c376ca642940 = $(`<div id="html_5af7467b0e8d259146c0c376ca642940" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80521.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1772</div>`)[0];
+                popup_7fa6388089787b333a9680710be5d079.setContent(html_5af7467b0e8d259146c0c376ca642940);
+            
+        
+
+        marker_c9670f23703c52601f5154ddd7c01971.bindPopup(popup_7fa6388089787b333a9680710be5d079)
+        ;
+
+        
+    
+    
+            var marker_a39d1b88e10b549b766be77bb70b7c16 = L.marker(
+                [40.52719279090909, -105.06836494545455],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_85caa9bf7be98f65598cd864f5cc0f71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_a39d1b88e10b549b766be77bb70b7c16.setIcon(icon_85caa9bf7be98f65598cd864f5cc0f71);
+        
+    
+        var popup_f68e9e742caee504027a2b13bf02d136 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_81295e8d8ccb6ca332f0f0110c1e6df5 = $(`<div id="html_81295e8d8ccb6ca332f0f0110c1e6df5" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80522.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2602</div>`)[0];
+                popup_f68e9e742caee504027a2b13bf02d136.setContent(html_81295e8d8ccb6ca332f0f0110c1e6df5);
+            
+        
+
+        marker_a39d1b88e10b549b766be77bb70b7c16.bindPopup(popup_f68e9e742caee504027a2b13bf02d136)
+        ;
+
+        
+    
+    
+            var marker_daa96dba07b3140d11e7ed3dff02a338 = L.marker(
+                [40.589679872407174, -105.07527047492545],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_5c39797126904179e1d20fc9902adef3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_daa96dba07b3140d11e7ed3dff02a338.setIcon(icon_5c39797126904179e1d20fc9902adef3);
+        
+    
+        var popup_5c560003e591bb72d9d10a74c3e2b865 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec6ee7c117b064eaf22d562b5e0f1028 = $(`<div id="html_ec6ee7c117b064eaf22d562b5e0f1028" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80523.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 7822</div>`)[0];
+                popup_5c560003e591bb72d9d10a74c3e2b865.setContent(html_ec6ee7c117b064eaf22d562b5e0f1028);
+            
+        
+
+        marker_daa96dba07b3140d11e7ed3dff02a338.bindPopup(popup_5c560003e591bb72d9d10a74c3e2b865)
+        ;
+
+        
+    
+    
+            var marker_24728da78309c543f07f1b7808184eea = L.marker(
+                [40.58173656487936, -105.06677741759354],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_8b9837a40305f91a59ae681bae856ae7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_24728da78309c543f07f1b7808184eea.setIcon(icon_8b9837a40305f91a59ae681bae856ae7);
+        
+    
+        var popup_ea9a2ca36cdc2b48bb0f5e433a8d6560 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad1a3af39d3b2780d09544c2467d1157 = $(`<div id="html_ad1a3af39d3b2780d09544c2467d1157" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80524.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5693</div>`)[0];
+                popup_ea9a2ca36cdc2b48bb0f5e433a8d6560.setContent(html_ad1a3af39d3b2780d09544c2467d1157);
+            
+        
+
+        marker_24728da78309c543f07f1b7808184eea.bindPopup(popup_ea9a2ca36cdc2b48bb0f5e433a8d6560)
+        ;
+
+        
+    
+    
+            var marker_c37dc97294e02223007d7ce2dd34741d = L.marker(
+                [40.548694685043266, -105.05279675710753],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ae2b40aa5da00f4c6d68c8a05cee20f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c37dc97294e02223007d7ce2dd34741d.setIcon(icon_ae2b40aa5da00f4c6d68c8a05cee20f5);
+        
+    
+        var popup_f1b1a16500de95a0de45d3b7fee64fc7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_841db5ff4d84913578b625ddc22a4511 = $(`<div id="html_841db5ff4d84913578b625ddc22a4511" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80525.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 10107</div>`)[0];
+                popup_f1b1a16500de95a0de45d3b7fee64fc7.setContent(html_841db5ff4d84913578b625ddc22a4511);
+            
+        
+
+        marker_c37dc97294e02223007d7ce2dd34741d.bindPopup(popup_f1b1a16500de95a0de45d3b7fee64fc7)
+        ;
+
+        
+    
+    
+            var marker_2a951a494a365262d38e866cb19eee79 = L.marker(
+                [40.5545144, -105.116478],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_5c445913526c483f79143fb33e3656e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2a951a494a365262d38e866cb19eee79.setIcon(icon_5c445913526c483f79143fb33e3656e3);
+        
+    
+        var popup_1c8ca3805e0b695f8e235063ae2460f3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01e709699c931f028dab2f356211b9c1 = $(`<div id="html_01e709699c931f028dab2f356211b9c1" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80526.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1416</div>`)[0];
+                popup_1c8ca3805e0b695f8e235063ae2460f3.setContent(html_01e709699c931f028dab2f356211b9c1);
+            
+        
+
+        marker_2a951a494a365262d38e866cb19eee79.bindPopup(popup_1c8ca3805e0b695f8e235063ae2460f3)
+        ;
+
+        
+    
+    
+            var marker_096fea1ac71509ee323d21f70489ccb6 = L.marker(
+                [40.5274324, -105.02165259999998],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_914010adef369ae5fab25612ee33caec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_096fea1ac71509ee323d21f70489ccb6.setIcon(icon_914010adef369ae5fab25612ee33caec);
+        
+    
+        var popup_3b3197b7924eec14f2f3a9228152417f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_029d0242c303609a0ecbd43eb7ef5b30 = $(`<div id="html_029d0242c303609a0ecbd43eb7ef5b30" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80528.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3114</div>`)[0];
+                popup_3b3197b7924eec14f2f3a9228152417f.setContent(html_029d0242c303609a0ecbd43eb7ef5b30);
+            
+        
+
+        marker_096fea1ac71509ee323d21f70489ccb6.bindPopup(popup_3b3197b7924eec14f2f3a9228152417f)
+        ;
+
+        
+    
+    
+            var marker_212e1fb1d8949d29536d6311c08667c3 = L.marker(
+                [40.076604, -104.9423248],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_93ac72d54a73aefce2f3253d712874e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_212e1fb1d8949d29536d6311c08667c3.setIcon(icon_93ac72d54a73aefce2f3253d712874e1);
+        
+    
+        var popup_b9e89ac5750b0c69ef6627469014b399 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8d6cace1f431360508fa4a7a40e00a8 = $(`<div id="html_c8d6cace1f431360508fa4a7a40e00a8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80530.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 568</div>`)[0];
+                popup_b9e89ac5750b0c69ef6627469014b399.setContent(html_c8d6cace1f431360508fa4a7a40e00a8);
+            
+        
+
+        marker_212e1fb1d8949d29536d6311c08667c3.bindPopup(popup_b9e89ac5750b0c69ef6627469014b399)
+        ;
+
+        
+    
+    
+            var marker_05966b0232fad366c707d32786151f46 = L.marker(
+                [40.334377, -104.908904],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_52bb91de54fd18340e74809ef6bbbb87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_05966b0232fad366c707d32786151f46.setIcon(icon_52bb91de54fd18340e74809ef6bbbb87);
+        
+    
+        var popup_cfeed46e709ffeffefbec4732ee7320c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46b152c47f39bfd56b22f573c485bf97 = $(`<div id="html_46b152c47f39bfd56b22f573c485bf97" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80534.0<br><strong>Most Sold SKU:</strong> 100% BREAD WW<br><strong>Gross Units:</strong> 0</div>`)[0];
+                popup_cfeed46e709ffeffefbec4732ee7320c.setContent(html_46b152c47f39bfd56b22f573c485bf97);
+            
+        
+
+        marker_05966b0232fad366c707d32786151f46.bindPopup(popup_cfeed46e709ffeffefbec4732ee7320c)
+        ;
+
+        
+    
+    
+            var marker_874cbad153779c4d83fa3bcb81f18066 = L.marker(
+                [40.402639303723404, -105.08971410127334],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ca1205d795ef95b602a02b4dae31ae18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_874cbad153779c4d83fa3bcb81f18066.setIcon(icon_ca1205d795ef95b602a02b4dae31ae18);
+        
+    
+        var popup_64fdf53dfeaa4c47f397203ed820fc40 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c6981cf3b04053a6d019471c22b5143f = $(`<div id="html_c6981cf3b04053a6d019471c22b5143f" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80537.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 6258</div>`)[0];
+                popup_64fdf53dfeaa4c47f397203ed820fc40.setContent(html_c6981cf3b04053a6d019471c22b5143f);
+            
+        
+
+        marker_874cbad153779c4d83fa3bcb81f18066.bindPopup(popup_64fdf53dfeaa4c47f397203ed820fc40)
+        ;
+
+        
+    
+    
+            var marker_0b361f8134ee793311b7cdbc21eaca2a = L.marker(
+                [40.5212478, -104.9883549],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_c7e5ff4f5d04828e70d8b7e2c6965331 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0b361f8134ee793311b7cdbc21eaca2a.setIcon(icon_c7e5ff4f5d04828e70d8b7e2c6965331);
+        
+    
+        var popup_5b7b31dd91c8de68cbd0575e2dffe068 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a04a1395bf73fd43dd1733369e64475 = $(`<div id="html_0a04a1395bf73fd43dd1733369e64475" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80547.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 28742</div>`)[0];
+                popup_5b7b31dd91c8de68cbd0575e2dffe068.setContent(html_0a04a1395bf73fd43dd1733369e64475);
+            
+        
+
+        marker_0b361f8134ee793311b7cdbc21eaca2a.bindPopup(popup_5b7b31dd91c8de68cbd0575e2dffe068)
+        ;
+
+        
+    
+    
+            var marker_0de8886c83e4a4829c69d3a4b91e30f9 = L.marker(
+                [40.4779686, -104.9280571],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_a4e84b5e03adcfe11908b3908f4b3363 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0de8886c83e4a4829c69d3a4b91e30f9.setIcon(icon_a4e84b5e03adcfe11908b3908f4b3363);
+        
+    
+        var popup_8679351dd837d871678c00cb6fa0e167 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7608a3972dab1e5e6de72de1519e8be5 = $(`<div id="html_7608a3972dab1e5e6de72de1519e8be5" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80550.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1156</div>`)[0];
+                popup_8679351dd837d871678c00cb6fa0e167.setContent(html_7608a3972dab1e5e6de72de1519e8be5);
+            
+        
+
+        marker_0de8886c83e4a4829c69d3a4b91e30f9.bindPopup(popup_8679351dd837d871678c00cb6fa0e167)
+        ;
+
+        
+    
+    
+            var marker_9327c965fde77abe89ee9b9d56821e23 = L.marker(
+                [39.97587002566372, -104.78700946478742],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_2c6842e47daa6df39ce1247ea30da83a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9327c965fde77abe89ee9b9d56821e23.setIcon(icon_2c6842e47daa6df39ce1247ea30da83a);
+        
+    
+        var popup_8870a946942e4c02abb5a7070a258442 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2b95b1f29a1ae2435fa1d0b063a432f8 = $(`<div id="html_2b95b1f29a1ae2435fa1d0b063a432f8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80601.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2254</div>`)[0];
+                popup_8870a946942e4c02abb5a7070a258442.setContent(html_2b95b1f29a1ae2435fa1d0b063a432f8);
+            
+        
+
+        marker_9327c965fde77abe89ee9b9d56821e23.bindPopup(popup_8870a946942e4c02abb5a7070a258442)
+        ;
+
+        
+    
+    
+            var marker_0bc5b59cefbe971c08bb99dd242701c2 = L.marker(
+                [39.96578140852459, -104.90297025180327],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_4bfb4c52a2150dd8fad38bb097258321 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0bc5b59cefbe971c08bb99dd242701c2.setIcon(icon_4bfb4c52a2150dd8fad38bb097258321);
+        
+    
+        var popup_b9863c74fd52d776342706895538b709 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e266ac220ea68918be8b1a247eb6e66a = $(`<div id="html_e266ac220ea68918be8b1a247eb6e66a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80602.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3278</div>`)[0];
+                popup_b9863c74fd52d776342706895538b709.setContent(html_e266ac220ea68918be8b1a247eb6e66a);
+            
+        
+
+        marker_0bc5b59cefbe971c08bb99dd242701c2.bindPopup(popup_b9863c74fd52d776342706895538b709)
+        ;
+
+        
+    
+    
+            var marker_5f4e3cc3f41a688de2bf69a12570742b = L.marker(
+                [40.420066215625, -104.68968961875001],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_e5fc86c8144238e5ec976163c36b5a9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5f4e3cc3f41a688de2bf69a12570742b.setIcon(icon_e5fc86c8144238e5ec976163c36b5a9d);
+        
+    
+        var popup_502b3f5f889d693b4611f8159904a80d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0782eacb0f0361128d922feeb5faa39b = $(`<div id="html_0782eacb0f0361128d922feeb5faa39b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80631.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2021</div>`)[0];
+                popup_502b3f5f889d693b4611f8159904a80d.setContent(html_0782eacb0f0361128d922feeb5faa39b);
+            
+        
+
+        marker_5f4e3cc3f41a688de2bf69a12570742b.bindPopup(popup_502b3f5f889d693b4611f8159904a80d)
+        ;
+
+        
+    
+    
+            var marker_478b194983f8f7cced334300771da6f6 = L.marker(
+                [40.40626758678679, -104.73910296371997],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_1c2da7a46993c6ae040f9fb66af5ed24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_478b194983f8f7cced334300771da6f6.setIcon(icon_1c2da7a46993c6ae040f9fb66af5ed24);
+        
+    
+        var popup_d509f83488e13ee0788d77c58efafd1e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff9da32861c7bd2f0a6a7f2fc4ba7892 = $(`<div id="html_ff9da32861c7bd2f0a6a7f2fc4ba7892" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80634.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1610</div>`)[0];
+                popup_d509f83488e13ee0788d77c58efafd1e.setContent(html_ff9da32861c7bd2f0a6a7f2fc4ba7892);
+            
+        
+
+        marker_478b194983f8f7cced334300771da6f6.bindPopup(popup_d509f83488e13ee0788d77c58efafd1e)
+        ;
+
+        
+    
+    
+            var marker_9bdb8b1890d5c80721ffc3aa3cca292a = L.marker(
+                [40.2512536, -103.8015099],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7ce505ac3b30746d931e049e5b0871bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9bdb8b1890d5c80721ffc3aa3cca292a.setIcon(icon_7ce505ac3b30746d931e049e5b0871bd);
+        
+    
+        var popup_5d391437488c161b53d949199ddf9b81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1b67952b22c8593fd1309e741917660 = $(`<div id="html_e1b67952b22c8593fd1309e741917660" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80701.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1609</div>`)[0];
+                popup_5d391437488c161b53d949199ddf9b81.setContent(html_e1b67952b22c8593fd1309e741917660);
+            
+        
+
+        marker_9bdb8b1890d5c80721ffc3aa3cca292a.bindPopup(popup_5d391437488c161b53d949199ddf9b81)
+        ;
+
+        
+    
+    
+            var marker_604e88fd1a7382b0418bd3701dc0d6a8 = L.marker(
+                [40.0823823, -102.2221114],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_7b261f6d42fff7cbd11c73d5542cdfad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_604e88fd1a7382b0418bd3701dc0d6a8.setIcon(icon_7b261f6d42fff7cbd11c73d5542cdfad);
+        
+    
+        var popup_aa1dc9aa13ad89d1856e35132206fccf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a9ed8a414eef58204d4b7493a6c7e896 = $(`<div id="html_a9ed8a414eef58204d4b7493a6c7e896" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80758.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3594</div>`)[0];
+                popup_aa1dc9aa13ad89d1856e35132206fccf.setContent(html_a9ed8a414eef58204d4b7493a6c7e896);
+            
+        
+
+        marker_604e88fd1a7382b0418bd3701dc0d6a8.bindPopup(popup_aa1dc9aa13ad89d1856e35132206fccf)
+        ;
+
+        
+    
+    
+            var marker_c033c93afe462eb01af19f78661706ed = L.marker(
+                [38.71619895, -104.69897838821905],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_db49c1db513bc20a4fe84ebadba066cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_c033c93afe462eb01af19f78661706ed.setIcon(icon_db49c1db513bc20a4fe84ebadba066cf);
+        
+    
+        var popup_d7d7448274358342072a4021201fc33c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_02bc978aaaa21512e1a74e244fba2b68 = $(`<div id="html_02bc978aaaa21512e1a74e244fba2b68" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80817.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 805</div>`)[0];
+                popup_d7d7448274358342072a4021201fc33c.setContent(html_02bc978aaaa21512e1a74e244fba2b68);
+            
+        
+
+        marker_c033c93afe462eb01af19f78661706ed.bindPopup(popup_d7d7448274358342072a4021201fc33c)
+        ;
+
+        
+    
+    
+            var marker_f03987ec3baa23043504fdbb6e79381d = L.marker(
+                [38.7640171, -102.7861882],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_40b24b3bd0e34a25cc8a514e08287549 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f03987ec3baa23043504fdbb6e79381d.setIcon(icon_40b24b3bd0e34a25cc8a514e08287549);
+        
+    
+        var popup_b86d7b12cb6dab6677b69ccff51d5d1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7d4d1f5f5e0fcdd23c111bb55853f417 = $(`<div id="html_7d4d1f5f5e0fcdd23c111bb55853f417" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80825.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1578</div>`)[0];
+                popup_b86d7b12cb6dab6677b69ccff51d5d1d.setContent(html_7d4d1f5f5e0fcdd23c111bb55853f417);
+            
+        
+
+        marker_f03987ec3baa23043504fdbb6e79381d.bindPopup(popup_b86d7b12cb6dab6677b69ccff51d5d1d)
+        ;
+
+        
+    
+    
+            var marker_1b030b60bdb964a82999ee587a0e4b06 = L.marker(
+                [38.94173966277533, -104.6062580792282],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_ae26f3209e09457984d7e13dc3aaab51 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1b030b60bdb964a82999ee587a0e4b06.setIcon(icon_ae26f3209e09457984d7e13dc3aaab51);
+        
+    
+        var popup_510e6d8038983bed226be1388f1c4a8e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1e7aed117e7f76ab8912fe96056785fa = $(`<div id="html_1e7aed117e7f76ab8912fe96056785fa" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80831.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1466</div>`)[0];
+                popup_510e6d8038983bed226be1388f1c4a8e.setContent(html_1e7aed117e7f76ab8912fe96056785fa);
+            
+        
+
+        marker_1b030b60bdb964a82999ee587a0e4b06.bindPopup(popup_510e6d8038983bed226be1388f1c4a8e)
+        ;
+
+        
+    
+    
+            var marker_8fbc54d3b3c2fbf05ba43702923d2703 = L.marker(
+                [38.850507441800644, -104.85861680707396],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_9289989db1ea2a3442839f3082eebc82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8fbc54d3b3c2fbf05ba43702923d2703.setIcon(icon_9289989db1ea2a3442839f3082eebc82);
+        
+    
+        var popup_036b9c19aa707243281a04af2dcc29ee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_453b934abfbab1482e00bb2eebf75aee = $(`<div id="html_453b934abfbab1482e00bb2eebf75aee" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80904.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2554</div>`)[0];
+                popup_036b9c19aa707243281a04af2dcc29ee.setContent(html_453b934abfbab1482e00bb2eebf75aee);
+            
+        
+
+        marker_8fbc54d3b3c2fbf05ba43702923d2703.bindPopup(popup_036b9c19aa707243281a04af2dcc29ee)
+        ;
+
+        
+    
+    
+            var marker_2fe5cd1b5f04cfe2fecc5cfae1e025ed = L.marker(
+                [38.81463400193051, -104.82849035995143],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_d7660eb5d1c568dd6ca555179d90e10d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2fe5cd1b5f04cfe2fecc5cfae1e025ed.setIcon(icon_d7660eb5d1c568dd6ca555179d90e10d);
+        
+    
+        var popup_000ba5414b032323d29ac65b3b37d458 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_905d492183d0cd1c1e8eba7e681741e7 = $(`<div id="html_905d492183d0cd1c1e8eba7e681741e7" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80905.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2599</div>`)[0];
+                popup_000ba5414b032323d29ac65b3b37d458.setContent(html_905d492183d0cd1c1e8eba7e681741e7);
+            
+        
+
+        marker_2fe5cd1b5f04cfe2fecc5cfae1e025ed.bindPopup(popup_000ba5414b032323d29ac65b3b37d458)
+        ;
+
+        
+    
+    
+            var marker_78a35c3399322cf6cb5c9934dcf80a5c = L.marker(
+                [38.791119314017095, -104.81354030089491],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_f6d1fbbfdaa98e4f7384d510caa5ee56 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_78a35c3399322cf6cb5c9934dcf80a5c.setIcon(icon_f6d1fbbfdaa98e4f7384d510caa5ee56);
+        
+    
+        var popup_20d273ead4fa90c79aaa0c574d253d48 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab21ac49bac458a637acc5890982c15b = $(`<div id="html_ab21ac49bac458a637acc5890982c15b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80906.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 5168</div>`)[0];
+                popup_20d273ead4fa90c79aaa0c574d253d48.setContent(html_ab21ac49bac458a637acc5890982c15b);
+            
+        
+
+        marker_78a35c3399322cf6cb5c9934dcf80a5c.bindPopup(popup_20d273ead4fa90c79aaa0c574d253d48)
+        ;
+
+        
+    
+    
+            var marker_06ade2a2d98c4e7686d3607e03cdd172 = L.marker(
+                [38.871151359536086, -104.8336983018585],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_0a1ef6253fc37f29f6570fb864da9875 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_06ade2a2d98c4e7686d3607e03cdd172.setIcon(icon_0a1ef6253fc37f29f6570fb864da9875);
+        
+    
+        var popup_c57c12fa3eee0525a016ac171709d9eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e8fb44730a0e1456b65087abe84ffff1 = $(`<div id="html_e8fb44730a0e1456b65087abe84ffff1" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80907.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2346</div>`)[0];
+                popup_c57c12fa3eee0525a016ac171709d9eb.setContent(html_e8fb44730a0e1456b65087abe84ffff1);
+            
+        
+
+        marker_06ade2a2d98c4e7686d3607e03cdd172.bindPopup(popup_c57c12fa3eee0525a016ac171709d9eb)
+        ;
+
+        
+    
+    
+            var marker_f61b6ffbeff3d37fc934536d42e02e7b = L.marker(
+                [38.8484146, -104.7723311],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_44be062b442af81a24e20fa69dd80658 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f61b6ffbeff3d37fc934536d42e02e7b.setIcon(icon_44be062b442af81a24e20fa69dd80658);
+        
+    
+        var popup_5dd5326f89cc383a770f3fd3f01f93f4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3afb782c05a0ef6fcfa713df4f78dc4a = $(`<div id="html_3afb782c05a0ef6fcfa713df4f78dc4a" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80909.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 572</div>`)[0];
+                popup_5dd5326f89cc383a770f3fd3f01f93f4.setContent(html_3afb782c05a0ef6fcfa713df4f78dc4a);
+            
+        
+
+        marker_f61b6ffbeff3d37fc934536d42e02e7b.bindPopup(popup_5dd5326f89cc383a770f3fd3f01f93f4)
+        ;
+
+        
+    
+    
+            var marker_398d27bf35ad2c23a2482830c2810e2c = L.marker(
+                [38.8120722, -104.7467815],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_be6295bee2c9719fd27e3f9816cc9e70 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_398d27bf35ad2c23a2482830c2810e2c.setIcon(icon_be6295bee2c9719fd27e3f9816cc9e70);
+        
+    
+        var popup_2da579bc9b1603539ff75449a33c7eee = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_022d638ce9c5ffbdba315cc5d12623e2 = $(`<div id="html_022d638ce9c5ffbdba315cc5d12623e2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80916.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 63</div>`)[0];
+                popup_2da579bc9b1603539ff75449a33c7eee.setContent(html_022d638ce9c5ffbdba315cc5d12623e2);
+            
+        
+
+        marker_398d27bf35ad2c23a2482830c2810e2c.bindPopup(popup_2da579bc9b1603539ff75449a33c7eee)
+        ;
+
+        
+    
+    
+            var marker_d2808b216a5a89228331f3ba39a926e5 = L.marker(
+                [38.8930567, -104.7231816],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_80ccce2e4383e4d19769be7f0b0a95cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d2808b216a5a89228331f3ba39a926e5.setIcon(icon_80ccce2e4383e4d19769be7f0b0a95cd);
+        
+    
+        var popup_d7f805cce84b8b4da9e24b89017c2690 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3abc66fa6f7764c914b2ef2d09ec7bdc = $(`<div id="html_3abc66fa6f7764c914b2ef2d09ec7bdc" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80917.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2158</div>`)[0];
+                popup_d7f805cce84b8b4da9e24b89017c2690.setContent(html_3abc66fa6f7764c914b2ef2d09ec7bdc);
+            
+        
+
+        marker_d2808b216a5a89228331f3ba39a926e5.bindPopup(popup_d7f805cce84b8b4da9e24b89017c2690)
+        ;
+
+        
+    
+    
+            var marker_60c454afb52d3a9ad34890d30157a496 = L.marker(
+                [38.9054343, -104.82226593849434],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_b4c1e41e7710a7956da93eb81d750c14 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_60c454afb52d3a9ad34890d30157a496.setIcon(icon_b4c1e41e7710a7956da93eb81d750c14);
+        
+    
+        var popup_5f8adb4fba74de64e94f110bad10b040 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe7c01007d0a4056cae0582a68caf8a8 = $(`<div id="html_fe7c01007d0a4056cae0582a68caf8a8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80918.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 28130</div>`)[0];
+                popup_5f8adb4fba74de64e94f110bad10b040.setContent(html_fe7c01007d0a4056cae0582a68caf8a8);
+            
+        
+
+        marker_60c454afb52d3a9ad34890d30157a496.bindPopup(popup_5f8adb4fba74de64e94f110bad10b040)
+        ;
+
+        
+    
+    
+            var marker_73dca8abcafeadb1d61d56620e73358e = L.marker(
+                [38.91223674734043, -104.84651069334336],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_d38484cb0e3f7e0a354441ac3b94a6f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_73dca8abcafeadb1d61d56620e73358e.setIcon(icon_d38484cb0e3f7e0a354441ac3b94a6f4);
+        
+    
+        var popup_9defd27e89a64370835c6593e46220ea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b3d2a3d755c9ff192f2ca440e9fab0f8 = $(`<div id="html_b3d2a3d755c9ff192f2ca440e9fab0f8" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80919.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 949</div>`)[0];
+                popup_9defd27e89a64370835c6593e46220ea.setContent(html_b3d2a3d755c9ff192f2ca440e9fab0f8);
+            
+        
+
+        marker_73dca8abcafeadb1d61d56620e73358e.bindPopup(popup_9defd27e89a64370835c6593e46220ea)
+        ;
+
+        
+    
+    
+            var marker_d54319dbe0818a739e95d270a2173a6f = L.marker(
+                [38.94595511358025, -104.78206607996812],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_877b0428abf7a4cf3658db0f2c507e4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_d54319dbe0818a739e95d270a2173a6f.setIcon(icon_877b0428abf7a4cf3658db0f2c507e4d);
+        
+    
+        var popup_c89edd9eac231b4192f22a4d7c84d146 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43a2b43aa7ffd84e4030ad75dac72fa2 = $(`<div id="html_43a2b43aa7ffd84e4030ad75dac72fa2" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80920.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 7755</div>`)[0];
+                popup_c89edd9eac231b4192f22a4d7c84d146.setContent(html_43a2b43aa7ffd84e4030ad75dac72fa2);
+            
+        
+
+        marker_d54319dbe0818a739e95d270a2173a6f.bindPopup(popup_c89edd9eac231b4192f22a4d7c84d146)
+        ;
+
+        
+    
+    
+            var marker_8bbe299bb9174b36bc627db8f750d1cf = L.marker(
+                [39.02658801125541, -104.81454122428742],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_318cbf840222432ff5d6b71f942d552d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_8bbe299bb9174b36bc627db8f750d1cf.setIcon(icon_318cbf840222432ff5d6b71f942d552d);
+        
+    
+        var popup_df709cf544bd39287c350286c943e442 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ead8bab77acfa9146accf2c3afdd179d = $(`<div id="html_ead8bab77acfa9146accf2c3afdd179d" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80921.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2241</div>`)[0];
+                popup_df709cf544bd39287c350286c943e442.setContent(html_ead8bab77acfa9146accf2c3afdd179d);
+            
+        
+
+        marker_8bbe299bb9174b36bc627db8f750d1cf.bindPopup(popup_df709cf544bd39287c350286c943e442)
+        ;
+
+        
+    
+    
+            var marker_e13a094c4572f6f4688e9eae39d7c4ae = L.marker(
+                [38.8931546, -104.7178191],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_11a3e5ccf62b3c74bf28167c07f5e25d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e13a094c4572f6f4688e9eae39d7c4ae.setIcon(icon_11a3e5ccf62b3c74bf28167c07f5e25d);
+        
+    
+        var popup_4b912cba1eef3f315b68924ff2f5cb1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8499311e0f53179d53dd09f9651c474b = $(`<div id="html_8499311e0f53179d53dd09f9651c474b" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80922.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 20337</div>`)[0];
+                popup_4b912cba1eef3f315b68924ff2f5cb1b.setContent(html_8499311e0f53179d53dd09f9651c474b);
+            
+        
+
+        marker_e13a094c4572f6f4688e9eae39d7c4ae.bindPopup(popup_4b912cba1eef3f315b68924ff2f5cb1b)
+        ;
+
+        
+    
+    
+            var marker_74f8f3ee0711b95331330237d59352e4 = L.marker(
+                [38.9123312, -104.7159824864454],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_97799a28dfd73954d91806190ebc60e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_74f8f3ee0711b95331330237d59352e4.setIcon(icon_97799a28dfd73954d91806190ebc60e2);
+        
+    
+        var popup_b96c4ff63b222d8a52e0c2b881153579 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_541734510293583c47d15a756b065596 = $(`<div id="html_541734510293583c47d15a756b065596" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80923.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1078</div>`)[0];
+                popup_b96c4ff63b222d8a52e0c2b881153579.setContent(html_541734510293583c47d15a756b065596);
+            
+        
+
+        marker_74f8f3ee0711b95331330237d59352e4.bindPopup(popup_b96c4ff63b222d8a52e0c2b881153579)
+        ;
+
+        
+    
+    
+            var marker_bd02dcbed2e07b3269434d09877e4341 = L.marker(
+                [38.9734494, -104.7460757],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_1ea7c23c88808abd3cc74e8bd2e6e7de = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_bd02dcbed2e07b3269434d09877e4341.setIcon(icon_1ea7c23c88808abd3cc74e8bd2e6e7de);
+        
+    
+        var popup_beadb872de81520eddb1ab5b3d834f86 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00e425132692abe74a79a7f68e3f3789 = $(`<div id="html_00e425132692abe74a79a7f68e3f3789" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80924.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2832</div>`)[0];
+                popup_beadb872de81520eddb1ab5b3d834f86.setContent(html_00e425132692abe74a79a7f68e3f3789);
+            
+        
+
+        marker_bd02dcbed2e07b3269434d09877e4341.bindPopup(popup_beadb872de81520eddb1ab5b3d834f86)
+        ;
+
+        
+    
+    
+            var marker_cae846594ea3a0d161b968c5f2561945 = L.marker(
+                [38.8680938, -104.6939718],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_dffd8cf62dd4d67c939fc643730e1e01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cae846594ea3a0d161b968c5f2561945.setIcon(icon_dffd8cf62dd4d67c939fc643730e1e01);
+        
+    
+        var popup_c8344fb79f8b4994593f91ad67bb7cf8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7333c7c1184752f2052cd3fefd44716e = $(`<div id="html_7333c7c1184752f2052cd3fefd44716e" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 80951.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1402</div>`)[0];
+                popup_c8344fb79f8b4994593f91ad67bb7cf8.setContent(html_7333c7c1184752f2052cd3fefd44716e);
+            
+        
+
+        marker_cae846594ea3a0d161b968c5f2561945.bindPopup(popup_c8344fb79f8b4994593f91ad67bb7cf8)
+        ;
+
+        
+    
+    
+            var marker_2163610886032bd409d5dc009fca94d0 = L.marker(
+                [38.24287355, -104.6457871524108],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_32d58e01e8b22de9a740f1052eff7c71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_2163610886032bd409d5dc009fca94d0.setIcon(icon_32d58e01e8b22de9a740f1052eff7c71);
+        
+    
+        var popup_e004723ea6072a32cbc6cd891c20c5be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_80636cb6aa58686197c96310050c26b0 = $(`<div id="html_80636cb6aa58686197c96310050c26b0" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81005.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 876</div>`)[0];
+                popup_e004723ea6072a32cbc6cd891c20c5be.setContent(html_80636cb6aa58686197c96310050c26b0);
+            
+        
+
+        marker_2163610886032bd409d5dc009fca94d0.bindPopup(popup_e004723ea6072a32cbc6cd891c20c5be)
+        ;
+
+        
+    
+    
+            var marker_1a073cb71a89fd1e8a946c191978205b = L.marker(
+                [38.29821386605504, -104.6069784678899],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_93337b191f2baca0d9f5cccb38eb2649 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_1a073cb71a89fd1e8a946c191978205b.setIcon(icon_93337b191f2baca0d9f5cccb38eb2649);
+        
+    
+        var popup_d9fe48f38865f7e492caee3f224e0050 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abca33bbc8f0eb0d4b49111b390747ad = $(`<div id="html_abca33bbc8f0eb0d4b49111b390747ad" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81008.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 3767</div>`)[0];
+                popup_d9fe48f38865f7e492caee3f224e0050.setContent(html_abca33bbc8f0eb0d4b49111b390747ad);
+            
+        
+
+        marker_1a073cb71a89fd1e8a946c191978205b.bindPopup(popup_d9fe48f38865f7e492caee3f224e0050)
+        ;
+
+        
+    
+    
+            var marker_97d802b6b102f706697916b76260fa9a = L.marker(
+                [38.218972, -103.75803],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_b03d0654633aa40b0bc1fa7cf4d1dde2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_97d802b6b102f706697916b76260fa9a.setIcon(icon_b03d0654633aa40b0bc1fa7cf4d1dde2);
+        
+    
+        var popup_59631db0ec131dc54d3e5ea8efc1d54b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_26ccec0871872f1386491b142690c5e6 = $(`<div id="html_26ccec0871872f1386491b142690c5e6" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81064.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 1200</div>`)[0];
+                popup_59631db0ec131dc54d3e5ea8efc1d54b.setContent(html_26ccec0871872f1386491b142690c5e6);
+            
+        
+
+        marker_97d802b6b102f706697916b76260fa9a.bindPopup(popup_59631db0ec131dc54d3e5ea8efc1d54b)
+        ;
+
+        
+    
+    
+            var marker_13a4c46081830c0b0183e40a6f34daab = L.marker(
+                [37.6715459, -106.6554519],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_bd9268a2eb2de91f60e9f15db8b66dc8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_13a4c46081830c0b0183e40a6f34daab.setIcon(icon_bd9268a2eb2de91f60e9f15db8b66dc8);
+        
+    
+        var popup_a5502e930201566e5cca86961459067d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1953ce43a94785467afba7ee3bf4accd = $(`<div id="html_1953ce43a94785467afba7ee3bf4accd" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81154.0<br><strong>Most Sold SKU:</strong> RMS 2PK<br><strong>Gross Units:</strong> 18832</div>`)[0];
+                popup_a5502e930201566e5cca86961459067d.setContent(html_1953ce43a94785467afba7ee3bf4accd);
+            
+        
+
+        marker_13a4c46081830c0b0183e40a6f34daab.bindPopup(popup_a5502e930201566e5cca86961459067d)
+        ;
+
+        
+    
+    
+            var marker_f00c94503810be442f2512572c415a6b = L.marker(
+                [37.2962375, -107.8734713],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_f748c62f59768518dd0c9f149080851a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f00c94503810be442f2512572c415a6b.setIcon(icon_f748c62f59768518dd0c9f149080851a);
+        
+    
+        var popup_26f8562f96ebd18773aef15eb8ecc0ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7cb5b5a029fc752f018f79dd1dc7c1fb = $(`<div id="html_7cb5b5a029fc752f018f79dd1dc7c1fb" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81301.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 812</div>`)[0];
+                popup_26f8562f96ebd18773aef15eb8ecc0ce.setContent(html_7cb5b5a029fc752f018f79dd1dc7c1fb);
+            
+        
+
+        marker_f00c94503810be442f2512572c415a6b.bindPopup(popup_26f8562f96ebd18773aef15eb8ecc0ce)
+        ;
+
+        
+    
+    
+            var marker_4382f974fdc3db41661176f818db03ef = L.marker(
+                [37.3822787, -108.60960230000002],
+                {
+}
+            ).addTo(map_a5d35c2824d4eaf2b18e823416193991);
+        
+    
+            var icon_9017a3dce9db93776f4f9efc21717c39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_4382f974fdc3db41661176f818db03ef.setIcon(icon_9017a3dce9db93776f4f9efc21717c39);
+        
+    
+        var popup_aad553cef542142499e302ccf4b3b3f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6314e77ca3e6a5e81a95d3920285c4d0 = $(`<div id="html_6314e77ca3e6a5e81a95d3920285c4d0" style="width: 100.0%; height: 100.0%;"><strong>ZIP Code:</strong> 81321.0<br><strong>Most Sold SKU:</strong> ROCKY MT SOUR<br><strong>Gross Units:</strong> 2701</div>`)[0];
+                popup_aad553cef542142499e302ccf4b3b3f1.setContent(html_6314e77ca3e6a5e81a95d3920285c4d0);
+            
+        
+
+        marker_4382f974fdc3db41661176f818db03ef.bindPopup(popup_aad553cef542142499e302ccf4b3b3f1)
+        ;
+
+        
+    
+</script>
+</html>
